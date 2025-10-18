@@ -6,9 +6,15 @@
     --text-color: #151515;
     /* Noir Profond */
 
-    /* Couleur d'Accent (Mauve / Or Rose) - Le point de puissance et d'élégance */
+    /* Couleur d'Accent (Mauve / Or Rose) */
     --accent-color: #A055FF;
     /* Mauve puissant */
+
+    /* Couleurs du Mode Sombre (MAINTEANT CORRECTEMENT PLACÉES) */
+    --dark-bg-color: #1a1a2e;
+    /* Fond Bleu Nuit Profond */
+    --dark-text-color: #f0f0f0;
+    /* Texte Blanc Cassé */
 
     /* Typographie */
     --font-sans: 'Inter', sans-serif;
@@ -143,4 +149,30 @@ h1 {
 .button.outline:hover {
     background-color: var(--text-color);
     color: var(--bg-color);
+}
+
+/* 6. MODE SOMBRE (DARK MODE) */
+/* Lorsque la classe 'dark-mode' est ajoutée au <body>, les couleurs changent */
+.dark-mode {
+    /* Inversion des couleurs de base */
+    --bg-color: var(--dark-bg-color);
+    --text-color: var(--dark-text-color);
+}
+
+/* Le bouton rempli s'adapte au mode sombre pour rester lisible */
+.dark-mode .button.filled {
+    background-color: var(--accent-color);
+    color: var(--dark-bg-color);
+    /* Texte sur le bouton devient très foncé */
+    border-color: var(--accent-color);
+}
+
+.dark-mode .button.outline {
+    color: var(--dark-text-color);
+    border-color: var(--dark-text-color);
+}
+
+.dark-mode .button.outline:hover {
+    background-color: var(--dark-text-color);
+    color: var(--dark-bg-color);
 }

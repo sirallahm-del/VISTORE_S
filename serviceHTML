@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | VERITASIA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* CSS spécifique pour cette page (non dans style.css principal) */
+        .construction-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            text-align: center;
+        }
+
+        .construction-section h1 {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .construction-section p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="brand">VERITASIA</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="#">Profil</a></li>
+                <li><a href="case-studies.html">Études de Cas</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="construction-section">
+        <h1>🚀 Services & Offres Partenaires</h1>
+        <p>
+            Nous développons actuellement une structure de conseil sur mesure.<br>
+            Revenez bientôt pour découvrir comment la Data et l'IA peuvent transformer votre business.
+        </p>
+        <a href="index.html" class="button outline" style="margin-top: 30px;">Retour à l'Accueil</a>
+    </main>
+
+</body>
+
+</html>
