@@ -1,0 +1,146 @@
+/* 1. Définition des Variables de Couleurs (La Palette Luxe Tech) */
+:root {
+    /* Couleurs de base */
+    --bg-color: #e9ebe0;
+    /* Gris Pâle / Fond Clean */
+    --text-color: #151515;
+    /* Noir Profond */
+
+    /* Couleur d'Accent (Mauve / Or Rose) - Le point de puissance et d'élégance */
+    --accent-color: #A055FF;
+    /* Mauve puissant */
+
+    /* Typographie */
+    --font-sans: 'Inter', sans-serif;
+    /* Police de la maquette */
+}
+
+/* 2. Style Global et Réinitialisation */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* 3. Barre de Navigation (Navbar) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin-left: 30px;
+    font-weight: 400;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.navbar ul li a:hover {
+    opacity: 1;
+}
+
+/* 4. Section Principale (Hero Section) */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    text-align: left;
+    width: 100%;
+}
+
+.hero-section .content {
+    max-width: 800px;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-color);
+    opacity: 0.6;
+    margin-bottom: 5px;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.accent-text {
+    color: var(--accent-color);
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 40px;
+}
+
+/* 5. Style des Boutons (FOMO & Action) */
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.button {
+    text-decoration: none;
+    padding: 12px 25px;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+}
+
+/* Bouton Rempli (Action Principale: Postuler/Collaborer) */
+.button.filled {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: 2px solid var(--accent-color);
+}
+
+.button.filled:hover {
+    background-color: var(--text-color);
+    border-color: var(--text-color);
+}
+
+/* Bouton Contourné (Action Secondaire: Voir les preuves) */
+.button.outline {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+}
+
+.button.outline:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
