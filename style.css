@@ -1,9 +1,10 @@
 :root {
-    --bg-color: #e9ebe0;
-    --text-color: #151515;
-    --accent-color: #A055FF;
-    --dark-bg-color: #1a1a2e;
-    --dark-text-color: #f0f0f0;
+    --bg-color: #f0f8ff;
+    --text-color: #2c3e50;
+    --accent-color: #6a0dad;
+    --secondary-color: #28a745;
+    --dark-bg-color: #1e2a38;
+    --dark-text-color: #e8f4f8;
     --font-sans: 'Inter', sans-serif;
 }
 
@@ -35,7 +36,7 @@ body {
 .brand {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--text-color);
+    color: var(--accent-color);
 }
 
 .navbar nav {
@@ -62,6 +63,7 @@ body {
 
 .navbar ul li a:hover {
     opacity: 1;
+    color: var(--secondary-color);
 }
 
 #dark-mode-toggle, #lang-select {
@@ -78,7 +80,8 @@ body {
 }
 
 #dark-mode-toggle:hover, #lang-select:hover {
-    opacity: 0.8;
+    background: var(--secondary-color);
+    color: white;
 }
 
 .dark-mode #dark-mode-toggle, .dark-mode #lang-select {
@@ -170,8 +173,8 @@ h1 {
 }
 
 .button.filled:hover {
-    background-color: var(--text-color);
-    border-color: var(--text-color);
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
 }
 
 .button.outline {
@@ -214,12 +217,13 @@ h1 {
 
 .cas-etude {
     background-color: var(--bg-color);
-    border: 1px solid #dcdcdc;
+    border: 1px solid var(--secondary-color);
     padding: 40px;
     margin-bottom: 40px;
     border-radius: 8px;
     line-height: 1.6;
     word-wrap: break-word;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .cas-etude h2 {
@@ -229,8 +233,8 @@ h1 {
 
 .cas-etude .tag {
     display: inline-block;
-    background-color: var(--text-color);
-    color: var(--bg-color);
+    background-color: var(--secondary-color);
+    color: white;
     padding: 5px 10px;
     margin-right: 10px;
     border-radius: 3px;
@@ -244,7 +248,7 @@ h1 {
 
 .dark-mode .cas-etude {
     background-color: var(--dark-bg-color);
-    border-color: var(--dark-text-color);
+    border-color: var(--accent-color);
 }
 
 .construction-section {
@@ -281,8 +285,8 @@ h1 {
 }
 
 .donate-btn {
-    background: var(--text-color);
-    color: var(--bg-color);
+    background: var(--secondary-color);
+    color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -291,7 +295,7 @@ h1 {
 }
 
 .donate-btn:hover {
-    opacity: 0.8;
+    background: var(--text-color);
 }
 
 .dark-mode .affiliate {
@@ -300,6 +304,6 @@ h1 {
 }
 
 .dark-mode .donate-btn {
-    background: var(--dark-text-color);
+    background: var(--accent-color);
     color: var(--dark-bg-color);
 }
