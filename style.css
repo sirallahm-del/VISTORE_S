@@ -263,3 +263,12 @@ h1 {
     background: var(--dark-text-color);
     color: var(--dark-bg-color);
 }
+:root {
+    --bg-color: #f0f2f5; /* Softer light gray for calm/trust */
+    --text-color: #2c3e50; /* Deep blue-black for professionalism */
+    --accent-color: #6a0dad; /* Rich purple for innovation/exclusivity */
+    --dark-bg-color: #1e1e2f; /* Darker blue for night mode */
+    --dark-text-color: #e0e0e0; /* Soft white */
+    --secondary-color: #3498db; /* Light blue for highlights (trust) */
+}
+
