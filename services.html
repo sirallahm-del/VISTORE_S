@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | VERITASIA</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="services.css">
 </head>
 
 <body>
@@ -15,64 +15,19 @@
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="#">Profil</a></li>
                 <li><a href="case-studies.html">Études de Cas</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
-            <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">🌙 Dark Mode</button>
-            <select id="lang-select">
-                <option value="fr">Français</option>
-                <option value="en">English</option>
-            </select>
+            <div class="controls">
+                <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">🌙</button>
+                <select id="lang-select">
+                    <option value="fr">FR</option>
+                    <option value="en">EN</option>
+                </select>
+            </div>
         </nav>
     </header>
 
-    <main class="construction-section">
-        <h1 data-translate="services-title">🚀 Services & Offres Partenaires</h1>
-        <p data-translate="services-desc">
-            Nous développons actuellement une structure de conseil sur mesure. Revenez bientôt pour découvrir comment la Data et l'IA peuvent transformer votre business.
-        </p>
-        <a href="index.html" class="button outline" style="margin-top: 30px;" data-translate="back-btn">Retour à l'Accueil</a>
-
-        <div class="monetization">
-            <div class="affiliate">
-                <p data-translate="affiliate-text">Recommandé: <a href="https://www.amazon.com/dp/1492032646?tag=veritasia-20" target="_blank">Livre sur l'IA pour Débutants</a> (Gagnez des commissions sur les achats)</p>
-            </div>
-            <a href="https://www.buymeacoffee.com/veritasia" target="_blank" class="donate-btn" data-translate="donate-btn">Soutenez Veritasia - À partir de 1$</a>
-        </div>
-    </main>
-
-    <script src="script.js"></script>
-</body>
-
-</html>
-// Au chargement de la page, applique le thème sauvegardé
-document.addEventListener('DOMContentLoaded', () => {
-    const theme = localStorage.getItem('theme');
-    if (theme) {
-        applyTheme(theme);
-    }
-});
-
-function toggleTheme() {
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    applyTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-}
-
-function applyTheme(theme) {
-    const root = document.documentElement;
-    if (theme === 'dark') {
-        root.style.setProperty('--bg-color', '#0e0e0e');
-        root.style.setProperty('--text-color', '#f5f5f5');
-        root.style.setProperty('--secondary-color', '#1c1c1c');
-    } else {
-        root.style.setProperty('--bg-color', '#f5f5f5');
-        root.style.setProperty('--text-color', '#0e0e0e');
-        root.style.setProperty('--secondary-color', '#ffffff');
-    }
-}
-
-
+    <main class="services-section">
+        <h1 class="section-title"
