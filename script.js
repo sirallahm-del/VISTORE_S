@@ -8,4 +8,8 @@ const translations = {
         "collaborate-btn": "Démarrer une Collaboration",
         "case-studies-title": "Nos Solutions Prouvées",
         "case-studies-subtitle": "Démontrer la rigueur technique et l'impact de l'Intelligence Artificielle.",
-        "nasa-title": "Hackathon NASA
+        "nasa-title": "Hackathon NASA : Projet GaiaByte – Climat Insights",
+        tag1: "Analyse Géospatiale (SIG)",
+        tag2: "Google Earth Engine (GEE)",
+        tag3: "Télédétection",
+        "nasa-desc": "Participation à un défi d'innovation intense (Hackathon NASA, Octobre 2025). Ce projet visait à modéliser l'impact des variations climatiques en utilisant des données satellites (Landsat/SRTM). Rôle
