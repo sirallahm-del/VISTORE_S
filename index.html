@@ -1,178 +1,94 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Veritasia Portfolio – Études de cas</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    :root {
-      --bg-color: #0e0e0e;
-      --text-color: #f5f5f5;
-      --accent-color: #c5a46d;
-      --secondary-color: #1c1c1c;
-      --font-main: 'Playfair Display', serif;
-      --font-secondary: 'Inter', sans-serif;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg-color);
-      color: var(--text-color);
-      font-family: var(--font-secondary);
-      transition: background 0.3s, color 0.3s;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 3rem;
-      background: var(--secondary-color);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-    }
-
-    header h1 {
-      font-family: var(--font-main);
-      color: var(--accent-color);
-      font-size: 1.8rem;
-      letter-spacing: 1px;
-    }
-
-    nav a {
-      color: var(--text-color);
-      text-decoration: none;
-      margin-left: 2rem;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--accent-color);
-    }
-
-    .case-studies {
-      max-width: 1200px;
-      margin: 3rem auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .case-card {
-      background: var(--secondary-color);
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-      padding: 2rem;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .case-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
-    }
-
-    .case-card h2 {
-      font-family: var(--font-main);
-      color: var(--accent-color);
-      margin-bottom: 1rem;
-    }
-
-    .case-card p {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: var(--secondary-color);
-      color: #aaa;
-      margin-top: 3rem;
-    }
-
-    .lang-switch {
-      background: transparent;
-      border: 1px solid var(--accent-color);
-      color: var(--accent-color);
-      padding: 0.4rem 0.8rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .lang-switch:hover {
-      background: var(--accent-color);
-      color: var(--bg-color);
-    }
-
-    .theme-switch {
-      background: transparent;
-      border: none;
-      color: var(--accent-color);
-      font-size: 1.2rem;
-      cursor: pointer;
-      margin-left: 1rem;
-      transition: transform 0.3s;
-    }
-
-    .theme-switch:hover {
-      transform: rotate(20deg);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERITASIA | Accueil</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <header>
-    <h1>Veritasia</h1>
-    <nav>
-      <a href="index.html">Accueil</a>
-      <a href="about.html">À propos</a>
-      <a href="case-studies.html">Études de cas</a>
-      <button class="lang-switch" onclick="toggleLang()">FR / EN</button>
-      <button class="theme-switch" onclick="toggleTheme()">☾</button>
-    </nav>
-  </header>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="brand">VERITASIA</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active" data-translate="nav-home">Accueil</a></li>
+                <li><a href="case-studies.html" data-translate="nav-cases">Études de Cas</a></li>
+                <li><a href="services.html" data-translate="nav-services">Services</a></li>
+                <li><a href="#" data-translate="nav-contact">Contact</a></li>
+            </ul>
+            <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">🌙</button>
+            <select id="lang-select">
+                <option value="fr">FR</option>
+                <option value="en">EN</option>
+            </select>
+        </nav>
+    </header>
 
-  <section class="case-studies">
-    <div class="case-card">
-      <h2>Projet Luxe Intemporel</h2>
-      <p>Création d'une identité visuelle élégante et minimaliste pour une marque de bijoux haut de gamme.</p>
-    </div>
-    <div class="case-card">
-      <h2>Modern Serenity</h2>
-      <p>Conception d'un site web apaisant pour un spa de luxe avec un design immersif et fluide.</p>
-    </div>
-    <div class="case-card">
-      <h2>Digital Elegance</h2>
-      <p>Développement d'une expérience utilisateur raffinée pour une agence de création numérique.</p>
-    </div>
-  </section>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1 data-translate="hero-title">Bienvenue chez VERITASIA</h1>
+            <p data-translate="hero-subtitle">Innovation, AI, et solutions sur mesure pour votre futur digital.</p>
+            <a href="services.html" class="button filled" data-translate="hero-cta">Découvrir nos services</a>
+        </div>
+        <div class="hero-image">
+            <img src="assets/hero-image.png" alt="Illustration Tech Futuriste">
+        </div>
+    </section>
 
-  <footer>
-    <p>© 2025 Veritasia. Tous droits réservés.</p>
-  </footer>
+    <!-- SERVICES PREVIEW -->
+    <section class="services-preview">
+        <h2 data-translate="services-title">Nos Services</h2>
+        <div class="services-cards">
+            <div class="service-card">
+                <h3 data-translate="service1-title">Développement Web</h3>
+                <p data-translate="service1-desc">Sites et applications modernes, performants et responsive.</p>
+            </div>
+            <div class="service-card">
+                <h3 data-translate="service2-title">AI & Automatisation</h3>
+                <p data-translate="service2-desc">Solutions intelligentes pour optimiser vos processus et décisions.</p>
+            </div>
+            <div class="service-card">
+                <h3 data-translate="service3-title">Conseil & Startups</h3>
+                <p data-translate="service3-desc">Accompagnement pour lancer et scaler vos projets tech.</p>
+            </div>
+        </div>
+        <a href="services.html" class="button outline" data-translate="services-cta">Voir tous les services</a>
+    </section>
 
-  <script>
-    function toggleTheme() {
-      const root = document.documentElement;
-      const dark = getComputedStyle(root).getPropertyValue('--bg-color') === '#0e0e0e';
-      if (dark) {
-        root.style.setProperty('--bg-color', '#f5f5f5');
-        root.style.setProperty('--text-color', '#0e0e0e');
-        root.style.setProperty('--secondary-color', '#ffffff');
-      } else {
-        root.style.setProperty('--bg-color', '#0e0e0e');
-        root.style.setProperty('--text-color', '#f5f5f5');
-        root.style.setProperty('--secondary-color', '#1c1c1c');
-      }
-    }
+    <!-- ETUDES DE CAS TEASER -->
+    <section class="cases-preview">
+        <h2 data-translate="cases-title">Nos Études de Cas</h2>
+        <div class="cases-cards">
+            <div class="case-card">
+                <h3 data-translate="case1-title">Hackathon NASA</h3>
+                <p data-translate="case1-desc">Analyse géospatiale et intelligence artificielle appliquée au climat.</p>
+            </div>
+            <div class="case-card">
+                <h3 data-translate="case2-title">Certification CS50</h3>
+                <p data-translate="case2-desc">Compétences en programmation, algorithmique et bases de données.</p>
+            </div>
+        </div>
+        <a href="case-studies.html" class="button outline" data-translate="cases-cta">Voir toutes les études</a>
+    </section>
 
-    function toggleLang() {
-      const currentLang = document.documentElement.lang;
-      document.documentElement.lang = currentLang === 'fr' ? 'en' : 'fr';
-      location.reload();
-    }
-  </script>
+    <!-- VAULT / FOMO TEASER -->
+    <section class="vault-preview">
+        <h2 data-translate="vault-title">Veritasia Vault</h2>
+        <p data-translate="vault-desc">Accédez à des ressources exclusives et limitées, disponibles pour un temps restreint. <strong>Ne manquez pas votre chance !</strong></p>
+        <a href="#" class="button filled" data-translate="vault-cta">Accéder au Vault</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 VERITASIA. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
