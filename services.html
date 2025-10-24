@@ -47,3 +47,32 @@
 </body>
 
 </html>
+// Au chargement de la page, applique le thème sauvegardé
+document.addEventListener('DOMContentLoaded', () => {
+    const theme = localStorage.getItem('theme');
+    if (theme) {
+        applyTheme(theme);
+    }
+});
+
+function toggleTheme() {
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+}
+
+function applyTheme(theme) {
+    const root = document.documentElement;
+    if (theme === 'dark') {
+        root.style.setProperty('--bg-color', '#0e0e0e');
+        root.style.setProperty('--text-color', '#f5f5f5');
+        root.style.setProperty('--secondary-color', '#1c1c1c');
+    } else {
+        root.style.setProperty('--bg-color', '#f5f5f5');
+        root.style.setProperty('--text-color', '#0e0e0e');
+        root.style.setProperty('--secondary-color', '#ffffff');
+    }
+}
+
+
