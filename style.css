@@ -1,13 +1,11 @@
-:root {
-    --bg-dark: #0b0b0b;           /* noir profond luxe */
-    --bg-light: #fff7f0;          /* ivoire doux */
-    --text-dark: #f5f5f5;         /* texte clair sur sombre */
-    --text-light: #2b2b2b;        /* texte sombre sur clair */
-    --gold: #e6c76a;              /* doré riche, pas flashy */
-    --gold-dark: #b88f2e;         /* doré profond pour hover */
-    --highlight: #f9ecd8;         /* accent chaud et rassurant */
-    --card-dark: #1d1d1d;         /* carte sombre luxueuse */
-    --card-light: #fff5e6;        /* carte claire chaleureuse */
-    --accent-purple: #5d3a7d;     /* subtil luxe / créativité */
+/* Mauvais : couleur fixe */
+body {
+  background-color: #0a0a0a;
+  color: #fefefe;
 }
 
+/* Bon : utilise les variables */
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
