@@ -5,4 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Études de Cas | VERITASIA</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Playfair+Display:w
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="brand">VERITASIA</div>
+    <nav>
+      <ul>
+        <li><a href="index.html" data-translate="nav-home">Accueil</a></li>
+        <li><a href="#" data-translate="nav-profile">Profil</a></li>
+        <li><a href="case-studies.html" data-translate="nav-cases">Études de Cas</a></li>
+        <li><a href="services.html" data-translate="nav-services">Services</a></li>
+        <li><a href="#" data-translate="nav-contact">Contact</a></li>
+      </ul>
+      <div class="controls">
+        <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">🌙</button>
+        <select id="lang-select">
+          <option value="fr">Français 🇫🇷</option>
+          <option value="en">English 🇬🇧</option>
+        </select>
+      </div>
+    </nav>
+  </header>
+
+  <main class="cas-etude-section">
+    <h1 data-translate="case-studies-title">Nos Solutions Prouvées</h1>
+    <p class="subtitle" data-translate="case-studies-subtitle">Démontrer la rigueur technique et l'impact de l'IA.</p>
+
+    <section class="cas-etude">
+      <h2 data-translate="nasa-title">Hackathon NASA : Projet GaiaByte – Climat Insights</h2>
+      <div class="tags">
+        <span class="tag" data-translate="tag1">Analyse Géospatiale (SIG)</span>
+        <span class="tag" data-translate="tag2">Google Earth Engine (GEE)</span>
+        <span class="tag" data-translate="tag3">Télédétection</span>
+      </div>
+      <p data-translate="nasa-desc">
+        Participation à un défi d'innovation intense (Hackathon NASA, Octobre 2025). Ce projet visait à modéliser
+        l'impact des variations climatiques en utilisant des données satellites (Landsat/SRTM).
+        J'ai géré le volet d'analyse géospatiale, utilisant Google Earth Engine (GEE) et Python pour traiter rapidement
+        de grandes masses de données.
+      </p>
+      <a href="#" class="button" data-translate="github-btn">Voir le code source (GitHub)</a>
+    </section>
+
+    <section class="cas-etude">
+      <h2 data-translate="cs50-title">Certification CS50 (HarvardX) : Fondamentaux de l'Informatique</h2>
+      <div class="tags">
+        <span class="tag" data-translate="tag4">Python</span>
+        <span class="tag" data-translate="tag5">C & Algorithmique</span>
+        <span class="tag" data-translate="tag6">SQL & Bases de Données</span>
+      </div>
+      <p data-translate="cs50-desc">
+        Certification démontrant la maîtrise des concepts fondamentaux en algorithmique, C, Python et SQL.
+        Ce programme atteste ma capacité à produire un code propre, structuré et efficace, fondement essentiel pour l'IA et la Data Science.
+      </p>
+      <a href="#" class="button" data-translate="project-btn">Accéder au Projet</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 VERITASIA. Tous droits réservés.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
