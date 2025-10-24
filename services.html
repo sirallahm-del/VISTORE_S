@@ -3,62 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | VERITASIA</title>
+    <title>Services - Veritasia</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="navbar">
-        <div class="brand">VERITASIA</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="#">Profil</a></li>
-                <li><a href="case-studies.html">Études de Cas</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">🌙 Dark Mode</button>
-            <select id="lang-select">
-                <option value="fr">Français</option>
-                <option value="en">English</option>
-            </select>
-        </nav>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="brand">Veritasia</div>
+        <div>
+            <a href="index.html" class="button">Accueil</a>
+            <a href="services.html" class="button">Services</a>
+            <a href="cas-etudes.html" class="button">Études de cas</a>
+            <button id="dark-mode-toggle">Mode Sombre / Clair</button>
+        </div>
+    </nav>
+
+    <!-- Page Title -->
+    <header style="text-align:center; padding:50px 20px;">
+        <h1 style="font-size:2.5rem; font-weight:900; color:var(--gold); text-shadow:0 0 15px rgba(224,183,55,0.4);">
+            Nos Services
+        </h1>
+        <p style="font-size:1.3rem; color:var(--highlight); max-width:700px; margin:20px auto;">
+            Chaque service est pensé pour combiner technologie, créativité et psychologie du luxe.
+            Restez attentif, nos offres exclusives arrivent bientôt.
+        </p>
     </header>
 
-    <main class="services-section">
-        <div class="construction fomo">
-            🚧 Nos services sont en cours de construction… restez connectés pour découvrir des offres exclusives et limitées ! 🚀
-        </div>
+    <!-- En construction / FOMO -->
+    <div class="construction fomo">
+        🚧 Nos services sont en cours de construction… Patience, quelque chose d'unique arrive ! 🚧
+    </div>
 
-        <!-- Rubriques visibles dès le chargement -->
-        <div class="service-card">
-            <h2>Développement Web</h2>
-            <p>Création de sites web modernes et performants, adaptés à vos besoins.</p>
-        </div>
+    <!-- Services Exemple (à compléter quand prêt) -->
+    <!--
+    <div class="service-card">
+        <h2>Service 1</h2>
+        <p>Description courte du service, sa valeur unique et luxueuse.</p>
+        <div class="tag">#Tech</div>
+        <div class="tag">#Créativité</div>
+    </div>
 
-        <div class="service-card">
-            <h2>Consulting AI</h2>
-            <p>Conseil en intelligence artificielle et automatisation pour entreprises et particuliers.</p>
-        </div>
+    <div class="service-card">
+        <h2>Service 2</h2>
+        <p>Description courte du service, teasing FOMO et exclusivité.</p>
+        <div class="tag">#Psychologie</div>
+        <div class="tag">#Innovation</div>
+    </div>
+    -->
 
-        <div class="service-card">
-            <h2>Produits Digitaux</h2>
-            <p>Projets exclusifs en cours, limités pour nos premiers clients VIP.</p>
+    <!-- Amazon Affiliate / Dons -->
+    <section style="text-align:center; margin:50px 20px;">
+        <h3 style="color:var(--gold); font-weight:700;">Supportez nos projets</h3>
+        <p style="color:var(--text-dark); max-width:600px; margin:10px auto;">
+            Achetez nos livres via Amazon ou faites un don pour soutenir notre vision du futur digital et du luxe.
+        </p>
+        <div style="margin-top:20px;">
+            <a href="#" class="button">Amazon</a>
+            <a href="#" class="button">Faire un don</a>
         </div>
+    </section>
 
-        <div class="service-card">
-            <h2>Affiliation & Commission</h2>
-            <p>Participez à notre programme d’affiliation et gagnez une commission sur nos produits partenaires.</p>
-        </div>
-    </main>
-
-    <script src="script.js"></script>
+    <script>
+        // Toggle Mode Sombre / Clair
+        const toggleBtn = document.getElementById('dark-mode-toggle');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+        });
+    </script>
 </body>
 </html>
-/veritasia-portfolio/
-├─ index.html        <-- page d’accueil
-├─ services.html     <-- nouvelle page
-├─ style.css         <-- ton CSS actuel
-├─ images/           <-- tes images
-└─ js/               <-- si tu as des scripts
-
