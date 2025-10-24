@@ -1,0 +1,89 @@
+/* Services Page CSS */
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0f0f0f;
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.services-section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.services-section h1 {
+    font-size: 3rem;
+    color: #FFD700;
+    /* Luxe doré */
+    margin-bottom: 20px;
+}
+
+.services-section .subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 50px;
+}
+
+/* Card */
+.service-card {
+    background: #1a1a1a;
+    border: 2px solid #b8860b;
+    /* Gold border */
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+}
+
+/* FOMO Glow */
+.fomo {
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+
+    100% {
+        box-shadow: 0 0 35px rgba(255, 215, 0, 0.7);
+    }
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #FFD700;
+    color: #0f0f0f;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background: #b8860b;
+    color: #fff;
+    box-shadow: 0 0 15px #FFD700;
+}
+
+/* Mantra section */
+.mantra {
+    font-size: 1rem;
+    color: #FFD700;
+    font-style: italic;
+    border-top: 1px solid #b8860b;
+    padding-top: 20px;
+}
