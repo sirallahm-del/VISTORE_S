@@ -1,77 +1,59 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | VERITASIA</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="services.css">
 </head>
+
 <body>
     <header class="navbar">
         <div class="brand">VERITASIA</div>
         <nav>
             <ul>
-                <li><a href="index.html" data-translate="nav-home">Accueil</a></li>
-                <li><a href="profil.html" data-translate="nav-profile">Profil</a></li>
-                <li><a href="case-studies.html" data-translate="nav-case">Études de Cas</a></li>
-                <li><a href="services.html" class="active" data-translate="nav-services">Services</a></li>
-                <li><a href="contact.html" data-translate="nav-contact">Contact</a></li>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="case-studies.html">Études de Cas</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
-            <div class="controls">
-                <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">🌙</button>
-                <select id="lang-select">
-                    <option value="fr">Français</option>
-                    <option value="en">English</option>
-                </select>
-            </div>
+            <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">🌙 Dark Mode</button>
+            <select id="lang-select">
+                <option value="fr">Français</option>
+                <option value="en">English</option>
+            </select>
         </nav>
     </header>
 
     <main class="services-section">
-        <h1 data-translate="services-title">Nos Services Exclusifs</h1>
-        <p class="subtitle" data-translate="services-subtitle">
-            Solutions techniques et digitales haut de gamme, conçues pour impacter et performer.
-        </p>
+        <h1>Nos Services Exclusifs</h1>
+        <p class="subtitle">Transformez votre expérience digitale avec créativité, technologie et psychologie du luxe.</p>
 
-        <div class="services-grid">
-            <div class="service-card">
-                <h2 data-translate="service1-title">Développement Web Sur-Mesure</h2>
-                <p data-translate="service1-desc">
-                    Création de sites web et applications personnalisées avec une attention premium aux détails et à la performance.
-                </p>
-                <a href="#" class="button filled" data-translate="service1-btn">Demander un devis</a>
-            </div>
-            <div class="service-card">
-                <h2 data-translate="service2-title">Intelligence Artificielle & Automatisation</h2>
-                <p data-translate="service2-desc">
-                    Solutions IA pour automatiser vos processus et transformer vos données en décisions intelligentes.
-                </p>
-                <a href="#" class="button filled" data-translate="service2-btn">Découvrir</a>
-            </div>
-            <div class="service-card">
-                <h2 data-translate="service3-title">Branding & Stratégie Digitale</h2>
-                <p data-translate="service3-desc">
-                    Positionnez votre marque comme un produit de luxe digital avec une stratégie percutante et exclusive.
-                </p>
-                <a href="#" class="button filled" data-translate="service3-btn">Contactez-nous</a>
-            </div>
+        <!-- Section Coming Soon / FOMO -->
+        <div class="service-card fomo">
+            <h2>Produits & Agents AI</h2>
+            <p>En cours de construction... Soyez parmi les premiers à découvrir nos créations rares et intemporelles. ⏳</p>
         </div>
 
-        <section class="vault-teaser">
-            <h2 data-translate="vault-title">Veritasia Vault – Édition Limitée</h2>
-            <p data-translate="vault-desc">
-                Rejoignez notre cercle exclusif et accédez à des expériences numériques uniques et limitées. Seuls quelques privilégiés pourront en profiter.
-            </p>
-            <a href="#" class="button outlined" data-translate="vault-btn">Réservez votre accès</a>
-        </section>
+        <!-- Section Amazon Affiliée -->
+        <div class="service-card">
+            <h2>Livres Recommandés</h2>
+            <p>Découvrez mes lectures favorites. En achetant via ce lien, vous me permettez de continuer à créer pour vous.</p>
+            <a href="LIEN_AFFILIATION_AMAZON" target="_blank" class="button">Voir sur Amazon</a>
+        </div>
+
+        <!-- Section Donation -->
+        <div class="service-card">
+            <h2>Supportez Veritasia</h2>
+            <p>Si vous aimez ce que nous faisons et souhaitez contribuer à nos futurs projets, vous pouvez nous soutenir ici :</p>
+            <a href="LIEN_PAYPAL" target="_blank" class="button">Faire un Don</a>
+        </div>
+
+        <!-- Ton mantra -->
+        <div class="service-card mantra">
+            <p><em>"My micro-business will combine tech, creativity and psychology. From student portfolio to global phenomenon, the market will be the future of digital luxury. Don’t miss out – like diamonds, these are rare and timeless."</em></p>
+        </div>
     </main>
-
-    <footer>
-        <p>&copy; 2025 VERITASIA. Tous droits réservés.</p>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
-
