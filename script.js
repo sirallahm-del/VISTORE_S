@@ -8,5 +8,4 @@ const translations = {
         "collaborate-btn": "Démarrer une Collaboration",
         "case-studies-title": "Nos Solutions Prouvées",
         "case-studies-subtitle": "Démontrer la rigueur technique et l'impact de l'Intelligence Artificielle.",
-        "nasa-title": "Hackathon NASA : Projet GaiaByte – Climat Insights",
-        tag1: "Analyse
+        "nasa-title": "Hackathon NASA
