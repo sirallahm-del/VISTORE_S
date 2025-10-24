@@ -7,31 +7,6 @@
     <title>Services | VERITASIA</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        /* ... (Keep your existing CSS) ... */
-        /* New: Styles for Monetization Elements */
-        .monetization {
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        .affiliate {
-            background: var(--accent-color);
-            color: var(--bg-color);
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 15px;
-        }
-
-        .donate-btn {
-            background: var(--text-color);
-            color: var(--bg-color);
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-        }
-    </style>
 </head>
 
 <body>
@@ -45,9 +20,7 @@
                 <li><a href="services.html">Services</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
-            <!-- New: Dark Mode Toggle -->
             <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">🌙 Dark Mode</button>
-            <!-- New: Language Switcher -->
             <select id="lang-select">
                 <option value="fr">Français</option>
                 <option value="en">English</option>
@@ -58,25 +31,18 @@
     <main class="construction-section">
         <h1 data-translate="services-title">🚀 Services & Offres Partenaires</h1>
         <p data-translate="services-desc">
-            Nous développons actuellement une structure de conseil sur mesure.<br>
-            Revenez bientôt pour découvrir comment la Data et l'IA peuvent transformer votre business.
+            Nous développons actuellement une structure de conseil sur mesure. Revenez bientôt pour découvrir comment la Data et l'IA peuvent transformer votre business.
         </p>
-        <a href="index.html" class="button outline" style="margin-top: 30px;" data-translate="back-btn">Retour à
-            l'Accueil</a>
+        <a href="index.html" class="button outline" style="margin-top: 30px;" data-translate="back-btn">Retour à l'Accueil</a>
 
-        <!-- New: Monetization Section -->
         <div class="monetization">
             <div class="affiliate">
-                <p data-translate="affiliate-text">Recommandé: <a
-                        href="https://www.amazon.com/dp/B08N5WRWNW?tag=veritasia-20" target="_blank">Livre sur l'IA pour
-                        Débutants</a> (Gagnez des commissions sur les achats)</p>
+                <p data-translate="affiliate-text">Recommandé: <a href="https://www.amazon.com/dp/1492032646?tag=veritasia-20" target="_blank">Livre sur l'IA pour Débutants</a> (Gagnez des commissions sur les achats)</p>
             </div>
-            <a href="https://www.buymeacoffee.com/veritasia" target="_blank" class="donate-btn"
-                data-translate="donate-btn">Soutenez Veritasia - À partir de 1$</a>
+            <a href="https://www.buymeacoffee.com/veritasia" target="_blank" class="donate-btn" data-translate="donate-btn">Soutenez Veritasia - À partir de 1$</a>
         </div>
     </main>
 
-    <!-- New: JS for Dark Mode and Language Switcher -->
     <script src="script.js"></script>
 </body>
 
