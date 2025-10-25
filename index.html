@@ -3,146 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VERITASIA | Portfolio & Services</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-<style>
-:root {
-  --primary-color: #FFD700;
-  --bg-color: #0a0a0a;
-  --text-color: #F5F5F5;
-  --card-bg: #1a1a1a;
-  --card-hover: #333;
-}
-* {margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif;}
-body {background:var(--bg-color); color:var(--text-color);}
-header {display:flex; justify-content:space-between; align-items:center; padding:20px 50px; background:#111;}
-header .brand {font-size:28px; font-weight:900; color:var(--primary-color);}
-header nav ul {display:flex; list-style:none; gap:25px;}
-header nav ul li a {color:var(--text-color); text-decoration:none; font-weight:600; transition:0.3s;}
-header nav ul li a:hover {color:var(--primary-color);}
-header nav select, header nav button {margin-left:15px; padding:5px 10px; border:none; border-radius:5px; cursor:pointer;}
-header nav button {background:var(--primary-color); color:#000; font-weight:700;}
-.hero {height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/hero-image.png') center/cover no-repeat;}
-.hero h1 {font-size:60px; margin-bottom:20px; color:var(--primary-color);}
-.hero p {font-size:22px; margin-bottom:30px;}
-.hero .btn {padding:15px 30px; background:var(--primary-color); color:#000; font-weight:700; border:none; border-radius:10px; cursor:pointer; transition:0.3s;}
-.hero .btn:hover {transform:scale(1.05);}
-section {padding:80px 50px;}
-h2 {font-size:36px; margin-bottom:30px; color:var(--primary-color);}
-.card-container {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px;}
-.card {background:var(--card-bg); padding:25px; border-radius:15px; transition:0.3s; box-shadow:0 4px 15px rgba(0,0,0,0.4);}
-.card:hover {background:var(--card-hover); transform:translateY(-10px);}
-.card h3 {font-size:24px; margin-bottom:15px; color:var(--primary-color);}
-.card p {font-size:16px; margin-bottom:20px; line-height:1.5;}
-.card .btn {padding:10px 20px; background:var(--primary-color); color:#000; border:none; border-radius:8px; cursor:pointer; font-weight:700; transition:0.3s;}
-.card .btn:hover {transform:scale(1.05);}
-footer {padding:40px 50px; text-align:center; background:#111; color:var(--text-color); margin-top:50px;}
-/* Dark Mode */
-body.dark {background:#F5F5F5; color:#0a0a0a;}
-body.dark header {background:#ddd;}
-body.dark header .brand {color:#000;}
-body.dark header nav ul li a {color:#000;}
-body.dark header nav ul li a:hover {color:#FFD700;}
-body.dark header nav button {background:#FFD700; color:#000;}
-body.dark .card {background:#eee; color:#0a0a0a;}
-body.dark .card:hover {background:#ddd;}
-</style>
+<title>Vistoré | Accueil</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <div class="brand">VERITASIA</div>
-  <nav>
-    <ul>
-      <li><a href="#">Accueil</a></li>
-      <li><a href="#">Profil</a></li>
-      <li><a href="#">Études de Cas</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <button id="dark-mode-toggle">🌙 Dark Mode</button>
-    <select id="lang-select">
-      <option value="fr">Français</option>
-      <option value="en">English</option>
-    </select>
-  </nav>
+<header class="navbar">
+    <div class="brand">Vistoré</div>
+    <div>
+        <a href="index.html" class="button">Accueil</a>
+        <a href="services.html" class="button">Services</a>
+        <a href="cas-etudes.html" class="button">Études de cas</a>
+        <button id="dark-mode-toggle">Mode Sombre / Clair</button>
+        <select id="lang-select">
+            <option value="fr">Français</option>
+            <option value="en">English</option>
+        </select>
+    </div>
 </header>
 
 <section class="hero">
-  <h1>Bienvenue chez VERITASIA</h1>
-  <p>Votre futur partenaire tech et AI | Portfolio & Startup</p>
-  <button class="btn">Découvrir Nos Services</button>
+    <h1>Bienvenue chez Vistoré</h1>
+    <p>Votre futur partenaire tech et AI | Portfolio & Startup</p>
+    <button class="btn">Découvrir Nos Services</button>
 </section>
 
 <section>
-  <h2>Nos Services</h2>
-  <div class="card-container">
-    <div class="card">
-      <h3>Développement Web</h3>
-      <p>Sites modernes, responsives et sur-mesure, adaptés à vos besoins.</p>
-      <button class="btn">Voir plus</button>
+    <h2 style="text-align:center; color:var(--gold); margin-bottom:30px;">Nos Services</h2>
+    <div class="service-card">
+        <h3>Développement Web</h3>
+        <p>Sites modernes, responsives et sur-mesure, adaptés à vos besoins.</p>
+        <div class="tag">#Tech</div>
+        <div class="tag">#Créativité</div>
     </div>
-    <div class="card">
-      <h3>Consulting AI</h3>
-      <p>Solutions intelligentes pour optimiser vos données et automatiser vos process.</p>
-      <button class="btn">Voir plus</button>
+    <div class="service-card">
+        <h3>Consulting AI</h3>
+        <p>Solutions intelligentes pour optimiser vos données et automatiser vos process.</p>
+        <div class="tag">#AI</div>
+        <div class="tag">#Innovation</div>
     </div>
-    <div class="card">
-      <h3>Mini-Projets Innovants</h3>
-      <p>Projets technologiques exclusifs pour tester et expérimenter de nouvelles idées.</p>
-      <button class="btn">Voir plus</button>
-    </div>
-  </div>
 </section>
 
-<section>
-  <h2>Études de Cas</h2>
-  <div class="card-container">
-    <div class="card">
-      <h3>Hackathon NASA</h3>
-      <p>Projet GaiaByte – Analyse géospatiale et climats. 48h de challenge intense.</p>
-      <button class="btn">Voir le code</button>
-    </div>
-    <div class="card">
-      <h3>Certification CS50</h3>
-      <p>Maîtrise des fondamentaux en C, Python et SQL pour projets IA.</p>
-      <button class="btn">Voir le projet</button>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Veritasia Vault</h2>
-  <div class="card-container">
-    <div class="card">
-      <h3>Accès exclusif</h3>
-      <p>Drops limités et expériences AI interactives pour nos premiers membres.</p>
-      <button class="btn">Rejoindre le Vault</button>
-    </div>
-  </div>
-</section>
-
-<footer>
-  &copy; 2025 VERITASIA. Tous droits réservés.
+<footer style="text-align:center; padding:40px; color:var(--highlight); background:#111;">
+    &copy; 2025 Vistoré. Tous droits réservés.
 </footer>
 
 <script>
-// Dark Mode
-const toggle = document.getElementById('dark-mode-toggle');
-toggle.addEventListener('click', () => document.body.classList.toggle('dark'));
+    // Dark Mode
+    const toggleBtn = document.getElementById('dark-mode-toggle');
+    toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+    });
 
-// Langue (FR/EN simple)
-const langSelect = document.getElementById('lang-select');
-langSelect.addEventListener('change', e => {
-  const lang = e.target.value;
-  if(lang === 'en'){
-    document.querySelector('h1').textContent = 'Welcome to VERITASIA';
-    document.querySelector('.hero p').textContent = 'Your future tech & AI partner | Portfolio & Startup';
-  } else {
-    document.querySelector('h1').textContent = 'Bienvenue chez VERITASIA';
-    document.querySelector('.hero p').textContent = 'Votre futur partenaire tech et AI | Portfolio & Startup';
-  }
-});
+    // Langue simple FR/EN
+    const langSelect = document.getElementById('lang-select');
+    langSelect.addEventListener('change', e => {
+        const lang = e.target.value;
+        if(lang === 'en'){
+            document.querySelector('.hero h1').textContent = 'Welcome to Vistoré';
+            document.querySelector('.hero p').textContent = 'Your future tech & AI partner | Portfolio & Startup';
+        } else {
+            document.querySelector('.hero h1').textContent = 'Bienvenue chez Vistoré';
+            document.querySelector('.hero p').textContent = 'Votre futur partenaire tech et AI | Portfolio & Startup';
+        }
+    });
 </script>
 
 </body>
