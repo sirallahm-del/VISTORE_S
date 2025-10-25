@@ -1,18 +1,16 @@
-// ----- DARK MODE -----
-const toggleDarkMode = document.getElementById('dark-mode-toggle');
-toggleDarkMode.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
+// Dark mode toggle
+const toggle = document.getElementById('dark-mode-toggle');
+toggle.addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
 });
 
-// ----- LANGUE -----
+// Language switcher
 const langBtn = document.getElementById('lang-btn');
-let lang = 'FR';
-langBtn.addEventListener('click', () => {
-  if (lang === 'FR') {
-    lang = 'EN';
-    langBtn.textContent = 'EN';
+langBtn.addEventListener('change', (e) => {
+  const lang = e.target.value;
+  if (lang === 'en') {
+    window.location.href = 'index_en.html';
   } else {
-    lang = 'FR';
-    langBtn.textContent = 'FR';
+    window.location.href = 'index.html';
   }
 });
