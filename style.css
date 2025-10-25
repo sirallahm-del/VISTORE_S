@@ -1,140 +1,122 @@
-/* Variables de couleurs Premium */
 :root {
-    --bg-dark: #0a0a0a;
-    --bg-light: #fef8f0;
-    --text-dark: #fefefe;
-    --text-light: #1c1c1c;
-    --gold: #FFD700;
-    --gold-dark: #b8860b;
-    --highlight: #f5f0e0;
-    --card-dark: #1a1a1a;
-    --card-light: #fdf5e6;
+  --bg-dark: #0a0a0a;
+  --bg-light: #fff8f0;
+  --text-dark: #fefefe;
+  --text-light: #1c1c1c;
+  --gold: #e0b737;
+  --gold-dark: #b78f2b;
+  --card-dark: #1b1b1b;
+  --card-light: #fff4e6;
 }
 
-/* Global Styles */
+/* Général */
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-dark);
-    color: var(--text-dark);
-    margin: 0;
-    padding: 0;
-    transition: all 0.5s ease;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+  transition: 0.5s ease;
 }
-
 body.light-mode {
-    background-color: var(--bg-light);
-    color: var(--text-light);
+  background-color: var(--bg-light);
+  color: var(--text-light);
 }
 
 /* Navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
-    background: rgba(10,10,10,0.85);
-    backdrop-filter: blur(14px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(12px);
 }
-
 body.light-mode .navbar {
-    background: rgba(255,248,240,0.85);
+  background: rgba(255, 248, 240, 0.9);
 }
-
 .navbar .brand {
-    font-weight: 900;
-    font-size: 2rem;
-    color: var(--gold);
+  color: var(--gold);
+  font-weight: 900;
+  font-size: 1.8rem;
+}
+.nav-links {
+  display: flex;
+  gap: 15px;
 }
 
-/* Buttons */
-.button {
-    padding: 12px 28px;
-    border: none;
-    border-radius: 12px;
-    background: var(--gold);
-    color: var(--bg-dark);
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
+/* Boutons */
+.button,
+.btn {
+  background: var(--gold);
+  color: var(--bg-dark);
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.button:hover,
+.btn:hover {
+  background: var(--gold-dark);
+  box-shadow: 0 0 20px var(--gold);
 }
 
-.button:hover {
-    background: var(--gold-dark);
-    box-shadow: 0 0 20px var(--gold);
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 120px 20px 80px;
+}
+.hero h1 {
+  font-size: 2.8rem;
+}
+.gold {
+  color: var(--gold);
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
-/* Headers */
-.page-header {
-    text-align: center;
-    padding: 50px 20px;
+/* Teaser */
+.teaser {
+  text-align: center;
+  padding: 60px 20px;
+  border-top: 1px solid var(--gold);
 }
-
-.page-header h1 {
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: var(--gold);
-}
-
-.page-header p {
-    font-size: 1.3rem;
-    color: var(--highlight);
-    max-width: 700px;
-    margin: 20px auto;
+.teaser h2 {
+  color: var(--gold);
 }
 
 /* Construction / FOMO */
 .construction {
-    text-align: center;
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--gold);
-    padding: 50px 25px;
-    border: 2px dashed var(--gold);
-    border-radius: 24px;
-    margin: 40px auto;
-    max-width: 620px;
-    background: rgba(255,215,0,0.08);
-    box-shadow: 0 0 25px rgba(255,215,0,0.2);
+  text-align: center;
+  border: 2px dashed var(--gold);
+  border-radius: 20px;
+  padding: 50px 25px;
+  margin: 50px auto;
+  width: 80%;
+  background: rgba(224, 183, 55, 0.05);
+  box-shadow: 0 0 20px rgba(224, 183, 55, 0.25);
 }
-
 .fomo {
-    animation: glow 2s infinite alternate;
+  animation: glow 2s infinite alternate;
 }
-
 @keyframes glow {
-    0% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
-    100% { box-shadow: 0 0 35px rgba(255, 215, 0, 0.7); }
+  0% {
+    text-shadow: 0 0 10px rgba(224, 183, 55, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 25px rgba(224, 183, 55, 0.7);
+  }
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 40px 20px;
-    background: rgba(10,10,10,0.85);
-    /* 3. Barre de Navigation (Navbar) - Suite */
-
-/* 1. Aligner les éléments de la liste de navigation horizontalement */
-.navbar nav ul {
-    list-style: none; /* Enlève les puces de liste */
-    display: flex; /* Rends la liste horizontale */
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--gold);
+  border-top: 1px solid var(--gold);
 }
 
-/* 2. Espacement entre les liens de navigation */
-.navbar nav ul li {
-    margin: 0 15px; /* Ajoute un espace entre chaque lien (Accueil, Services, etc.) */
-}
-
-/* 3. Style des liens */
-.navbar nav ul li a {
-    text-decoration: none; /* Enlève le soulignement des liens */
-    color: var(--text-color);
-    font-weight: 400;
-    padding: 5px 0; /* Petit padding pour les zones de clic (optionnel) */
-    transition: color 0.3s;
-}
-
-.navbar nav ul li a:hover {
-    color: var(--accent-color); /* Effet de survol Mauve/Accent */
-}
 
