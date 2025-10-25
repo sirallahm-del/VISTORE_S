@@ -1,13 +1,13 @@
 /* ============================= */
 /* Variables de couleur premium */
 :root {
-    --bg-dark: #0a0a0a;       /* noir profond */
-    --bg-light: #fff8f0;      /* ivoire chaud */
-    --text-dark: #fefefe;     /* texte clair */
-    --text-light: #1c1c1c;    /* texte sombre */
-    --gold: #e0b737;          /* doré lumineux */
-    --gold-dark: #b78f2b;     /* doré sombre hover */
-    --highlight: #f7ead9;     /* accent doux */
+    --bg-dark: #0a0a0a;
+    --bg-light: #fff8f0;
+    --text-dark: #fefefe;
+    --text-light: #1c1c1c;
+    --gold: #e0b737;
+    --gold-dark: #b78f2b;
+    --highlight: #f7ead9;
     --card-dark: #1b1b1b;
     --card-light: #fff4e6;
 }
@@ -37,11 +37,9 @@ body.light-mode {
     background: rgba(10,10,10,0.85);
     backdrop-filter: blur(14px);
 }
-
 body.light-mode .navbar {
     background: rgba(255,248,240,0.85);
 }
-
 .navbar .brand {
     font-weight: 900;
     font-size: 2rem;
@@ -74,13 +72,11 @@ body.light-mode .navbar {
     box-shadow: 0 0 30px rgba(224,183,55,0.3);
     transition: all 0.4s ease;
 }
-
 body.light-mode .service-card, body.light-mode .cas-etude {
     background: var(--card-light);
     border: 2px solid var(--gold-dark);
     box-shadow: 0 0 22px rgba(183,143,43,0.2);
 }
-
 .service-card:hover, .cas-etude:hover {
     transform: translateY(-6px);
     box-shadow: 0 0 40px rgba(224,183,55,0.6);
@@ -89,10 +85,5 @@ body.light-mode .service-card, body.light-mode .cas-etude {
 /* Tags */
 .tag {
     display: inline-block;
-    padding: 6px 20px;
-    margin: 5px 5px 0 0;
-    border-radius: 16px;
-    background: var(--gold);
-    color: var(--bg-dark);
-    font-weight: 600;
+    padding: 6
 
