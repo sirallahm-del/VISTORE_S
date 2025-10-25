@@ -3,49 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vistoré | Accueil</title>
+    <title>VISTORÉ - Accueil</title>
+    
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        .theme-toggle-button {
+            background: none;
+            /* Renommé l'ID pour la cohérence avec le JS ci-dessous */
+            border: 2px solid var(--text-color); 
+            color: var(--text-color);
+            padding: 8px 12px;
+            margin-left: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+        }
+
+        .theme-toggle-button:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+        /* Style du bouton en Mode Sombre */
+        .dark-mode .theme-toggle-button {
+            border: 2px solid var(--dark-text-color);
+            color: var(--dark-text-color);
+        }
+        .dark-mode .theme-toggle-button:hover {
+            background-color: var(--dark-text-color);
+            color: var(--dark-bg-color);
+        }
+        
+        /* Styles pour aligner la navbar avec le modèle précédent */
+        .navbar div {
+            display: flex;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar">
-        <div class="brand">Vistoré</div>
+        <div class="brand">VISTORÉ</div>
         <div>
             <a href="index.html" class="button">Accueil</a>
             <a href="services.html" class="button">Services</a>
-            <a href="cas-etudes.html" class="button">Études de cas</a>
-            <button id="dark-mode-toggle">Mode Sombre / Clair</button>
-            <select id="lang-select">
+            <a href="case-studies.html" class="button">Études de cas</a> 
+            
+            <button id="theme-toggle" class="theme-toggle-button">Mode Sombre</button>
+            
+            <select id="lang-select" style="margin-left: 10px; padding: 8px; border-radius: 5px;">
                 <option value="fr">Français</option>
                 <option value="en">English</option>
             </select>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <h1>Bienvenue chez Vistoré</h1>
+        <h1>Bienvenue chez VISTORÉ</h1>
         <p>Votre futur partenaire tech et AI | Portfolio & Startup</p>
         <button class="btn">Découvrir Nos Services</button>
     </section>
 
-    <!-- Services teaser -->
     <section>
         <h2>Nos Services</h2>
         <p>Des services exclusifs combinant technologie, créativité et luxe. Découvrez bientôt !</p>
     </section>
 
-    <!-- Études de Cas teaser -->
     <section>
         <h2>Études de Cas</h2>
         <p>Projets et réalisations exclusifs. Patience, chaque cas est unique et luxueux.</p>
     </section>
 
     <footer>
-        &copy; 2025 Vistoré. Tous droits réservés.
+        &copy; 2025 VISTORÉ. Tous droits réservés.
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // L'ID doit correspondre au bouton dans le HTML
+        const toggleButton = document.getElementById('theme-toggle'); 
+        const body = document.body;
+
+        function toggleTheme() {
+            body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            toggleButton.textContent = isDarkMode ? 'Mode Clair' : 'Mode Sombre';
+        }
+
+        // Chargement du thème sauvegardé
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.textContent = 'Mode Clair';
+        } else {
+            toggleButton.textContent = 'Mode Sombre';
+        }
+
+        // Événement au clic
+        toggleButton.addEventListener('click', toggleTheme);
+    </script>
 </body>
 </html>
-
