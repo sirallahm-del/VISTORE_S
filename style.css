@@ -1,11 +1,66 @@
-/* Mauvais : couleur fixe */
-body {
-  background-color: #0a0a0a;
-  color: #fefefe;
+/* ============================= */
+/* Variables de couleur premium */
+:root {
+    --bg-dark: #0a0a0a;          /* noir profond pour luxe */
+    --bg-light: #fff8f0;         /* ivoire chaud élégant */
+    --text-dark: #fefefe;        /* texte clair sur sombre */
+    --text-light: #1c1c1c;       /* texte sombre sur clair */
+    --gold: #e0b737;             /* doré lumineux luxe */
+    --gold-dark: #b78f2b;        /* doré sombre hover */
+    --highlight: #f7ead9;        /* accent doux et chaleureux */
+    --card-dark: #1b1b1b;
+    --card-light: #fff4e6;
 }
 
-/* Bon : utilise les variables */
+/* Corps général */
 body {
-  background-color: var(--bg-dark);
-  color: var(--text-dark);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+    transition: background 0.5s ease, color 0.5s ease;
 }
+
+/* Mode clair */
+body.light-mode {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(14px);
+}
+
+body.light-mode .navbar {
+    background: rgba(255,248,240,0.85);
+}
+
+.navbar .brand {
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--gold);
+}
+
+/* Boutons */
+.button {
+    padding: 12px 25px;
+    border-radius: 10px;
+    background: var(--gold);
+    color: var(--bg-dark);
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+.button:hover {
+    background: var(--gold-dark);
+    box-shadow: 0 0 15px var(--gold);
+}
+
