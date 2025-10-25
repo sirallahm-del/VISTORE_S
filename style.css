@@ -112,3 +112,29 @@ footer {
     text-align: center;
     padding: 40px 20px;
     background: rgba(10,10,10,0.85);
+    /* 3. Barre de Navigation (Navbar) - Suite */
+
+/* 1. Aligner les éléments de la liste de navigation horizontalement */
+.navbar nav ul {
+    list-style: none; /* Enlève les puces de liste */
+    display: flex; /* Rends la liste horizontale */
+}
+
+/* 2. Espacement entre les liens de navigation */
+.navbar nav ul li {
+    margin: 0 15px; /* Ajoute un espace entre chaque lien (Accueil, Services, etc.) */
+}
+
+/* 3. Style des liens */
+.navbar nav ul li a {
+    text-decoration: none; /* Enlève le soulignement des liens */
+    color: var(--text-color);
+    font-weight: 400;
+    padding: 5px 0; /* Petit padding pour les zones de clic (optionnel) */
+    transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+    color: var(--accent-color); /* Effet de survol Mauve/Accent */
+}
+
