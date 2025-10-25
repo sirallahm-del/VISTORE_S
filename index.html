@@ -1,50 +1,86 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vistoré – L'Art du Digital de Luxe</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">Vistoré</div>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Accueil</a></li>
-        <li><a href="case-studies.html">Études de cas</a></li>
-        <li><a href="services.html">Services</a></li>
-      </ul>
-    </nav>
-    <div class="controls">
-      <button id="lang-btn">FR</button>
-      <button id="dark-mode-toggle">🌙</button>
-    </div>
-  </header>
+/* ====== RESET ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Vistoré</h1>
-    <p>Où la technologie, la créativité et la psychologie se rencontrent pour créer l’avenir du digital de luxe.</p>
-    <a href="services.html" class="cta">Découvrir nos services</a>
-  </section>
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0d0d0d;
+  color: #fff;
+  line-height: 1.6;
+}
 
-  <!-- About -->
-  <section class="about">
-    <h2>Notre Vision</h2>
-    <p>
-      De la conception étudiante à un phénomène mondial, Vistoré incarne une révolution du digital où
-      chaque projet devient une expérience émotionnelle et esthétique.
-    </p>
-  </section>
+/* ====== NAVBAR ====== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: transparent;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Vistoré. Tous droits réservés.</p>
-  </footer>
+.navbar .logo {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
 
-  <script src="script.js"></script>
-</body>
-</html>
+.navbar ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.navbar a {
+  color: #b3b3b3;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #fff;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+/* ====== HERO ====== */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  max-width: 800px;
+  color: #d1d1d1;
+  margin-bottom: 40px;
+}
+
+.cta {
+  display: inline-block;
+  background:
 
