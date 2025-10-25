@@ -1,28 +1,26 @@
-/* ============================= */
-/* Variables de couleur premium */
+/* Variables de couleurs Premium */
 :root {
     --bg-dark: #0a0a0a;
-    --bg-light: #fff8f0;
+    --bg-light: #fef8f0;
     --text-dark: #fefefe;
     --text-light: #1c1c1c;
-    --gold: #e0b737;
-    --gold-dark: #b78f2b;
-    --highlight: #f7ead9;
-    --card-dark: #1b1b1b;
-    --card-light: #fff4e6;
+    --gold: #FFD700;
+    --gold-dark: #b8860b;
+    --highlight: #f5f0e0;
+    --card-dark: #1a1a1a;
+    --card-light: #fdf5e6;
 }
 
-/* Corps général */
+/* Global Styles */
 body {
     font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: var(--bg-dark);
     color: var(--text-dark);
+    margin: 0;
+    padding: 0;
     transition: all 0.5s ease;
 }
 
-/* Mode clair */
 body.light-mode {
     background-color: var(--bg-light);
     color: var(--text-light);
@@ -37,53 +35,80 @@ body.light-mode {
     background: rgba(10,10,10,0.85);
     backdrop-filter: blur(14px);
 }
+
 body.light-mode .navbar {
     background: rgba(255,248,240,0.85);
 }
+
 .navbar .brand {
     font-weight: 900;
     font-size: 2rem;
     color: var(--gold);
 }
 
-/* Boutons */
+/* Buttons */
 .button {
-    padding: 12px 25px;
-    border-radius: 10px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 12px;
     background: var(--gold);
     color: var(--bg-dark);
-    font-weight: bold;
-    text-decoration: none;
-    margin-top: 15px;
+    font-weight: 700;
+    cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none;
 }
+
 .button:hover {
     background: var(--gold-dark);
-    box-shadow: 0 0 15px var(--gold);
+    box-shadow: 0 0 20px var(--gold);
 }
 
-/* Cartes (Services / Études de cas) */
-.service-card, .cas-etude {
-    background: var(--card-dark);
-    border: 2px solid var(--gold);
+/* Headers */
+.page-header {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--gold);
+}
+
+.page-header p {
+    font-size: 1.3rem;
+    color: var(--highlight);
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+/* Construction / FOMO */
+.construction {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--gold);
+    padding: 50px 25px;
+    border: 2px dashed var(--gold);
     border-radius: 24px;
-    padding: 35px;
-    margin-bottom: 35px;
-    box-shadow: 0 0 30px rgba(224,183,55,0.3);
-    transition: all 0.4s ease;
-}
-body.light-mode .service-card, body.light-mode .cas-etude {
-    background: var(--card-light);
-    border: 2px solid var(--gold-dark);
-    box-shadow: 0 0 22px rgba(183,143,43,0.2);
-}
-.service-card:hover, .cas-etude:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 40px rgba(224,183,55,0.6);
+    margin: 40px auto;
+    max-width: 620px;
+    background: rgba(255,215,0,0.08);
+    box-shadow: 0 0 25px rgba(255,215,0,0.2);
 }
 
-/* Tags */
-.tag {
-    display: inline-block;
-    padding: 6
+.fomo {
+    animation: glow 2s infinite alternate;
+}
 
+@keyframes glow {
+    0% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+    100% { box-shadow: 0 0 35px rgba(255, 215, 0, 0.7); }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(10,10,10,0.85);
