@@ -1,78 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vistoré | Études de cas</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vistoré | Études de Cas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="brand">Vistoré</div>
+        <div>
+            <a href="index.html" class="button">Accueil</a>
+            <a href="services.html" class="button">Services</a>
+            <a href="cas-etudes.html" class="button">Études de cas</a>
+            <button id="dark-mode-toggle">Mode Sombre / Clair</button>
+            <select id="lang-select">
+                <option value="fr">Français</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+    </nav>
 
-<header class="navbar">
-    <div class="brand">Vistoré</div>
-    <div>
-        <a href="index.html" class="button">Accueil</a>
-        <a href="services.html" class="button">Services</a>
-        <a href="cas-etudes.html" class="button">Études de cas</a>
-        <button id="dark-mode-toggle">Mode Sombre / Clair</button>
-        <select id="lang-select">
-            <option value="fr">Français</option>
-            <option value="en">English</option>
-        </select>
+    <!-- Page Title -->
+    <header class="page-header">
+        <h1>Études de Cas</h1>
+        <p>Découvrez bientôt nos projets exclusifs. Chaque cas est une opportunité rare, luxueuse et intemporelle.</p>
+    </header>
+
+    <!-- En construction / FOMO -->
+    <div class="construction fomo">
+        🚧 Nos études de cas sont en cours de construction… Patience, quelque chose d'unique arrive ! 🚧
     </div>
-</header>
 
-<section style="text-align:center; padding:50px 20px;">
-    <h1 style="font-size:2.5rem; font-weight:900; color:var(--gold);">Études de Cas</h1>
-    <p style="font-size:1.3rem; color:var(--highlight); max-width:700px; margin:20px auto;">
-        Découvrez bientôt nos projets exclusifs. Chaque cas est une opportunité rare, luxueuse et intemporelle.
-    </p>
-</section>
+    <footer>
+        &copy; 2025 Vistoré. Tous droits réservés.
+    </footer>
 
-<!-- Cartes d'études de cas -->
-<div style="max-width:1100px; margin:auto; padding:40px 20px;">
-    <div class="cas-etude">
-        <h3>Hackathon NASA</h3>
-        <p>Projet GaiaByte – Analyse géospatiale et climats. 48h de challenge intense.</p>
-        <div class="tag">#NASA</div>
-        <div class="tag">#Innovation</div>
-        <button class="button">Voir le code</button>
-    </div>
-    <div class="cas-etude">
-        <h3>Certification CS50</h3>
-        <p>Maîtrise des fondamentaux en C, Python et SQL pour projets IA.</p>
-        <div class="tag">#CS50</div>
-        <div class="tag">#IA</div>
-        <button class="button">Voir le projet</button>
-    </div>
-</div>
-
-<footer style="text-align:center; padding:40px; color:var(--highlight); background:#111;">
-    &copy; 2025 Vistoré. Tous droits réservés.
-</footer>
-
-<script>
-    // Dark Mode
-    const toggleBtn = document.getElementById('dark-mode-toggle');
-    toggleBtn.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-    });
-
-    // Langue simple FR/EN
-    const langSelect = document.getElementById('lang-select');
-    langSelect.addEventListener('change', e => {
-        const lang = e.target.value;
-        const h1 = document.querySelector('section h1');
-        const p = document.querySelector('section p');
-        if(lang === 'en'){
-            h1.textContent = 'Case Studies';
-            p.textContent = 'Soon you will discover our exclusive projects. Each case is a rare, luxurious, and timeless opportunity.';
-        } else {
-            h1.textContent = 'Études de Cas';
-            p.textContent = 'Découvrez bientôt nos projets exclusifs. Chaque cas est une opportunité rare, luxueuse et intemporelle.';
-        }
-    });
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
