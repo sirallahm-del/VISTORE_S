@@ -1,73 +1,51 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vistoré | Accueil</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vistoré | Accueil</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="brand">Vistoré</div>
+        <div>
+            <a href="index.html" class="button">Accueil</a>
+            <a href="services.html" class="button">Services</a>
+            <a href="cas-etudes.html" class="button">Études de cas</a>
+            <button id="dark-mode-toggle">Mode Sombre / Clair</button>
+            <select id="lang-select">
+                <option value="fr">Français</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+    </nav>
 
-<header class="navbar">
-    <div class="brand">Vistoré</div>
-    <div>
-        <a href="index.html" class="button">Accueil</a>
-        <a href="services.html" class="button">Services</a>
-        <a href="cas-etudes.html" class="button">Études de cas</a>
-        <button id="dark-mode-toggle">Mode Sombre / Clair</button>
-        <select id="lang-select">
-            <option value="fr">Français</option>
-            <option value="en">English</option>
-        </select>
-    </div>
-</header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Bienvenue chez Vistoré</h1>
+        <p>Votre futur partenaire tech et AI | Portfolio & Startup</p>
+        <button class="btn">Découvrir Nos Services</button>
+    </section>
 
-<section class="hero">
-    <h1>Bienvenue chez Vistoré</h1>
-    <p>Votre futur partenaire tech et AI | Portfolio & Startup</p>
-    <button class="btn">Découvrir Nos Services</button>
-</section>
+    <!-- Services teaser -->
+    <section>
+        <h2>Nos Services</h2>
+        <p>Des services exclusifs combinant technologie, créativité et luxe. Découvrez bientôt !</p>
+    </section>
 
-<section>
-    <h2 style="text-align:center; color:var(--gold); margin-bottom:30px;">Nos Services</h2>
-    <div class="service-card">
-        <h3>Développement Web</h3>
-        <p>Sites modernes, responsives et sur-mesure, adaptés à vos besoins.</p>
-        <div class="tag">#Tech</div>
-        <div class="tag">#Créativité</div>
-    </div>
-    <div class="service-card">
-        <h3>Consulting AI</h3>
-        <p>Solutions intelligentes pour optimiser vos données et automatiser vos process.</p>
-        <div class="tag">#AI</div>
-        <div class="tag">#Innovation</div>
-    </div>
-</section>
+    <!-- Études de Cas teaser -->
+    <section>
+        <h2>Études de Cas</h2>
+        <p>Projets et réalisations exclusifs. Patience, chaque cas est unique et luxueux.</p>
+    </section>
 
-<footer style="text-align:center; padding:40px; color:var(--highlight); background:#111;">
-    &copy; 2025 Vistoré. Tous droits réservés.
-</footer>
+    <footer>
+        &copy; 2025 Vistoré. Tous droits réservés.
+    </footer>
 
-<script>
-    // Dark Mode
-    const toggleBtn = document.getElementById('dark-mode-toggle');
-    toggleBtn.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-    });
-
-    // Langue simple FR/EN
-    const langSelect = document.getElementById('lang-select');
-    langSelect.addEventListener('change', e => {
-        const lang = e.target.value;
-        if(lang === 'en'){
-            document.querySelector('.hero h1').textContent = 'Welcome to Vistoré';
-            document.querySelector('.hero p').textContent = 'Your future tech & AI partner | Portfolio & Startup';
-        } else {
-            document.querySelector('.hero h1').textContent = 'Bienvenue chez Vistoré';
-            document.querySelector('.hero p').textContent = 'Votre futur partenaire tech et AI | Portfolio & Startup';
-        }
-    });
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
+
