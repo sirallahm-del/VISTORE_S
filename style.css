@@ -1,13 +1,13 @@
 /* ============================= */
 /* Variables de couleur premium */
 :root {
-    --bg-dark: #0a0a0a;          /* noir profond pour luxe */
-    --bg-light: #fff8f0;         /* ivoire chaud élégant */
-    --text-dark: #fefefe;        /* texte clair sur sombre */
-    --text-light: #1c1c1c;       /* texte sombre sur clair */
-    --gold: #e0b737;             /* doré lumineux luxe */
-    --gold-dark: #b78f2b;        /* doré sombre hover */
-    --highlight: #f7ead9;        /* accent doux et chaleureux */
+    --bg-dark: #0a0a0a;       /* noir profond */
+    --bg-light: #fff8f0;      /* ivoire chaud */
+    --text-dark: #fefefe;     /* texte clair */
+    --text-light: #1c1c1c;    /* texte sombre */
+    --gold: #e0b737;          /* doré lumineux */
+    --gold-dark: #b78f2b;     /* doré sombre hover */
+    --highlight: #f7ead9;     /* accent doux */
     --card-dark: #1b1b1b;
     --card-light: #fff4e6;
 }
@@ -19,7 +19,7 @@ body {
     padding: 0;
     background-color: var(--bg-dark);
     color: var(--text-dark);
-    transition: background 0.5s ease, color 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 /* Mode clair */
@@ -63,4 +63,36 @@ body.light-mode .navbar {
     background: var(--gold-dark);
     box-shadow: 0 0 15px var(--gold);
 }
+
+/* Cartes (Services / Études de cas) */
+.service-card, .cas-etude {
+    background: var(--card-dark);
+    border: 2px solid var(--gold);
+    border-radius: 24px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 0 30px rgba(224,183,55,0.3);
+    transition: all 0.4s ease;
+}
+
+body.light-mode .service-card, body.light-mode .cas-etude {
+    background: var(--card-light);
+    border: 2px solid var(--gold-dark);
+    box-shadow: 0 0 22px rgba(183,143,43,0.2);
+}
+
+.service-card:hover, .cas-etude:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 40px rgba(224,183,55,0.6);
+}
+
+/* Tags */
+.tag {
+    display: inline-block;
+    padding: 6px 20px;
+    margin: 5px 5px 0 0;
+    border-radius: 16px;
+    background: var(--gold);
+    color: var(--bg-dark);
+    font-weight: 600;
 
