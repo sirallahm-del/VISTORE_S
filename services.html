@@ -1,56 +1,94 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Vistoré</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vistoré | Services</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="brand">Vistoré</div>
-        <div>
-            <a href="index.html" class="button">Accueil</a>
-            <a href="services.html" class="button">Services</a>
-            <a href="cas-etudes.html" class="button">Études de cas</a>
-            <button id="dark-mode-toggle">Mode Sombre / Clair</button>
-        </div>
-    </nav>
 
-    <!-- Page Title -->
-    <header style="text-align:center; padding:50px 20px;">
-        <h1 style="font-size:2.5rem; font-weight:900; color:var(--gold);">
-            Nos Services
-        </h1>
-        <p style="font-size:1.3rem; color:var(--highlight); max-width:700px; margin:20px auto;">
-            Chaque service est pensé pour combiner technologie, créativité et psychologie du luxe.
-        </p>
-    </header>
-
-    <!-- En construction / FOMO -->
-    <div class="construction fomo">
-        🚧 Nos services sont en cours de construction… Patience, quelque chose d'unique arrive ! 🚧
+<header class="navbar">
+    <div class="brand">Vistoré</div>
+    <div>
+        <a href="index.html" class="button">Accueil</a>
+        <a href="services.html" class="button">Services</a>
+        <a href="cas-etudes.html" class="button">Études de cas</a>
+        <button id="dark-mode-toggle">Mode Sombre / Clair</button>
+        <select id="lang-select">
+            <option value="fr">Français</option>
+            <option value="en">English</option>
+        </select>
     </div>
+</header>
 
-    <!-- Amazon Affiliate / Dons -->
-    <section style="text-align:center; margin:50px 20px;">
-        <h3 style="color:var(--gold); font-weight:700;">Supportez nos projets</h3>
-        <p style="color:var(--text-dark); max-width:600px; margin:10px auto;">
-            Achetez nos livres via Amazon ou faites un don pour soutenir notre vision du futur digital et du luxe.
-        </p>
-        <div style="margin-top:20px;">
-            <a href="https://amzn.to/43vBtt5" class="button" target="_blank">Amazon</a>
-            <a href="#" class="button">Faire un don</a>
-        </div>
-    </section>
+<section style="text-align:center; padding:50px 20px;">
+    <h1 style="font-size:2.5rem; font-weight:900; color:var(--gold);">Nos Services</h1>
+    <p style="font-size:1.3rem; color:var(--highlight); max-width:700px; margin:20px auto;">
+        Chaque service est pensé pour combiner technologie, créativité et psychologie du luxe.
+        Restez attentif, nos offres exclusives arrivent bientôt.
+    </p>
+</section>
 
-    <script>
-        // Dark Mode Toggle
-        const toggleBtn = document.getElementById('dark-mode-toggle');
-        toggleBtn.addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
-        });
-    </script>
+<!-- Message FOMO -->
+<div class="construction fomo">
+    🚧 Nos services sont en cours de construction… Patience, quelque chose d'unique arrive ! 🚧
+</div>
+
+<!-- Exemple de cartes (à compléter quand prêt) -->
+<div style="max-width:1100px; margin:auto; padding:40px 20px;">
+    <div class="service-card">
+        <h3>Service Premium 1</h3>
+        <p>Description courte du service, sa valeur unique et luxueuse.</p>
+        <div class="tag">#Tech</div>
+        <div class="tag">#Créativité</div>
+    </div>
+    <div class="service-card">
+        <h3>Service Premium 2</h3>
+        <p>Teasing FOMO et exclusivité du service.</p>
+        <div class="tag">#Psychologie</div>
+        <div class="tag">#Innovation</div>
+    </div>
+</div>
+
+<!-- Amazon / Dons -->
+<section style="text-align:center; margin:50px 20px;">
+    <h3 style="color:var(--gold); font-weight:700;">Supportez nos projets</h3>
+    <p style="color:var(--text-dark); max-width:600px; margin:10px auto;">
+        Achetez nos livres via Amazon ou faites un don pour soutenir notre vision du futur digital et du luxe.
+    </p>
+    <div style="margin-top:20px;">
+        <a href="https://amzn.to/43vBtt5" class="button" target="_blank">Amazon</a>
+        <a href="#" class="button">Faire un don</a>
+    </div>
+</section>
+
+<footer style="text-align:center; padding:40px; color:var(--highlight); background:#111;">
+    &copy; 2025 Vistoré. Tous droits réservés.
+</footer>
+
+<script>
+    // Dark Mode
+    const toggleBtn = document.getElementById('dark-mode-toggle');
+    toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+    });
+
+    // Langue simple FR/EN
+    const langSelect = document.getElementById('lang-select');
+    langSelect.addEventListener('change', e => {
+        const lang = e.target.value;
+        const h1 = document.querySelector('section h1');
+        const p = document.querySelector('section p');
+        if(lang === 'en'){
+            h1.textContent = 'Our Services';
+            p.textContent = 'Each service is designed to combine technology, creativity and luxury psychology. Stay tuned, exclusive offers coming soon.';
+        } else {
+            h1.textContent = 'Nos Services';
+            p.textContent = 'Chaque service est pensé pour combiner technologie, créativité et psychologie du luxe. Restez attentif, nos offres exclusives arrivent bientôt.';
+        }
+    });
+</script>
+
 </body>
 </html>
