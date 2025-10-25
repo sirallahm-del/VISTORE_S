@@ -1,11 +1,18 @@
-// Toggle mode sombre / clair
-const toggle = document.getElementById("dark-mode-toggle");
-toggle.addEventListener("click", () => {
-  document.body.classList.toggle("light-mode");
+// ----- DARK MODE -----
+const toggleDarkMode = document.getElementById('dark-mode-toggle');
+toggleDarkMode.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
 });
 
-// Gestion langue (simple placeholder)
-const langSelect = document.getElementById("lang-select");
-langSelect.addEventListener("change", (e) => {
-  alert("Version multilingue à venir 🌍");
+// ----- LANGUE -----
+const langBtn = document.getElementById('lang-btn');
+let lang = 'FR';
+langBtn.addEventListener('click', () => {
+  if (lang === 'FR') {
+    lang = 'EN';
+    langBtn.textContent = 'EN';
+  } else {
+    lang = 'FR';
+    langBtn.textContent = 'FR';
+  }
 });
