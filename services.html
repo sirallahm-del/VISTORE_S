@@ -3,50 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vistoré | Services</title>
+    <title>VISTORÉ - Accueil</title>
+    
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Styles pour le bouton du Mode Sombre */
+        .theme-toggle-button {
+            background: none;
+            border: 2px solid var(--text-color); 
+            color: var(--text-color);
+            padding: 8px 12px;
+            margin-left: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+        }
+
+        .theme-toggle-button:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+        
+        /* Styles d'adaptation au Mode Sombre */
+        .dark-mode .theme-toggle-button {
+            border: 2px solid var(--dark-text-color);
+            color: var(--dark-text-color);
+        }
+        .dark-mode .theme-toggle-button:hover {
+            background-color: var(--dark-text-color);
+            color: var(--dark-bg-color);
+        }
+        
+        /* Rétablissement du style de navigation plus élégant (texte simple) */
+        .navbar nav ul {
+            list-style: none;
+            display: flex;
+            margin-right: 20px; /* Espace entre les liens et le bouton d'action */
+        }
+        
+        .navbar nav ul li {
+            margin-left: 20px;
+        }
+        
+        .navbar nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 400; /* Moins lourd que les boutons */
+            padding: 5px 10px;
+            transition: color 0.3s;
+        }
+        
+        .navbar nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* La barre de navigation utilise l'ancienne structure "flex" */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="brand">Vistoré</div>
-        <div>
-            <a href="index.html" class="button">Accueil</a>
-            <a href="services.html" class="button">Services</a>
-            <a href="cas-etudes.html" class="button">Études de cas</a>
-            <button id="dark-mode-toggle">Mode Sombre / Clair</button>
-            <select id="lang-select">
-                <option value="fr">Français</option>
-                <option value="en">English</option>
+    
+    <header class="navbar">
+        <div class="brand">VISTORÉ</div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="case-studies.html">Études de cas</a></li> 
+            </ul>
+        </nav>
+        
+        <div style="display: flex; align-items: center;">
+            <select id="lang-select" class="theme-toggle-button" style="margin-left: 0; margin-right: 10px;">
+                <option value="fr">FR</option>
+                <option value="en">EN</option>
             </select>
+            
+            <button id="theme-toggle" class="theme-toggle-button">Mode Sombre</button>
         </div>
-    </nav>
-
-    <!-- Page Title -->
-    <header class="page-header">
-        <h1>Nos Services</h1>
-        <p>Chaque service est pensé pour combiner technologie, créativité et psychologie du luxe. Restez attentif, nos offres exclusives arrivent bientôt.</p>
     </header>
 
-    <!-- En construction / FOMO -->
-    <div class="construction fomo">
-        🚧 Nos services sont en cours de construction… Patience, quelque chose d'unique arrive ! 🚧
-    </div>
-
-    <!-- Amazon Affiliate / Dons -->
-    <section class="support">
-        <h3>Supportez nos projets</h3>
-        <p>Achetez nos livres via Amazon ou faites un don pour soutenir notre vision du futur digital et du luxe.</p>
-        <div>
-            <a href="https://amzn.to/43vBtt5" class="button">Amazon</a>
-            <a href="#" class="button">Faire un don</a>
-        </div>
+    <section class="hero" style="padding-top: 100px; text-align: center;">
+        <h1>Bienvenue chez VISTORÉ</h1>
+        <p>Votre futur partenaire tech et AI | Portfolio & Startup</p>
+        <a href="services.html" class="button filled" style="margin-top: 20px;">Découvrir Nos Services</a> 
     </section>
 
-    <footer>
-        &copy; 2025 Vistoré. Tous droits réservés.
+    <section style="padding: 50px 20px;">
+        <h2>Nos Services</h2>
+        <p>Des services exclusifs combinant technologie, créativité et luxe. Découvrez bientôt !</p>
+    </section>
+
+    <section style="padding: 50px 20px;">
+        <h2>Études de Cas</h2>
+        <p>Projets et réalisations exclusifs. Patience, chaque cas est unique et luxueux.</p>
+    </section>
+
+    <footer style="text-align: center; padding: 20px; margin-top: 50px; border-top: 1px solid var(--text-color);">
+        &copy; 2025 VISTORÉ. Tous droits réservés.
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        const toggleButton = document.getElementById('theme-toggle'); 
+        const body = document.body;
+
+        function toggleTheme() {
+            body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            toggleButton.textContent = isDarkMode ? 'Mode Clair' : 'Mode Sombre';
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.textContent = 'Mode Clair';
+        } else {
+            toggleButton.textContent = 'Mode Sombre';
+        }
+
+        toggleButton.addEventListener('click', toggleTheme);
+    </script>
 </body>
 </html>
