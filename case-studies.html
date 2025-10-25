@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Études de Cas - Veritasia</title>
+    <title>Études de Cas - Vistoré</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="brand">Veritasia</div>
+        <div class="brand">Vistoré</div>
         <div>
             <a href="index.html" class="button">Accueil</a>
             <a href="services.html" class="button">Services</a>
@@ -20,10 +20,35 @@
 
     <!-- Page Title -->
     <header style="text-align:center; padding:50px 20px;">
-        <h1 style="font-size:2.5rem; font-weight:900; color:var(--gold); text-shadow:0 0 15px rgba(224,183,55,0.4);">
+        <h1 style="font-size:2.5rem; font-weight:900; color:var(--gold);">
             Études de Cas
         </h1>
         <p style="font-size:1.3rem; color:var(--highlight); max-width:700px; margin:20px auto;">
-            Découvrez bientôt nos projets exclusifs. Chaque cas est une opportunité rare, luxueuse et intemporelle.
+            Découvrez nos projets exclusifs. Chaque étude est une opportunité rare et luxueuse.
         </p>
     </header>
+
+    <!-- Exemples d'études -->
+    <div class="cas-etude">
+        <h2>Hackathon NASA</h2>
+        <p>Projet GaiaByte – Analyse géospatiale et climats. 48h de challenge intense.</p>
+        <div class="tag">#Tech</div>
+        <div class="tag">#Innovation</div>
+    </div>
+
+    <div class="cas-etude">
+        <h2>Certification CS50</h2>
+        <p>Maîtrise des fondamentaux en C, Python et SQL pour projets IA.</p>
+        <div class="tag">#Apprentissage</div>
+        <div class="tag">#AI</div>
+    </div>
+
+    <script>
+        // Dark Mode Toggle
+        const toggleBtn = document.getElementById('dark-mode-toggle');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+        });
+    </script>
+</body>
+</html>
