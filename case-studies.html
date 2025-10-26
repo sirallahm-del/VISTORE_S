@@ -1,57 +1,152 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vistoré – L'Art du Digital de Luxe</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-fr="Études de Cas | VISTORÉ" data-en="Case Studies | VISTORÉ">Études de Cas | VISTORÉ</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">Vistoré</div>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Accueil</a></li>
-        <li><a href="case-studies.html">Études de cas</a></li>
-        <li><a href="services.html">Services</a></li>
-      </ul>
-    </nav>
-    <div class="controls">
-      <button id="lang-btn">FR</button>
-      <button id="dark-mode-toggle">🌙</button>
-    </div>
-  </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Vistoré</h1>
-      <p>Où la technologie, la créativité et la psychologie se rencontrent pour redéfinir le digital de luxe.</p>
-      <a href="services.html" class="cta">Découvrir nos services</a>
-    </div>
-  </section>
+    <header class="navbar">
+        <div class="brand">VISTORÉ</div>
 
-  <!-- Vision -->
-  <section class="about">
-    <h2>Notre Vision</h2>
-    <p>
-      De la conception étudiante à un mouvement mondial, <strong>Vistoré</strong> incarne une
-      approche du digital où chaque interaction devient une expérience esthétique, émotionnelle et stratégique.
-    </p>
-  </section>
+        <nav>
+            <ul>
+                <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                <li><a href="#" data-fr="Profil" data-en="Profile">Profil</a></li>
+                <li class="active-link-container"><a href="case-studies.html" class="active-link" data-fr="Études de Cas" data-en="Case Studies">Études de Cas</a></li> 
+                <li><a href="services.html" data-fr="Services" data-en="Services">Services</a></li>
+                <li><a href="#" data-fr="Contact" data-en="Contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header-utils">
+            <select id="language-switcher" class="util-select">
+                <option value="fr">FR</option>
+                <option value="en">EN</option>
+            </select>
+            
+            <button id="dark-mode-toggle" class="util-button" data-fr="Mode Sombre" data-en="Dark Mode">Mode Sombre</button>
+        </div>
+    </header>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <p>© 2025 <strong>Vistoré</strong>. Tous droits réservés.</p>
-      <p><a href="mailto:contact@vistore.com">Contact</a> | <a href="mentions-legales.html">Mentions légales</a></p>
-    </div>
-  </footer>
+    <main class="case-studies-container">
+        
+        <section class="page-intro">
+            <h1 class="page-title" data-fr="Nos Études de Cas" data-en="Our Case Studies">Nos Études de Cas</h1>
+            <p class="page-subtitle" data-fr="Rigueur du code. Excellence de l'analyse. Voici la preuve de notre expertise en Data et Intelligence Artificielle." data-en="Code precision. Analytical excellence. Here is the proof of our expertise in Data and Artificial Intelligence.">Rigueur du code. Excellence de l'analyse. Voici la preuve de notre expertise en Data et Intelligence Artificielle.</p>
+        </section>
 
-  <script src="script.js"></script>
+        <div class="case-study-card">
+            <h2 data-fr="Modélisation Géospatiale 48h : Analyse SIG Ultra-Rapide (Projet NASA)" data-en="48h Geospatial Modeling: Ultra-Fast GIS Analysis (NASA Project)">Modélisation Géospatiale 48h : Analyse SIG Ultra-Rapide (Projet NASA)</h2>
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Analyse SIG</span>
+                <span class="tag">Gestion de Projet</span>
+                <span class="tag">Hackathon</span>
+            </div>
+            <p class="description" 
+                data-fr="Développement d'un pipeline Python complet pour traiter rapidement des volumes importants de données de télédétection. Le défi était de livrer une solution fonctionnelle en 48 heures, démontrant ma rigueur en SIG et ma capacité à la gestion de projet sous contrainte."
+                data-en="Development of a comprehensive Python pipeline for rapid processing of large volumes of remote sensing data. The challenge was to deliver a functional solution within 48 hours, demonstrating my rigour in GIS and my ability to manage projects under strict deadlines.">
+                Développement d'un pipeline Python complet pour traiter rapidement des volumes importants de données de
+                télédétection. Le défi était de livrer une solution fonctionnelle en 48 heures, démontrant ma
+                <strong>rigueur en SIG</strong> et ma capacité à la <strong>gestion de projet</strong> sous contrainte.
+            </p>
+            <a href="https://github.com/sirallahm-del/NASA-GaiaByte-2025" target="_blank" class="button filled" data-fr="Voir le code source (GitHub)" data-en="View Source Code (GitHub)">Voir le code source (GitHub)</a>
+        </div>
+
+        <div class="case-study-card">
+            <h2 data-fr="Certification CS50 (HarvardX) : Maîtrise des Fondamentaux" data-en="CS50 Certification (HarvardX): Mastering the Fundamentals">Certification CS50 (HarvardX) : Maîtrise des Fondamentaux</h2>
+            <div class="tags">
+                <span class="tag">C</span>
+                <span class="tag">Algorithmique</span>
+                <span class="tag">SQL</span>
+            </div>
+            <p class="description" 
+                data-fr="Validation de la certification démontrant la maîtrise des concepts fondamentaux de l'informatique. J'ai acquis les bases solides en algorithmique, en langages C et Python, et en bases de données SQL. Démonstration : CS50 prouve ma capacité à écrire du code propre et performant pour la résolution de problèmes, socle essentiel pour l'Intelligence Artificielle."
+                data-en="Certification validation demonstrating mastery of computing fundamentals. I acquired solid foundations in algorithms, C and Python languages, and SQL databases. Demonstration: CS50 proves my ability to write clean, high-performance code for problem-solving, an essential base for Artificial Intelligence.">
+                Validation de la certification démontrant la maîtrise des concepts fondamentaux de l'informatique. J'ai acquis les bases
+                solides en algorithmique, en langages C et Python, et en bases de données SQL.
+                <br>
+                **Démonstration :** CS50 prouve ma capacité à écrire du <strong>code propre et performant</strong> pour la résolution de problèmes, socle essentiel pour l'Intelligence Artificielle.
+            </p>
+            <a href="#" class="button outline" data-fr="Accéder au Projet" data-en="Access Project">Accéder au Projet</a>
+        </div>
+        
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <a href="#" class="footer-link" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales</a>
+            <span class="footer-logo">|</span>
+            <span data-fr="© 2025 Vistoré. Tous droits réservés." data-en="© 2025 Vistoré. All rights reserved.">© 2025 Vistoré. Tous droits réservés.</span>
+            <span class="footer-logo">|</span>
+            <a href="#" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+        const langSwitcher = document.getElementById('language-switcher');
+        
+        // --- Mode Sombre ---
+        function toggleDarkMode() {
+            body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+            updateModeButtonText(localStorage.getItem('lang') || 'fr', isDarkMode);
+        }
+
+        function updateModeButtonText(lang, isDarkMode) {
+            if (isDarkMode) {
+                darkModeToggle.textContent = (lang === 'fr') ? 'Mode Clair' : 'Light Mode';
+            } else {
+                darkModeToggle.textContent = (lang === 'fr') ? 'Mode Sombre' : 'Dark Mode';
+            }
+        }
+
+        // Chargement initial du mode sombre
+        const isDarkModeInitial = localStorage.getItem('darkMode') === 'enabled';
+        if (isDarkModeInitial) {
+            body.classList.add('dark-mode');
+        }
+
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+
+        // --- Langue ---
+        const savedLang = localStorage.getItem('lang') || 'fr';
+        langSwitcher.value = savedLang;
+        document.documentElement.lang = savedLang;
+        
+        // Fonction de traduction : met à jour le texte visible
+        function applyLanguage(lang) {
+            document.querySelectorAll('[data-fr]').forEach(el => {
+                const translation = el.getAttribute(`data-${lang}`);
+                if (translation) {
+                    el.textContent = translation;
+                }
+            });
+            updateModeButtonText(lang, body.classList.contains('dark-mode'));
+        }
+
+        // Appliquer la langue au chargement de la page
+        applyLanguage(savedLang);
+
+        // Écouter le changement de langue
+        langSwitcher.addEventListener('change', (e) => {
+            const newLang = e.target.value;
+            localStorage.setItem('lang', newLang);
+            document.documentElement.lang = newLang;
+            applyLanguage(newLang);
+        });
+    </script>
+
 </body>
+
 </html>
-
-
- 
