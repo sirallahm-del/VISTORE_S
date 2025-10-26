@@ -12,12 +12,12 @@
     </nav>
     
     <div class="header-utils">
-        <button id="dark-mode-toggle" class="util-button">🌙</button>
-
         <select id="language-switcher" class="util-select">
-            <option value="fr">FR</option>
-            <option value="en">EN</option>
+            <option value="fr">Français</option>
+            <option value="en">English</option>
         </select>
+        
+        <button id="dark-mode-toggle" class="util-button">Mode Sombre</button>
     </div>
 </header>
 
@@ -33,16 +33,16 @@
         const isDarkMode = body.classList.contains('dark-mode');
         localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
         
-        // S'assurer que l'icône change bien
-        darkModeToggle.textContent = isDarkMode ? '☀️' : '🌙';
+        // Change le texte du bouton : "Mode Sombre" ou "Mode Clair"
+        darkModeToggle.textContent = isDarkMode ? 'Mode Clair' : 'Mode Sombre';
     }
 
-    // Vérifie l'état au chargement de la page
+    // Vérifie l'état au chargement de la page pour la persistance
     if (localStorage.getItem('darkMode') === 'enabled') {
         body.classList.add('dark-mode');
-        darkModeToggle.textContent = '☀️';
+        darkModeToggle.textContent = 'Mode Clair';
     } else {
-        darkModeToggle.textContent = '🌙';
+        darkModeToggle.textContent = 'Mode Sombre';
     }
 
     // Écoute l'événement clic
@@ -56,14 +56,14 @@
     // Initialise avec la dernière langue sélectionnée
     if (localStorage.getItem('lang')) {
         langSwitcher.value = localStorage.getItem('lang');
-        document.documentElement.lang = localStorage.getItem('lang');
     }
 
     langSwitcher.addEventListener('change', (event) => {
         const newLang = event.target.value;
         localStorage.setItem('lang', newLang);
-        document.documentElement.lang = newLang; // Met à jour l'attribut lang de la page
-        // Pour une vraie traduction, vous auriez besoin d'une librairie ou d'une logique plus complexe ici.
-        // Pour l'instant, cela enregistre la préférence.
+        // Pour une vraie traduction, cette fonction devrait recharger le contenu traduit.
+        // Ici, nous enregistrons la préférence.
+        console.log(`Langue enregistrée : ${newLang}`);
     });
 </script>
+  
