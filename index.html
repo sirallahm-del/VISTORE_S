@@ -1,37 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vistoré – L'Art du Digital de Luxe</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">Vistoré</div>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Accueil</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="case-studies.html">Études de cas</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="controls">
-      <button id="dark-mode-toggle">🌙</button>
-      <select id="lang-btn">
-        <option value="fr" selected>FR</option>
-        <option value="en">EN</option>
-      </select>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Vistoré</h1>
-    <p>Où la technologie, la créativité et la psychologie se rencontrent pour créer l’avenir du digital de luxe.</p>
-    <header class="navbar">
+<header class="navbar">
     <div class="brand">VISTORÉ</div> 
     
     <nav>
@@ -43,18 +10,17 @@
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
-
-    <div class="utils">
-        <button id="dark-mode-toggle" class="util-button">
-            🌙
-        </button>
+    
+    <div class="header-utils">
+        <button id="dark-mode-toggle" class="util-button">🌙</button>
 
         <select id="language-switcher" class="util-select">
-            <option value="fr">🇫🇷 FR</option>
-            <option value="en">🇬🇧 EN</option>
-            </select>
+            <option value="fr">FR</option>
+            <option value="en">EN</option>
+        </select>
     </div>
 </header>
+
 <script>
     // ------------------------------------------------------------------
     // A. Gestion du Mode Sombre (Dark Mode)
@@ -62,23 +28,21 @@
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     const body = document.body;
 
-    // Fonction pour appliquer ou retirer le mode sombre
     function toggleDarkMode() {
         body.classList.toggle('dark-mode');
-        // Sauvegarde de l'état dans le stockage local pour la persistance
         const isDarkMode = body.classList.contains('dark-mode');
         localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
         
-        // Changer l'icône du bouton
+        // S'assurer que l'icône change bien
         darkModeToggle.textContent = isDarkMode ? '☀️' : '🌙';
     }
 
     // Vérifie l'état au chargement de la page
     if (localStorage.getItem('darkMode') === 'enabled') {
-        toggleDarkMode();
+        body.classList.add('dark-mode');
+        darkModeToggle.textContent = '☀️';
     } else {
-        // Assurer que l'icône initiale est la lune si le mode sombre n'est pas actif
-        darkModeToggle.textContent = '🌙'; 
+        darkModeToggle.textContent = '🌙';
     }
 
     // Écoute l'événement clic
@@ -88,21 +52,18 @@
     // B. Gestion du Sélecteur de Langue
     // ------------------------------------------------------------------
     const langSwitcher = document.getElementById('language-switcher');
-
-    // Sauvegarde de la préférence de langue (exemple simple)
+    
+    // Initialise avec la dernière langue sélectionnée
     if (localStorage.getItem('lang')) {
         langSwitcher.value = localStorage.getItem('lang');
+        document.documentElement.lang = localStorage.getItem('lang');
     }
 
     langSwitcher.addEventListener('change', (event) => {
         const newLang = event.target.value;
         localStorage.setItem('lang', newLang);
-        // Ici, vous ajouteriez la logique complexe de traduction
-        alert(`Langue changée en ${newLang}. La logique de traduction complète doit être implémentée (chargement de fichiers JSON, etc.).`);
+        document.documentElement.lang = newLang; // Met à jour l'attribut lang de la page
+        // Pour une vraie traduction, vous auriez besoin d'une librairie ou d'une logique plus complexe ici.
+        // Pour l'instant, cela enregistre la préférence.
     });
 </script>
-
-</body>
-</html>
-
-
