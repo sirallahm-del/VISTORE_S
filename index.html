@@ -1,69 +1,102 @@
-<header class="navbar">
-    <div class="brand">VISTORÉ</div> 
-    
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="#">Profil</a></li>
-            <li><a href="case-studies.html">Études de Cas</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-    
-    <div class="header-utils">
-        <select id="language-switcher" class="util-select">
-            <option value="fr">Français</option>
-            <option value="en">English</option>
-        </select>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISTORÉ - Data & IA Consulting</title> 
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="brand">VISTORÉ</div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="#">Profil</a></li>
+                <li><a href="case-studies.html">Études de Cas</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
         
-        <button id="dark-mode-toggle" class="util-button">Mode Sombre</button>
-    </div>
-</header>
+        <div class="header-utils">
+            <select id="language-switcher" class="util-select">
+                <option value="fr">Français</option>
+                <option value="en">English</option>
+            </select>
+            
+            <button id="dark-mode-toggle" class="util-button">Mode Sombre</button>
+        </div>
+    </header>
 
-<script>
-    // ------------------------------------------------------------------
-    // A. Gestion du Mode Sombre (Dark Mode)
-    // ------------------------------------------------------------------
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const body = document.body;
+    <main class="hero-section">
+        <div class="content">
+            <p class="subtitle">LABORATOIRE DE RECHERCHE & DÉVELOPPEMENT</p>
 
-    function toggleDarkMode() {
-        body.classList.toggle('dark-mode');
-        const isDarkMode = body.classList.contains('dark-mode');
-        localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+            <h1>
+                Laboratoire d'Innovation en
+                <span class="accent-text">Data & IA</span>
+            </h1>
+
+            <p class="description">
+                Nous sommes spécialisés dans la modélisation prédictive et l'analyse de données complexes (géospatiales,
+                financières, etc.).
+                Notre mission est d'optimiser les stratégies d'entreprise par des solutions d'Intelligence Artificielle
+                rigoureuses et sur mesure.
+                Déterminée à redéfinir les standards par la rigueur du code et l'excellence de l'analyse.
+            </p>
+
+            <div class="buttons">
+                <a href="case-studies.html" class="button filled">Accéder aux Études de Cas</a>
+
+                <a href="#" class="button outline">Démarrer une Collaboration</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+        const langSwitcher = document.getElementById('language-switcher');
         
-        // Change le texte du bouton : "Mode Sombre" ou "Mode Clair"
-        darkModeToggle.textContent = isDarkMode ? 'Mode Clair' : 'Mode Sombre';
-    }
+        // --- Mode Sombre Logic ---
+        function toggleDarkMode() {
+            body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+            darkModeToggle.textContent = isDarkMode ? 'Mode Clair' : 'Mode Sombre';
+        }
 
-    // Vérifie l'état au chargement de la page pour la persistance
-    if (localStorage.getItem('darkMode') === 'enabled') {
-        body.classList.add('dark-mode');
-        darkModeToggle.textContent = 'Mode Clair';
-    } else {
-        darkModeToggle.textContent = 'Mode Sombre';
-    }
+        // Vérification de l'état au chargement
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.textContent = 'Mode Clair';
+        } else {
+            darkModeToggle.textContent = 'Mode Sombre';
+        }
+        
+        darkModeToggle.addEventListener('click', toggleDarkMode);
 
-    // Écoute l'événement clic
-    darkModeToggle.addEventListener('click', toggleDarkMode);
+        // --- Sélecteur de Langue Logic ---
+        if (localStorage.getItem('lang')) {
+            langSwitcher.value = localStorage.getItem('lang');
+        }
 
-    // ------------------------------------------------------------------
-    // B. Gestion du Sélecteur de Langue
-    // ------------------------------------------------------------------
-    const langSwitcher = document.getElementById('language-switcher');
-    
-    // Initialise avec la dernière langue sélectionnée
-    if (localStorage.getItem('lang')) {
-        langSwitcher.value = localStorage.getItem('lang');
-    }
+        langSwitcher.addEventListener('change', (event) => {
+            localStorage.setItem('lang', event.target.value);
+            // La logique de traduction s'effectuerait ici
+            console.log(`Langue enregistrée : ${event.target.value}`);
+        });
+    </script>
 
-    langSwitcher.addEventListener('change', (event) => {
-        const newLang = event.target.value;
-        localStorage.setItem('lang', newLang);
-        // Pour une vraie traduction, cette fonction devrait recharger le contenu traduit.
-        // Ici, nous enregistrons la préférence.
-        console.log(`Langue enregistrée : ${newLang}`);
-    });
-</script>
-  
+</body>
+
+</html>
+ 
+ 
