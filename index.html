@@ -37,18 +37,14 @@
 
     <main class="hero-section">
         <div class="content">
-            <p class="subtitle">LABORATOIRE DE RECHERCHE & DÉVELOPPEMENT</p>
+            <p class="subtitle">Bienvenue chez VISTORÉ</p>
 
             <h1>
-                Laboratoire d'Innovation en
-                <span class="accent-text">Data & IA</span>
+                Votre future partenaire Tech & IA
             </h1>
 
             <p class="description">
-                Nous sommes spécialisés dans la modélisation prédictive et l'analyse de données complexes (géospatiales,
-                financières, etc.).
-                Notre mission est d'optimiser les stratégies d'entreprise par des solutions d'Intelligence Artificielle
-                rigoureuses et sur mesure.
+                Portfolio & Startup. Des services exclusifs combinant technologie, créativité et luxe.
                 Déterminée à redéfinir les standards par la rigueur du code et l'excellence de l'analyse.
             </p>
 
@@ -70,7 +66,6 @@
             body.classList.toggle('dark-mode');
             const isDarkMode = body.classList.contains('dark-mode');
             localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
-            // Mettre à jour le texte du bouton
             darkModeToggle.textContent = isDarkMode ? 'Mode Clair' : 'Mode Sombre';
         }
 
@@ -82,18 +77,21 @@
         
         darkModeToggle.addEventListener('click', toggleDarkMode);
 
-        // --- Sélecteur de Langue Logic ---
+        // --- Sélecteur de Langue Logic (Correction du problème) ---
+        // Le sélecteur ne changeait pas la valeur affichée s'il n'y avait rien dans le localStorage
         if (localStorage.getItem('lang')) {
             langSwitcher.value = localStorage.getItem('lang');
+            document.documentElement.lang = localStorage.getItem('lang'); // Ajout pour la sémantique
         }
 
         langSwitcher.addEventListener('change', (event) => {
-            localStorage.setItem('lang', event.target.value);
+            const newLang = event.target.value;
+            localStorage.setItem('lang', newLang);
+            document.documentElement.lang = newLang; // Met à jour l'attribut lang
+            // Note: Pour une vraie traduction, vous devrez recharger le contenu ici.
         });
     </script>
 
 </body>
 
 </html>
-        
-     
