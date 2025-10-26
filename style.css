@@ -8,8 +8,8 @@
     --accent-color: #7242F5; /* Un violet vif, élégant et distinctif */
 
     /* Couleurs du Mode Sombre */
-    --dark-bg-color: #121212; /* Noir Absolu pour le contraste maximal */
-    --dark-text-color: #F7F5F0; /* Utilise le même blanc cassé pour le texte */
+    --dark-bg-color: #121212; /* Noir Absolu */
+    --dark-text-color: #F7F5F0; /* Blanc cassé */
 
     /* Typographie */
     --font-sans: 'Inter', sans-serif;
@@ -28,14 +28,14 @@ body {
     font-family: var(--font-sans);
     min-height: 100vh;
     padding: 20px;
-    transition: background-color 0.3s, color 0.3s; /* Transition pour le mode sombre */
+    transition: background-color 0.4s, color 0.4s; /* Transition fluide */
 }
 
 /* 3. Barre de Navigation (Navbar) */
 .navbar {
     display: flex;
-    justify-content: space-between; /* Espace entre les éléments (Marque, Nav, Boutons) */
-    align-items: center; /* Alignement vertical parfait */
+    justify-content: space-between; 
+    align-items: center; 
     padding: 10px 0;
     margin-bottom: 50px;
 }
@@ -97,7 +97,7 @@ body {
 }
 
 .util-button:hover {
-    opacity: 0.9;
+    opacity: 0.85;
 }
 
 /* Style du Sélecteur de Langue */
@@ -194,19 +194,21 @@ h1 {
 /* 7. MODE SOMBRE (DARK MODE) */
 /* Lorsque la classe 'dark-mode' est ajoutée au <body>, les couleurs changent */
 .dark-mode {
-    /* Inversion des couleurs de base */
     --bg-color: var(--dark-bg-color);
     --text-color: var(--dark-text-color);
 }
 
+/* Ajustements Mode Sombre pour les liens et le texte */
+.dark-mode .navbar nav ul li a {
+    color: var(--dark-text-color);
+}
+
 .dark-mode .button.filled {
-    /* Maintient le style d'accent */
     background-color: var(--accent-color);
     color: var(--dark-bg-color);
 }
 
 .dark-mode .button.filled:hover {
-    /* Inverse les couleurs pour le survol */
     background-color: var(--dark-text-color);
     border-color: var(--dark-text-color);
     color: var(--dark-bg-color);
@@ -222,7 +224,7 @@ h1 {
     color: var(--dark-bg-color);
 }
 
-/* 8. Adaptation au Mode Sombre pour les Utilitaires */
+/* Adaptation au Mode Sombre pour les Utilitaires */
 .dark-mode .util-select {
     background-color: var(--dark-bg-color);
     border-color: var(--dark-text-color);
