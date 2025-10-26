@@ -27,8 +27,8 @@
         
         <div class="header-utils">
             <select id="language-switcher" class="util-select">
-                <option value="fr">Français</option>
-                <option value="en">English</option>
+                <option value="fr">FR</option>
+                <option value="en">EN</option>
             </select>
             
             <button id="dark-mode-toggle" class="util-button">Mode Sombre</button>
@@ -70,6 +70,7 @@
             body.classList.toggle('dark-mode');
             const isDarkMode = body.classList.contains('dark-mode');
             localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+            // Mettre à jour le texte du bouton
             darkModeToggle.textContent = isDarkMode ? 'Mode Clair' : 'Mode Sombre';
         }
 
@@ -77,8 +78,6 @@
         if (localStorage.getItem('darkMode') === 'enabled') {
             body.classList.add('dark-mode');
             darkModeToggle.textContent = 'Mode Clair';
-        } else {
-            darkModeToggle.textContent = 'Mode Sombre';
         }
         
         darkModeToggle.addEventListener('click', toggleDarkMode);
@@ -90,13 +89,11 @@
 
         langSwitcher.addEventListener('change', (event) => {
             localStorage.setItem('lang', event.target.value);
-            // La logique de traduction s'effectuerait ici
-            console.log(`Langue enregistrée : ${event.target.value}`);
         });
     </script>
 
 </body>
 
 </html>
- 
- 
+        
+     
