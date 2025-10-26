@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-fr="VISTORÉ - Data & IA Consulting" data-en="VISTORÉ - Data & AI Consulting">VISTORÉ - Data & IA Consulting</title>
-
+    <title>VISTORÉ - Data & IA Consulting</title> 
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
@@ -24,14 +23,14 @@
                 <li><a href="#" data-fr="Contact" data-en="Contact">Contact</a></li>
             </ul>
         </nav>
-
+        
         <div class="header-utils">
             <select id="language-switcher" class="util-select">
                 <option value="fr">FR</option>
                 <option value="en">EN</option>
             </select>
-
-            <button id="dark-mode-toggle" class="util-button" data-fr="Mode Sombre" data-en="Dark Mode">Mode Sombre</button>
+            
+            <button id="dark-mode-toggle" class="util-button">Mode Sombre</button>
         </div>
     </header>
 
@@ -44,10 +43,10 @@
             </h1>
 
             <p class="description"
-                data-fr="Portfolio & Startup. Des services exclusifs combinant technologie, créativité et luxe. Déterminée à redéfinir les standards par la rigueur du code et l'excellence de l'analyse."
-                data-en="Portfolio & Startup. Exclusive services combining technology, creativity and luxury. Determined to redefine standards through code precision and analytical excellence.">
-                Portfolio & Startup. Des services exclusifs combinant technologie, créativité et luxe.
-                Déterminée à redéfinir les standards par la rigueur du code et l'excellence de l'analyse.
+               data-fr="Portfolio & Startup. Des services exclusifs combinant technologie, créativité et luxe. Déterminée à redéfinir les standards par la rigueur du code et l'excellence de l'analyse."
+               data-en="Portfolio & Startup. Exclusive services combining technology, creativity and luxury. Determined to redefine standards through code precision and analytical excellence.">
+               Portfolio & Startup. Des services exclusifs combinant technologie, créativité et luxe.
+               Déterminée à redéfinir les standards par la rigueur du code et l'excellence de l'analyse.
             </p>
 
             <div class="buttons">
@@ -61,42 +60,22 @@
         </div>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <a href="#" class="footer-link" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales</a>
-            <span class="footer-logo">|</span>
-            <span data-fr="© 2025 Vistoré. Tous droits réservés." data-en="© 2025 Vistoré. All rights reserved.">© 2025 Vistoré. Tous droits réservés.</span>
-            <span class="footer-logo">|</span>
-            <a href="#" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
-        </div>
-    </footer>
-
     <script>
         const darkModeToggle = document.getElementById('dark-mode-toggle');
         const body = document.body;
         const langSwitcher = document.getElementById('language-switcher');
-        
+
         // --- Mode Sombre ---
         function toggleDarkMode() {
             body.classList.toggle('dark-mode');
             const isDarkMode = body.classList.contains('dark-mode');
             localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
-            // Met à jour le texte du bouton après le changement de mode
-            updateModeButtonText(localStorage.getItem('lang') || 'fr', isDarkMode);
+            darkModeToggle.textContent = isDarkMode ? 'Mode Clair' : 'Mode Sombre';
         }
 
-        function updateModeButtonText(lang, isDarkMode) {
-            if (isDarkMode) {
-                darkModeToggle.textContent = (lang === 'fr') ? 'Mode Clair' : 'Light Mode';
-            } else {
-                darkModeToggle.textContent = (lang === 'fr') ? 'Mode Sombre' : 'Dark Mode';
-            }
-        }
-
-        // Chargement initial du mode sombre
-        const isDarkModeInitial = localStorage.getItem('darkMode') === 'enabled';
-        if (isDarkModeInitial) {
+        if (localStorage.getItem('darkMode') === 'enabled') {
             body.classList.add('dark-mode');
+            darkModeToggle.textContent = 'Mode Clair';
         }
 
         darkModeToggle.addEventListener('click', toggleDarkMode);
@@ -105,23 +84,18 @@
         const savedLang = localStorage.getItem('lang') || 'fr';
         langSwitcher.value = savedLang;
         document.documentElement.lang = savedLang;
-        
-        // Fonction de traduction : met à jour le texte visible
+
+        // fonction de traduction
         function applyLanguage(lang) {
             document.querySelectorAll('[data-fr]').forEach(el => {
-                const translation = el.getAttribute(`data-${lang}`);
-                if (translation) {
-                    el.textContent = translation;
-                }
+                el.textContent = el.getAttribute(`data-${lang}`);
             });
-            // Met à jour le texte du bouton Mode Sombre après le changement de langue
-            updateModeButtonText(lang, body.classList.contains('dark-mode'));
         }
 
-        // Appliquer la langue au chargement de la page
+        // appliquer au chargement
         applyLanguage(savedLang);
 
-        // Écouter le changement de langue
+        // écouter changement
         langSwitcher.addEventListener('change', (e) => {
             const newLang = e.target.value;
             localStorage.setItem('lang', newLang);
@@ -132,3 +106,5 @@
 
 </body>
 </html>
+
+      
