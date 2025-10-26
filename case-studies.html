@@ -1,33 +1,117 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Études de cas – Vistoré</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Études de Cas | VISTORÉ</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <header class="navbar">
-    <div class="logo">Vistoré</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="case-studies.html" class="active">Études de cas</a></li>
-        <li><a href="services.html">Services</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section class="case">
-    <h1>Nos Études de Cas</h1>
-    <p>Découvrez comment Vistoré transforme la vision digitale en émotion et en impact.</p>
-    <p><i>Section en développement – bientôt disponible.</i></p>
-  </section>
+    <header class="navbar">
+        <div class="brand">VISTORÉ</div>
 
-  <footer>
-    <p>© 2025 Vistoré. Tous droits réservés.</p>
-  </footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="#">Profil</a></li>
+                <li><a href="case-studies.html" class="active-link">Études de Cas</a></li> 
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header-utils">
+            <select id="language-switcher" class="util-select">
+                <option value="fr">FR</option>
+                <option value="en">EN</option>
+            </select>
+            
+            <button id="dark-mode-toggle" class="util-button">Mode Sombre</button>
+        </div>
+    </header>
 
-  <script src="script.js"></script>
+    <main class="case-studies-container">
+        
+        <section class="page-intro">
+            <h1 class="page-title">Nos Études de Cas</h1>
+            <p class="page-subtitle">Rigueur du code. Excellence de l'analyse. Voici la preuve de notre expertise en Data et Intelligence Artificielle.</p>
+        </section>
+
+        <div class="case-study-card">
+            <h2>Modélisation Géospatiale 48h : Analyse SIG Ultra-Rapide</h2>
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Analyse SIG</span>
+                <span class="tag">Gestion de Projet</span>
+            </div>
+            <p class="description">
+                Développement d'un pipeline Python complet pour traiter rapidement des volumes importants de données de
+                télédétection. Le défi était de livrer une solution fonctionnelle en 48 heures, démontrant ma
+                <strong>rigueur en SIG</strong> et ma capacité à la <strong>gestion de projet</strong> sous contrainte.
+            </p>
+            <a href="#" class="button filled">Voir le code source (GitHub)</a>
+        </div>
+
+        <div class="case-study-card">
+            <h2>Certification CS50 (HarvardX) : Maîtrise des Fondamentaux</h2>
+            <div class="tags">
+                <span class="tag">C</span>
+                <span class="tag">Algorithmique</span>
+                <span class="tag">SQL</span>
+            </div>
+            <p class="description">
+                Validation de la certification démontrant la maîtrise des concepts fondamentaux de l'informatique. J'ai acquis les bases
+                solides en algorithmique, en langages C et Python, et en bases de données SQL.
+                <br>
+                **Démonstration :** CS50 prouve ma capacité à écrire du <strong>code propre et performant</strong> pour la résolution de problèmes, socle essentiel pour l'Intelligence Artificielle.
+            </p>
+            <a href="#" class="button outline">Accéder au Projet</a>
+        </div>
+        
+        </main>
+
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+        const langSwitcher = document.getElementById('language-switcher');
+        
+        // --- Mode Sombre Logic ---
+        function toggleDarkMode() {
+            body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+            darkModeToggle.textContent = isDarkMode ? 'Mode Clair' : 'Mode Sombre';
+        }
+
+        // Chargement initial du mode sombre
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.textContent = 'Mode Clair';
+        } else {
+            darkModeToggle.textContent = 'Mode Sombre';
+        }
+        
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+
+        // --- Sélecteur de Langue Logic ---
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang) {
+            langSwitcher.value = savedLang;
+            document.documentElement.lang = savedLang;
+        }
+
+        langSwitcher.addEventListener('change', (event) => {
+            const newLang = event.target.value;
+            localStorage.setItem('lang', newLang);
+            document.documentElement.lang = newLang; 
+        });
+    </script>
+
 </body>
+
 </html>
