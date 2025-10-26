@@ -1,13 +1,13 @@
-/* 1. Définition des Variables de Couleurs (Palette "Old Money" & Navy Blue) */
+/* 1. Définition des Variables de Couleurs (Palette "Navy & Neutre" - Minimaliste Luxe) */
 :root {
-    /* Couleurs de base (Mode Clair - Inversé pour un look sombre riche) */
-    --bg-color: #0F1626;     /* Navy Blue/Bleu Nuit Profond (Base du Mode Clair) */
+    /* Couleurs de base (Mode Clair - Fond Navy Blue) */
+    --bg-color: #0F1626;     /* Navy Blue Profond */
     --text-color: #F8F8F8;   /* Blanc Cassé Doux */
 
-    /* Couleur d'Accent (Or Pâle/Crème de Luxe) */
-    --accent-color: #D4A373; /* Or/Taupe Pâle pour un contraste sophistiqué */
+    /* Couleur d'Accent (Gris Froid Neutre et Chic) */
+    --accent-color: #BDBDBD; /* Gris Froid Neutre pour l'accentuation */
 
-    /* Couleurs du Mode Sombre (Pour l'inversion) */
+    /* Couleurs du Mode Sombre (Pour l'inversion vers le Clair Visuel) */
     --dark-bg-color: #F8F8F8; /* Blanc Cassé pour le fond */
     --dark-text-color: #0F1626; /* Navy Blue pour le texte */
 
@@ -28,7 +28,7 @@ body {
     font-family: var(--font-sans);
     min-height: 100vh;
     padding: 20px;
-    transition: background-color 0.4s, color 0.4s; /* Transition fluide */
+    transition: background-color 0.4s, color 0.4s;
 }
 
 /* 3. Barre de Navigation (Navbar) */
@@ -43,14 +43,17 @@ body {
 }
 
 .brand {
-    font-size: 1.8rem; /* Augmenté pour l'impact */
+    font-size: 1.8rem;
     font-weight: 900;
-    color: var(--accent-color);
+    color: var(--text-color); /* La marque reste en Blanc/Neutre pour plus de sobriété */
+    transition: color 0.3s;
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
+    padding: 0;
+    margin: 0;
 }
 
 .navbar ul li a {
@@ -59,11 +62,11 @@ body {
     margin-left: 30px;
     font-weight: 400;
     opacity: 0.9;
-    transition: color 0.3s;
+    transition: color 0.3s, opacity 0.3s;
 }
 
 .navbar ul li a:hover {
-    color: var(--accent-color);
+    color: var(--accent-color); /* L'accent gris neutre est utilisé au survol */
     opacity: 1;
 }
 
@@ -86,21 +89,22 @@ body {
     white-space: nowrap; 
 }
 
-/* Bouton Mode Sombre/Clair (Utilise l'accent pour se démarquer) */
+/* Bouton Mode Sombre/Clair */
 .util-button {
-    background-color: var(--accent-color); 
-    color: var(--bg-color); /* Texte Navy sur le bouton Or */
+    background-color: transparent; 
+    color: var(--text-color);
     border: 1px solid var(--accent-color);
 }
 
 .util-button:hover {
-    opacity: 0.85;
+    background-color: var(--accent-color);
+    color: var(--bg-color); /* Texte Navy au survol */
 }
 
 /* Sélecteur de Langue */
 .util-select {
     background-color: transparent;
-    border: 1px solid var(--text-color);
+    border: 1px solid var(--accent-color);
     color: var(--text-color);
     appearance: none; 
     padding-right: 25px; 
@@ -112,14 +116,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 75vh; /* Légèrement ajusté */
-    text-align: center; /* Changement pour centrer le texte comme la maquette */
+    min-height: 75vh;
+    text-align: center;
     width: 100%;
 }
 
 .hero-section .content {
     max-width: 800px;
-    /* Centré grâce à text-align: center sur hero-section */
 }
 
 .subtitle {
@@ -132,7 +135,7 @@ body {
 }
 
 h1 {
-    font-size: 3.5rem; /* Ajusté pour le look */
+    font-size: 3.5rem;
     line-height: 1.2;
     font-weight: 900;
     margin-bottom: 20px;
@@ -152,13 +155,13 @@ h1 {
 /* 6. Styles des Boutons d'Action */
 .buttons {
     display: flex;
-    justify-content: center; /* Centrer les boutons */
-    gap: 20px; /* Plus d'espace */
+    justify-content: center;
+    gap: 20px;
 }
 
 .button {
     text-decoration: none;
-    padding: 15px 30px; /* Plus grand */
+    padding: 15px 30px;
     font-weight: 700;
     border-radius: 5px;
     transition: all 0.3s;
@@ -167,77 +170,76 @@ h1 {
 
 /* Bouton Rempli (Action Principale) */
 .button.filled {
-    background-color: var(--accent-color);
-    color: var(--bg-color); 
-    border: 2px solid var(--accent-color);
+    background-color: var(--text-color); /* Rempli avec la couleur de texte (Blanc) */
+    color: var(--bg-color); /* Texte Navy */
+    border: 2px solid var(--text-color);
 }
 
 .button.filled:hover {
-    background-color: transparent;
+    background-color: var(--accent-color); /* Survol en accent (Gris) */
     border-color: var(--accent-color);
-    color: var(--accent-color);
+    color: var(--bg-color); /* Texte Navy */
 }
 
 /* Bouton Contourné (Action Secondaire) */
 .button.outline {
     background-color: transparent;
-    color: var(--text-color);
-    border: 2px solid var(--text-color);
+    color: var(--accent-color); /* Contour et texte en accent (Gris) */
+    border: 2px solid var(--accent-color);
 }
 
 .button.outline:hover {
-    background-color: var(--text-color);
-    color: var(--bg-color);
+    background-color: var(--accent-color);
+    color: var(--bg-color); /* Remplissage et texte Navy */
 }
 
 /* 7. MODE SOMBRE (DARK MODE - INVERSION) */
-/* C'est maintenant le mode "clair" visuel */
 .dark-mode {
     --bg-color: var(--dark-bg-color);
     --text-color: var(--dark-text-color);
 }
 
-/* Adaptation au Mode Sombre (Clair Visuel) */
+/* Ajustements Mode Sombre */
 .dark-mode .brand {
-    color: var(--accent-color); 
+    color: var(--dark-text-color);
 }
+
 .dark-mode .navbar nav ul li a {
     color: var(--dark-text-color);
 }
 
-.dark-mode .util-button {
-    background-color: var(--accent-color);
-    color: var(--dark-bg-color);
-    border-color: var(--accent-color);
-}
-
+.dark-mode .util-button,
 .dark-mode .util-select {
     border-color: var(--dark-text-color);
     color: var(--dark-text-color);
 }
 
-.dark-mode .button.filled {
+.dark-mode .util-button:hover {
     background-color: var(--accent-color);
+    color: var(--dark-text-color);
+}
+
+.dark-mode .button.filled {
+    background-color: var(--dark-text-color);
     color: var(--dark-bg-color);
+    border-color: var(--dark-text-color);
 }
 
 .dark-mode .button.filled:hover {
-    background-color: transparent;
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--dark-text-color);
+}
+
+.dark-mode .button.outline {
     border-color: var(--accent-color);
     color: var(--accent-color);
 }
 
-.dark-mode .button.outline {
-    border-color: var(--dark-text-color);
+.dark-mode .button.outline:hover {
+    background-color: var(--accent-color);
     color: var(--dark-text-color);
 }
 
-.dark-mode .button.outline:hover {
-    background-color: var(--dark-text-color);
-    color: var(--dark-bg-color);
-}
-
-
 
   
-
