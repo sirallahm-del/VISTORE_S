@@ -31,4 +31,78 @@
   <section class="hero">
     <h1>Vistoré</h1>
     <p>Où la technologie, la créativité et la psychologie se rencontrent pour créer l’avenir du digital de luxe.</p>
+    <header class="navbar">
+    <div class="brand">VISTORÉ</div> 
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="#">Profil</a></li>
+            <li><a href="case-studies.html">Études de Cas</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="utils">
+        <button id="dark-mode-toggle" class="util-button">
+            🌙
+        </button>
+
+        <select id="language-switcher" class="util-select">
+            <option value="fr">🇫🇷 FR</option>
+            <option value="en">🇬🇧 EN</option>
+            </select>
+    </div>
+</header>
+<script>
+    // ------------------------------------------------------------------
+    // A. Gestion du Mode Sombre (Dark Mode)
+    // ------------------------------------------------------------------
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+
+    // Fonction pour appliquer ou retirer le mode sombre
+    function toggleDarkMode() {
+        body.classList.toggle('dark-mode');
+        // Sauvegarde de l'état dans le stockage local pour la persistance
+        const isDarkMode = body.classList.contains('dark-mode');
+        localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+        
+        // Changer l'icône du bouton
+        darkModeToggle.textContent = isDarkMode ? '☀️' : '🌙';
+    }
+
+    // Vérifie l'état au chargement de la page
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        toggleDarkMode();
+    } else {
+        // Assurer que l'icône initiale est la lune si le mode sombre n'est pas actif
+        darkModeToggle.textContent = '🌙'; 
+    }
+
+    // Écoute l'événement clic
+    darkModeToggle.addEventListener('click', toggleDarkMode);
+
+    // ------------------------------------------------------------------
+    // B. Gestion du Sélecteur de Langue
+    // ------------------------------------------------------------------
+    const langSwitcher = document.getElementById('language-switcher');
+
+    // Sauvegarde de la préférence de langue (exemple simple)
+    if (localStorage.getItem('lang')) {
+        langSwitcher.value = localStorage.getItem('lang');
+    }
+
+    langSwitcher.addEventListener('change', (event) => {
+        const newLang = event.target.value;
+        localStorage.setItem('lang', newLang);
+        // Ici, vous ajouteriez la logique complexe de traduction
+        alert(`Langue changée en ${newLang}. La logique de traduction complète doit être implémentée (chargement de fichiers JSON, etc.).`);
+    });
+</script>
+
+</body>
+</html>
+
 
