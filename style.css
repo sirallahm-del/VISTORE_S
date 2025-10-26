@@ -45,7 +45,7 @@ body {
 .brand {
     font-size: 1.8rem;
     font-weight: 900;
-    color: var(--text-color); /* La marque reste en Blanc/Neutre pour plus de sobriété */
+    color: var(--text-color); 
     transition: color 0.3s;
 }
 
@@ -66,8 +66,14 @@ body {
 }
 
 .navbar ul li a:hover {
-    color: var(--accent-color); /* L'accent gris neutre est utilisé au survol */
+    color: var(--accent-color); 
     opacity: 1;
+}
+
+/* S'assurer que le lien actif est bien visible dans la navbar */
+.active-link {
+    color: var(--accent-color) !important;
+    font-weight: 700 !important;
 }
 
 
@@ -89,7 +95,6 @@ body {
     white-space: nowrap; 
 }
 
-/* Bouton Mode Sombre/Clair */
 .util-button {
     background-color: transparent; 
     color: var(--text-color);
@@ -98,10 +103,9 @@ body {
 
 .util-button:hover {
     background-color: var(--accent-color);
-    color: var(--bg-color); /* Texte Navy au survol */
+    color: var(--bg-color);
 }
 
-/* Sélecteur de Langue */
 .util-select {
     background-color: transparent;
     border: 1px solid var(--accent-color);
@@ -168,29 +172,27 @@ h1 {
     font-size: 1rem;
 }
 
-/* Bouton Rempli (Action Principale) */
 .button.filled {
-    background-color: var(--text-color); /* Rempli avec la couleur de texte (Blanc) */
-    color: var(--bg-color); /* Texte Navy */
+    background-color: var(--text-color); 
+    color: var(--bg-color); 
     border: 2px solid var(--text-color);
 }
 
 .button.filled:hover {
-    background-color: var(--accent-color); /* Survol en accent (Gris) */
+    background-color: var(--accent-color); 
     border-color: var(--accent-color);
-    color: var(--bg-color); /* Texte Navy */
+    color: var(--bg-color); 
 }
 
-/* Bouton Contourné (Action Secondaire) */
 .button.outline {
     background-color: transparent;
-    color: var(--accent-color); /* Contour et texte en accent (Gris) */
+    color: var(--accent-color); 
     border: 2px solid var(--accent-color);
 }
 
 .button.outline:hover {
     background-color: var(--accent-color);
-    color: var(--bg-color); /* Remplissage et texte Navy */
+    color: var(--bg-color); 
 }
 
 /* 7. MODE SOMBRE (DARK MODE - INVERSION) */
@@ -199,7 +201,6 @@ h1 {
     --text-color: var(--dark-text-color);
 }
 
-/* Ajustements Mode Sombre */
 .dark-mode .brand {
     color: var(--dark-text-color);
 }
@@ -236,6 +237,11 @@ h1 {
     color: var(--accent-color);
 }
 
+.dark-mode .button.outline:hover {
+    background-color: var(--accent-color);
+    color: var(--dark-text-color);
+}
+
 /* 8. Styles Spécifiques pour la Page "Études de Cas" */
 
 .case-studies-container {
@@ -244,7 +250,6 @@ h1 {
     padding: 20px;
 }
 
-/* Introduction de la Page */
 .page-intro {
     text-align: center;
     margin-bottom: 60px;
@@ -263,20 +268,18 @@ h1 {
     opacity: 0.9;
 }
 
-
-/* Style de la Carte de Projet (Luxe/Contraste) */
 .case-study-card {
-    background-color: var(--bg-color); /* Utilise la couleur de fond actuelle (Navy) */
-    border: 1px solid var(--accent-color); /* Contour subtil en accent neutre */
+    background-color: var(--bg-color); 
+    border: 1px solid var(--accent-color); 
     padding: 30px;
     margin-bottom: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre légère pour le relief */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .case-study-card:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Ombre plus marquée au survol */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
     transform: translateY(-2px);
 }
 
@@ -293,15 +296,14 @@ h1 {
     opacity: 0.9;
 }
 
-/* Styles des Tags (Technologies utilisées) */
 .tags {
     margin-bottom: 15px;
 }
 
 .tag {
     display: inline-block;
-    background-color: var(--accent-color); /* Rempli avec l'accent (Gris) */
-    color: var(--bg-color); /* Texte Navy sur Gris */
+    background-color: var(--accent-color);
+    color: var(--bg-color); 
     font-size: 0.8rem;
     font-weight: 700;
     padding: 5px 10px;
@@ -311,16 +313,69 @@ h1 {
     text-transform: uppercase;
 }
 
-/* S'assurer que le lien actif est bien visible */
-.active-link {
-    color: var(--accent-color) !important;
-    font-weight: 700 !important;
+
+/* 9. Styles Spécifiques pour la Page "Services" (En Construction) */
+.construction-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    text-align: center;
 }
 
-/* 9. Adaptation Mode Sombre pour les Études de Cas */
+.construction-section h1 {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-weight: 900;
+}
+
+.construction-section p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+
+/* 10. Styles du Pied de Page (Footer) */
+footer {
+    padding: 30px 20px;
+    margin-top: 50px;
+    border-top: 1px solid var(--accent-color); 
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--accent-color); 
+    opacity: 0.7;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Assure la responsivité */
+}
+
+.footer-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.footer-link:hover {
+    opacity: 1;
+}
+
+.footer-logo {
+    font-weight: 700;
+}
+
+/* Adaptation Mode Sombre pour les sections spécifiques */
 .dark-mode .case-study-card {
-    background-color: var(--dark-bg-color); /* Blanc Cassé */
-    border-color: var(--dark-text-color); /* Navy pour le contour */
+    background-color: var(--dark-bg-color); 
+    border-color: var(--dark-text-color); 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
 }
 
@@ -330,13 +385,10 @@ h1 {
 }
 
 .dark-mode .case-study-card h2 {
-    color: var(--accent-color); /* L'accent gris reste cohérent */
-}
-.dark-mode .button.outline:hover {
-    background-color: var(--accent-color);
-    color: var(--dark-text-color);
+    color: var(--accent-color); 
 }
 
 
-  
+
+
 
