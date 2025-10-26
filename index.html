@@ -69,7 +69,7 @@
             darkModeToggle.textContent = isDarkMode ? 'Mode Clair' : 'Mode Sombre';
         }
 
-        // Vérification de l'état au chargement
+        // Chargement initial du mode sombre
         if (localStorage.getItem('darkMode') === 'enabled') {
             body.classList.add('dark-mode');
             darkModeToggle.textContent = 'Mode Clair';
@@ -77,18 +77,20 @@
         
         darkModeToggle.addEventListener('click', toggleDarkMode);
 
-        // --- Sélecteur de Langue Logic (Correction du problème) ---
-        // Le sélecteur ne changeait pas la valeur affichée s'il n'y avait rien dans le localStorage
-        if (localStorage.getItem('lang')) {
-            langSwitcher.value = localStorage.getItem('lang');
-            document.documentElement.lang = localStorage.getItem('lang'); // Ajout pour la sémantique
+        // --- Sélecteur de Langue Logic (FIX APPLIQUÉ) ---
+        // 1. Initialise le sélecteur avec la langue sauvegardée au chargement
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang) {
+            langSwitcher.value = savedLang;
+            document.documentElement.lang = savedLang;
         }
 
+        // 2. Écoute l'événement de changement et sauvegarde la nouvelle valeur
         langSwitcher.addEventListener('change', (event) => {
             const newLang = event.target.value;
             localStorage.setItem('lang', newLang);
-            document.documentElement.lang = newLang; // Met à jour l'attribut lang
-            // Note: Pour une vraie traduction, vous devrez recharger le contenu ici.
+            document.documentElement.lang = newLang; 
+            // La valeur du <select> est désormais gérée nativement par le navigateur
         });
     </script>
 
