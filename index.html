@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VISTORÉ - Data & IA Consulting</title> 
-
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
@@ -17,11 +16,11 @@
 
         <nav>
             <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="#">Profil</a></li>
-                <li><a href="case-studies.html">Études de Cas</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                <li><a href="#" data-fr="Profil" data-en="Profile">Profil</a></li>
+                <li><a href="case-studies.html" data-fr="Études de Cas" data-en="Case Studies">Études de Cas</a></li>
+                <li><a href="services.html" data-fr="Services" data-en="Services">Services</a></li>
+                <li><a href="#" data-fr="Contact" data-en="Contact">Contact</a></li>
             </ul>
         </nav>
         
@@ -37,21 +36,26 @@
 
     <main class="hero-section">
         <div class="content">
-            <p class="subtitle">Bienvenue chez VISTORÉ</p>
+            <p class="subtitle" data-fr="Bienvenue chez VISTORÉ" data-en="Welcome to VISTORÉ">Bienvenue chez VISTORÉ</p>
 
-            <h1>
+            <h1 data-fr="Votre future partenaire Tech & IA" data-en="Your Future Tech & AI Partner">
                 Votre future partenaire Tech & IA
             </h1>
 
-            <p class="description">
-                Portfolio & Startup. Des services exclusifs combinant technologie, créativité et luxe.
-                Déterminée à redéfinir les standards par la rigueur du code et l'excellence de l'analyse.
+            <p class="description"
+               data-fr="Portfolio & Startup. Des services exclusifs combinant technologie, créativité et luxe. Déterminée à redéfinir les standards par la rigueur du code et l'excellence de l'analyse."
+               data-en="Portfolio & Startup. Exclusive services combining technology, creativity and luxury. Determined to redefine standards through code precision and analytical excellence.">
+               Portfolio & Startup. Des services exclusifs combinant technologie, créativité et luxe.
+               Déterminée à redéfinir les standards par la rigueur du code et l'excellence de l'analyse.
             </p>
 
             <div class="buttons">
-                <a href="case-studies.html" class="button filled">Accéder aux Études de Cas</a>
-
-                <a href="#" class="button outline">Démarrer une Collaboration</a>
+                <a href="case-studies.html" class="button filled" data-fr="Accéder aux Études de Cas" data-en="View Case Studies">
+                    Accéder aux Études de Cas
+                </a>
+                <a href="#" class="button outline" data-fr="Démarrer une Collaboration" data-en="Start a Collaboration">
+                    Démarrer une Collaboration
+                </a>
             </div>
         </div>
     </main>
@@ -60,8 +64,8 @@
         const darkModeToggle = document.getElementById('dark-mode-toggle');
         const body = document.body;
         const langSwitcher = document.getElementById('language-switcher');
-        
-        // --- Mode Sombre Logic ---
+
+        // --- Mode Sombre ---
         function toggleDarkMode() {
             body.classList.toggle('dark-mode');
             const isDarkMode = body.classList.contains('dark-mode');
@@ -69,31 +73,36 @@
             darkModeToggle.textContent = isDarkMode ? 'Mode Clair' : 'Mode Sombre';
         }
 
-        // Chargement initial du mode sombre
         if (localStorage.getItem('darkMode') === 'enabled') {
             body.classList.add('dark-mode');
             darkModeToggle.textContent = 'Mode Clair';
         }
-        
+
         darkModeToggle.addEventListener('click', toggleDarkMode);
 
-        // --- Sélecteur de Langue Logic (FIX APPLIQUÉ) ---
-        // 1. Initialise le sélecteur avec la langue sauvegardée au chargement
-        const savedLang = localStorage.getItem('lang');
-        if (savedLang) {
-            langSwitcher.value = savedLang;
-            document.documentElement.lang = savedLang;
+        // --- Langue ---
+        const savedLang = localStorage.getItem('lang') || 'fr';
+        langSwitcher.value = savedLang;
+        document.documentElement.lang = savedLang;
+
+        // fonction de traduction
+        function applyLanguage(lang) {
+            document.querySelectorAll('[data-fr]').forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
         }
 
-        // 2. Écoute l'événement de changement et sauvegarde la nouvelle valeur
-        langSwitcher.addEventListener('change', (event) => {
-            const newLang = event.target.value;
+        // appliquer au chargement
+        applyLanguage(savedLang);
+
+        // écouter changement
+        langSwitcher.addEventListener('change', (e) => {
+            const newLang = e.target.value;
             localStorage.setItem('lang', newLang);
-            document.documentElement.lang = newLang; 
-            // La valeur du <select> est désormais gérée nativement par le navigateur
+            document.documentElement.lang = newLang;
+            applyLanguage(newLang);
         });
     </script>
 
 </body>
-
 </html>
