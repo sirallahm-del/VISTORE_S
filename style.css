@@ -236,6 +236,102 @@ h1 {
     color: var(--accent-color);
 }
 
+/* 8. Styles Spécifiques pour la Page "Études de Cas" */
+
+.case-studies-container {
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    padding: 20px;
+}
+
+/* Introduction de la Page */
+.page-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    opacity: 0.9;
+}
+
+
+/* Style de la Carte de Projet (Luxe/Contraste) */
+.case-study-card {
+    background-color: var(--bg-color); /* Utilise la couleur de fond actuelle (Navy) */
+    border: 1px solid var(--accent-color); /* Contour subtil en accent neutre */
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre légère pour le relief */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.case-study-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Ombre plus marquée au survol */
+    transform: translateY(-2px);
+}
+
+.case-study-card h2 {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.case-study-card .description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+/* Styles des Tags (Technologies utilisées) */
+.tags {
+    margin-bottom: 15px;
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--accent-color); /* Rempli avec l'accent (Gris) */
+    color: var(--bg-color); /* Texte Navy sur Gris */
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* S'assurer que le lien actif est bien visible */
+.active-link {
+    color: var(--accent-color) !important;
+    font-weight: 700 !important;
+}
+
+/* 9. Adaptation Mode Sombre pour les Études de Cas */
+.dark-mode .case-study-card {
+    background-color: var(--dark-bg-color); /* Blanc Cassé */
+    border-color: var(--dark-text-color); /* Navy pour le contour */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+}
+
+.dark-mode .tag {
+    background-color: var(--dark-text-color);
+    color: var(--dark-bg-color);
+}
+
+.dark-mode .case-study-card h2 {
+    color: var(--accent-color); /* L'accent gris reste cohérent */
+}
 .dark-mode .button.outline:hover {
     background-color: var(--accent-color);
     color: var(--dark-text-color);
@@ -243,3 +339,4 @@ h1 {
 
 
   
+
