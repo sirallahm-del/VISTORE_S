@@ -45,4 +45,71 @@
             <p class="description"
                data-fr="Portfolio & Startup. Des services exclusifs combinant technologie, créativité et luxe. Déterminée à redéfinir les standards par la rigueur du code et l'excellence de l'analyse."
                data-en="Portfolio & Startup. Exclusive services combining technology, creativity and luxury. Determined to redefine standards through code precision and analytical excellence.">
-               Portfolio & Startup. Des services exclus
+               Portfolio & Startup. Des services exclusifs combinant technologie, créativité et luxe.
+               Déterminée à redéfinir les standards par la rigueur du code et l'excellence de l'analyse.
+            </p>
+
+            <div class="buttons">
+                <a href="case-studies.html" class="button filled" data-fr="Accéder aux Études de Cas" data-en="View Case Studies">
+                    Accéder aux Études de Cas
+                </a>
+                <a href="#" class="button outline" data-fr="Démarrer une Collaboration" data-en="Start a Collaboration">
+                    Démarrer une Collaboration
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- ✅ Footer ajouté -->
+    <footer style="text-align: center; margin-top: 60px; padding: 20px 0; font-size: 0.9rem; opacity: 0.8;">
+        <p data-fr="© 2025 Vistoré. Tous droits réservés. | Contact" 
+           data-en="© 2025 Vistoré. All rights reserved. | Contact">
+           © 2025 Vistoré. Tous droits réservés. | Contact
+        </p>
+    </footer>
+
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+        const langSwitcher = document.getElementById('language-switcher');
+
+        // --- Mode Sombre ---
+        function toggleDarkMode() {
+            body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+            darkModeToggle.textContent = isDarkMode ? 'Mode Clair' : 'Mode Sombre';
+        }
+
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.textContent = 'Mode Clair';
+        }
+
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+
+        // --- Langue ---
+        const savedLang = localStorage.getItem('lang') || 'fr';
+        langSwitcher.value = savedLang;
+        document.documentElement.lang = savedLang;
+
+        function applyLanguage(lang) {
+            document.querySelectorAll('[data-fr]').forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+        }
+
+        applyLanguage(savedLang);
+
+        langSwitcher.addEventListener('change', (e) => {
+            const newLang = e.target.value;
+            localStorage.setItem('lang', newLang);
+            document.documentElement.lang = newLang;
+            applyLanguage(newLang);
+        });
+    </script>
+
+</body>
+</html>
+
+    
