@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-fr="Contact | VISTORÉ" data-en="Contact | VISTORÉ">Contact | VISTORÉ</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="brand">VISTORÉ</div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                <li><a href="profil.html" data-fr="Profil" data-en="Profile">Profil</a></li>
+                <li><a href="case-studies.html" data-fr="Études de Cas" data-en="Case Studies">Études de Cas</a></li>
+                <li><a href="services.html" data-fr="Services" data-en="Services">Services</a></li>
+                <li><a href="contact.html" class="active-link" data-fr="Contact" data-en="Contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-utils">
+            <select id="language-switcher" class="util-select">
+                <option value="fr">FR</option>
+                <option value="en">EN</option>
+            </select>
+
+            <button id="dark-mode-toggle" class="util-button" data-fr="Mode Sombre" data-en="Dark Mode">Mode Sombre</button>
+        </div>
+    </header>
+
+    <main class="construction-section">
+        <h1 data-fr="🤝 Démarrer une Collaboration" data-en="🤝 Start a Collaboration">🤝 Démarrer une Collaboration</h1>
+        <p data-fr="Nous sommes prêts à analyser vos besoins exclusifs en Data et IA. Veuillez nous contacter directement pour initier un partenariat." data-en="We are ready to analyze your exclusive Data and AI needs. Please contact us directly to initiate a partnership.">
+            Nous sommes prêts à analyser vos besoins exclusifs en Data et IA. <br>
+            Veuillez nous contacter directement pour initier un partenariat.
+        </p>
+        <a href="mailto:votre.email@votreentreprise.com" class="button filled" style="margin-top: 30px;" data-fr="Envoyer un e-mail" data-en="Send an E-mail">Envoyer un e-mail</a>
+        <a href="index.html" class="button outline" style="margin-top: 15px;" data-fr="Retourner à l'Accueil" data-en="Back to Home">Retourner à l'Accueil</a>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <a href="#" class="footer-link" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales</a>
+            <span class="footer-logo">|</span>
+            <span data-fr="© 2025 Vistoré. Tous droits réservés." data-en="© 2025 Vistoré. All rights reserved.">© 2025 Vistoré. Tous droits réservés.</span>
+            <span class="footer-logo">|</span>
+            <a href="contact.html" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+        const langSwitcher = document.getElementById('language-switcher');
+        
+        function updateModeButtonText(lang, isDarkMode) {
+            if (isDarkMode) {
+                darkModeToggle.textContent = (lang === 'fr') ? 'Mode Clair' : 'Light Mode';
+            } else {
+                darkModeToggle.textContent = (lang === 'fr') ? 'Mode Sombre' : 'Dark Mode';
+            }
+        }
+
+        function toggleDarkMode() {
+            body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+            updateModeButtonText(localStorage.getItem('lang') || 'fr', isDarkMode);
+        }
+
+        const isDarkModeInitial = localStorage.getItem('darkMode') === 'enabled';
+        if (isDarkModeInitial) {
+            body.classList.add('dark-mode');
+        }
+
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+
+        const savedLang = localStorage.getItem('lang') || 'fr';
+        langSwitcher.value = savedLang;
+        document.documentElement.lang = savedLang;
+        
+        function applyLanguage(lang) {
+            document.querySelectorAll('[data-fr]').forEach(el => {
+                const translation = el.getAttribute(`data-${lang}`);
+                if (translation) {
+                    el.textContent = translation;
+                }
+            });
+            updateModeButtonText(lang, body.classList.contains('dark-mode'));
+        }
+
+        applyLanguage(savedLang);
+
+        langSwitcher.addEventListener('change', (e) => {
+            const newLang = e.target.value;
+            localStorage.setItem('lang', newLang);
+            document.documentElement.lang = newLang;
+            applyLanguage(newLang);
+        });
+    </script>
+
+</body>
+</html>
