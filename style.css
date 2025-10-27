@@ -40,6 +40,7 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    flex-wrap: wrap; /* AJOUTÉ POUR LA RESPONSIVITÉ */
 }
 
 .brand {
@@ -49,11 +50,16 @@ body {
     transition: color 0.3s;
 }
 
+.main-nav {
+    flex-grow: 1; /* Permet à la nav de prendre de la place */
+}
+
 .navbar ul {
     list-style: none;
     display: flex;
     padding: 0;
     margin: 0;
+    justify-content: flex-start;
 }
 
 .navbar ul li a {
@@ -63,6 +69,7 @@ body {
     font-weight: 400;
     opacity: 0.9;
     transition: color 0.3s, opacity 0.3s;
+    white-space: nowrap; /* Empêche les liens de se casser sur plusieurs lignes */
 }
 
 .navbar ul li a:hover {
@@ -70,7 +77,6 @@ body {
     opacity: 1;
 }
 
-/* S'assurer que le lien actif est bien visible dans la navbar */
 .active-link {
     color: var(--accent-color) !important;
     font-weight: 700 !important;
@@ -145,10 +151,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-.accent-text {
-    color: var(--accent-color);
-}
-
 .description {
     font-size: 1.1rem;
     line-height: 1.6;
@@ -201,32 +203,27 @@ h1 {
     --text-color: var(--dark-text-color);
 }
 
-.dark-mode .brand {
-    color: var(--dark-text-color);
-}
-
-.dark-mode .navbar nav ul li a {
+.dark-mode .brand,
+.dark-mode .navbar nav ul li a,
+.dark-mode .util-button,
+.dark-mode .util-select {
     color: var(--dark-text-color);
 }
 
 .dark-mode .util-button,
 .dark-mode .util-select {
     border-color: var(--dark-text-color);
-    color: var(--dark-text-color);
 }
 
-.dark-mode .util-button:hover {
-    background-color: var(--accent-color);
-    color: var(--dark-text-color);
-}
-
+.dark-mode .util-button:hover,
 .dark-mode .button.filled {
     background-color: var(--dark-text-color);
     color: var(--dark-bg-color);
     border-color: var(--dark-text-color);
 }
 
-.dark-mode .button.filled:hover {
+.dark-mode .button.filled:hover,
+.dark-mode .util-button:hover {
     background-color: var(--accent-color);
     border-color: var(--accent-color);
     color: var(--dark-text-color);
@@ -242,14 +239,14 @@ h1 {
     color: var(--dark-text-color);
 }
 
-/* 8. Styles Spécifiques pour la Page "Études de Cas" */
 
-.case-studies-container {
+/* 8. Styles Spécifiques pour les Pages Secondaires */
+
+.page-container {
     max-width: 900px;
     margin: 0 auto 50px auto;
     padding: 20px;
 }
-
 .page-intro {
     text-align: center;
     margin-bottom: 60px;
@@ -268,7 +265,9 @@ h1 {
     opacity: 0.9;
 }
 
-.case-study-card {
+/* Style de la Carte de Projet (Études de Cas / Profil) */
+.case-study-card,
+.content-card {
     background-color: var(--bg-color); 
     border: 1px solid var(--accent-color); 
     padding: 30px;
@@ -278,17 +277,14 @@ h1 {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.case-study-card:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-    transform: translateY(-2px);
-}
-
+.content-card h2,
 .case-study-card h2 {
     font-size: 1.8rem;
     color: var(--accent-color);
     margin-bottom: 15px;
 }
 
+.content-card p,
 .case-study-card .description {
     font-size: 1rem;
     line-height: 1.6;
@@ -296,6 +292,7 @@ h1 {
     opacity: 0.9;
 }
 
+/* Styles des Tags */
 .tags {
     margin-bottom: 15px;
 }
@@ -313,15 +310,15 @@ h1 {
     text-transform: uppercase;
 }
 
-
-/* 9. Styles Spécifiques pour la Page "Services" (En Construction) */
+/* Styles pour les pages "Contact" et "Services" (En Construction) */
 .construction-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 80vh;
+    min-height: 70vh;
     text-align: center;
+    padding: 20px;
 }
 
 .construction-section h1 {
@@ -337,7 +334,7 @@ h1 {
 }
 
 
-/* 10. Styles du Pied de Page (Footer) */
+/* 9. Styles du Pied de Page (Footer) */
 footer {
     padding: 30px 20px;
     margin-top: 50px;
@@ -355,7 +352,7 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    flex-wrap: wrap; /* Assure la responsivité */
+    flex-wrap: wrap;
 }
 
 .footer-link {
@@ -372,18 +369,64 @@ footer {
     font-weight: 700;
 }
 
-/* Adaptation Mode Sombre pour les sections spécifiques */
-.dark-mode .case-study-card {
-    background-color: var(--dark-bg-color); 
-    border-color: var(--dark-text-color); 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
-}
+/* 10. MEDIA QUERIES (RESPONSIVITÉ) */
+@media (max-width: 768px) {
+    /* Ajustement de la Navbar pour le Mobile */
+    .navbar {
+        flex-direction: column; /* Empile les éléments */
+        align-items: center;
+    }
+    
+    .brand {
+        margin-bottom: 10px;
+    }
 
-.dark-mode .tag {
-    background-color: var(--dark-text-color);
-    color: var(--dark-bg-color);
-}
+    .main-nav {
+        order: 1; /* Place le menu après la marque */
+        width: 100%;
+        margin-bottom: 15px;
+    }
 
-.dark-mode .case-study-card h2 {
-    color: var(--accent-color); 
+    .navbar ul {
+        justify-content: center; /* Centre les liens de navigation */
+        flex-wrap: wrap; /* Permet aux liens de passer à la ligne */
+    }
+
+    .navbar ul li a {
+        margin: 5px 10px; /* Réduit les marges pour gagner de la place */
+    }
+
+    .header-utils {
+        order: 2; /* Place les utilitaires en dernier */
+        margin-top: 5px;
+    }
+
+    /* Ajustement des Titres et Textes */
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section {
+        min-height: 60vh;
+    }
+
+    .buttons {
+        flex-direction: column; /* Empile les boutons */
+        gap: 15px;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .page-title,
+    .construction-section h1 {
+        font-size: 2rem;
+    }
+
+    .description,
+    .page-subtitle,
+    .construction-section p {
+        font-size: 1rem;
+    }
 }
