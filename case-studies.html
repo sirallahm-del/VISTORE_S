@@ -15,13 +15,13 @@
     <header class="navbar">
         <div class="brand">VISTORÉ</div>
 
-        <nav>
+        <nav class="main-nav">
             <ul>
                 <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
-                <li><a href="#" data-fr="Profil" data-en="Profile">Profil</a></li>
-                <li class="active-link-container"><a href="case-studies.html" class="active-link" data-fr="Études de Cas" data-en="Case Studies">Études de Cas</a></li> 
+                <li><a href="profil.html" data-fr="Profil" data-en="Profile">Profil</a></li>
+                <li><a href="case-studies.html" class="active-link" data-fr="Études de Cas" data-en="Case Studies">Études de Cas</a></li> 
                 <li><a href="services.html" data-fr="Services" data-en="Services">Services</a></li>
-                <li><a href="#" data-fr="Contact" data-en="Contact">Contact</a></li>
+                <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
             </ul>
         </nav>
         
@@ -86,7 +86,7 @@
             <span class="footer-logo">|</span>
             <span data-fr="© 2025 Vistoré. Tous droits réservés." data-en="© 2025 Vistoré. All rights reserved.">© 2025 Vistoré. Tous droits réservés.</span>
             <span class="footer-logo">|</span>
-            <a href="#" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
+            <a href="contact.html" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
         </div>
     </footer>
 
@@ -95,14 +95,6 @@
         const body = document.body;
         const langSwitcher = document.getElementById('language-switcher');
         
-        // --- Mode Sombre ---
-        function toggleDarkMode() {
-            body.classList.toggle('dark-mode');
-            const isDarkMode = body.classList.contains('dark-mode');
-            localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
-            updateModeButtonText(localStorage.getItem('lang') || 'fr', isDarkMode);
-        }
-
         function updateModeButtonText(lang, isDarkMode) {
             if (isDarkMode) {
                 darkModeToggle.textContent = (lang === 'fr') ? 'Mode Clair' : 'Light Mode';
@@ -111,7 +103,13 @@
             }
         }
 
-        // Chargement initial du mode sombre
+        function toggleDarkMode() {
+            body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+            updateModeButtonText(localStorage.getItem('lang') || 'fr', isDarkMode);
+        }
+
         const isDarkModeInitial = localStorage.getItem('darkMode') === 'enabled';
         if (isDarkModeInitial) {
             body.classList.add('dark-mode');
@@ -119,12 +117,10 @@
 
         darkModeToggle.addEventListener('click', toggleDarkMode);
 
-        // --- Langue ---
         const savedLang = localStorage.getItem('lang') || 'fr';
         langSwitcher.value = savedLang;
         document.documentElement.lang = savedLang;
         
-        // Fonction de traduction : met à jour le texte visible
         function applyLanguage(lang) {
             document.querySelectorAll('[data-fr]').forEach(el => {
                 const translation = el.getAttribute(`data-${lang}`);
@@ -135,10 +131,8 @@
             updateModeButtonText(lang, body.classList.contains('dark-mode'));
         }
 
-        // Appliquer la langue au chargement de la page
         applyLanguage(savedLang);
 
-        // Écouter le changement de langue
         langSwitcher.addEventListener('change', (e) => {
             const newLang = e.target.value;
             localStorage.setItem('lang', newLang);
