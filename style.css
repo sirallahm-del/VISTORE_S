@@ -1,432 +1,113 @@
-/* 1. Définition des Variables de Couleurs (Palette "Navy & Neutre" - Minimaliste Luxe) */
-:root {
-    /* Couleurs de base (Mode Clair - Fond Navy Blue) */
-    --bg-color: #0F1626;     /* Navy Blue Profond */
-    --text-color: #F8F8F8;   /* Blanc Cassé Doux */
-
-    /* Couleur d'Accent (Gris Froid Neutre et Chic) */
-    --accent-color: #BDBDBD; /* Gris Froid Neutre pour l'accentuation */
-
-    /* Couleurs du Mode Sombre (Pour l'inversion vers le Clair Visuel) */
-    --dark-bg-color: #F8F8F8; /* Blanc Cassé pour le fond */
-    --dark-text-color: #0F1626; /* Navy Blue pour le texte */
-
-    /* Typographie */
-    --font-sans: 'Inter', sans-serif;
-}
-
-/* 2. Style Global et Réinitialisation */
+/* ----- RESET ----- */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: var(--font-sans);
-    min-height: 100vh;
-    padding: 20px;
-    transition: background-color 0.4s, color 0.4s;
+/* ----- COULEURS ----- */
+:root {
+  --noir: #0e0e0e;
+  --or: #c6a664;
+  --beige: #f5f0e6;
+  --blanc-casse: #fdfaf5;
+  --texte-sombre: #222;
+  --texte-clair: #eee;
 }
 
-/* 3. Barre de Navigation (Navbar) */
+/* ----- MODE SOMBRE ----- */
+body.dark {
+  background: var(--noir);
+  color: var(--texte-clair);
+}
+body.dark .navbar {
+  background: #141414;
+}
+body.dark a {
+  color: var(--or);
+}
+
+/* ----- NAVBAR ----- */
 .navbar {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 10px 0;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap; /* AJOUTÉ POUR LA RESPONSIVITÉ */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background: var(--blanc-casse);
+  color: var(--texte-sombre);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
-
-.brand {
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: var(--text-color); 
-    transition: color 0.3s;
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--or);
 }
-
-.main-nav {
-    flex-grow: 1; /* Permet à la nav de prendre de la place */
-}
-
 .navbar ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin: 0;
-    justify-content: flex-start;
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.navbar a {
+  text-decoration: none;
+  color: var(--texte-sombre);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.navbar a:hover,
+.navbar a.active {
+  color: var(--or);
 }
 
-.navbar ul li a {
-    text-decoration: none;
-    color: var(--text-color);
-    margin-left: 30px;
-    font-weight: 400;
-    opacity: 0.9;
-    transition: color 0.3s, opacity 0.3s;
-    white-space: nowrap; /* Empêche les liens de se casser sur plusieurs lignes */
+/* ----- HERO ----- */
+.hero {
+  text-align: center;
+  padding: 8rem 2rem;
+  background: linear-gradient(120deg, var(--blanc-casse), var(--beige));
+  color: var(--texte-sombre);
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--or);
+}
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+.cta {
+  background: var(--or);
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.cta:hover {
+  background: #b8944e;
 }
 
-.navbar ul li a:hover {
-    color: var(--accent-color); 
-    opacity: 1;
+/* ----- ABOUT ----- */
+.about {
+  padding: 5rem 2rem;
+  text-align: center;
+  background: var(--beige);
+}
+.about h2 {
+  font-size: 2rem;
+  color: var(--or);
+  margin-bottom: 1rem;
 }
 
-.active-link {
-    color: var(--accent-color) !important;
-    font-weight: 700 !important;
-}
-
-
-/* 4. Styles des Boutons Utilitaires (Mode Sombre & Langue) */
-.header-utils {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.util-button,
-.util-select {
-    padding: 8px 12px;
-    font-weight: 500;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    white-space: nowrap; 
-}
-
-.util-button {
-    background-color: transparent; 
-    color: var(--text-color);
-    border: 1px solid var(--accent-color);
-}
-
-.util-button:hover {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-}
-
-.util-select {
-    background-color: transparent;
-    border: 1px solid var(--accent-color);
-    color: var(--text-color);
-    appearance: none; 
-    padding-right: 25px; 
-}
-
-
-/* 5. Section Héro (Contenu Principal) */
-.hero-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 75vh;
-    text-align: center;
-    width: 100%;
-}
-
-.hero-section .content {
-    max-width: 800px;
-}
-
-.subtitle {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--accent-color);
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-h1 {
-    font-size: 3.5rem;
-    line-height: 1.2;
-    font-weight: 900;
-    margin-bottom: 20px;
-}
-
-.description {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    opacity: 0.85;
-    margin-bottom: 40px;
-}
-
-/* 6. Styles des Boutons d'Action */
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.button {
-    text-decoration: none;
-    padding: 15px 30px;
-    font-weight: 700;
-    border-radius: 5px;
-    transition: all 0.3s;
-    font-size: 1rem;
-}
-
-.button.filled {
-    background-color: var(--text-color); 
-    color: var(--bg-color); 
-    border: 2px solid var(--text-color);
-}
-
-.button.filled:hover {
-    background-color: var(--accent-color); 
-    border-color: var(--accent-color);
-    color: var(--bg-color); 
-}
-
-.button.outline {
-    background-color: transparent;
-    color: var(--accent-color); 
-    border: 2px solid var(--accent-color);
-}
-
-.button.outline:hover {
-    background-color: var(--accent-color);
-    color: var(--bg-color); 
-}
-
-/* 7. MODE SOMBRE (DARK MODE - INVERSION) */
-.dark-mode {
-    --bg-color: var(--dark-bg-color);
-    --text-color: var(--dark-text-color);
-}
-
-.dark-mode .brand,
-.dark-mode .navbar nav ul li a,
-.dark-mode .util-button,
-.dark-mode .util-select {
-    color: var(--dark-text-color);
-}
-
-.dark-mode .util-button,
-.dark-mode .util-select {
-    border-color: var(--dark-text-color);
-}
-
-.dark-mode .util-button:hover,
-.dark-mode .button.filled {
-    background-color: var(--dark-text-color);
-    color: var(--dark-bg-color);
-    border-color: var(--dark-text-color);
-}
-
-.dark-mode .button.filled:hover,
-.dark-mode .util-button:hover {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
-    color: var(--dark-text-color);
-}
-
-.dark-mode .button.outline {
-    border-color: var(--accent-color);
-    color: var(--accent-color);
-}
-
-.dark-mode .button.outline:hover {
-    background-color: var(--accent-color);
-    color: var(--dark-text-color);
-}
-
-
-/* 8. Styles Spécifiques pour les Pages Secondaires */
-
-.page-container {
-    max-width: 900px;
-    margin: 0 auto 50px auto;
-    padding: 20px;
-}
-.page-intro {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.page-title {
-    font-size: 3rem;
-    font-weight: 900;
-    color: var(--text-color);
-    margin-bottom: 15px;
-}
-
-.page-subtitle {
-    font-size: 1.1rem;
-    color: var(--accent-color);
-    opacity: 0.9;
-}
-
-/* Style de la Carte de Projet (Études de Cas / Profil) */
-.case-study-card,
-.content-card {
-    background-color: var(--bg-color); 
-    border: 1px solid var(--accent-color); 
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.content-card h2,
-.case-study-card h2 {
-    font-size: 1.8rem;
-    color: var(--accent-color);
-    margin-bottom: 15px;
-}
-
-.content-card p,
-.case-study-card .description {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 25px;
-    opacity: 0.9;
-}
-
-/* Styles des Tags */
-.tags {
-    margin-bottom: 15px;
-}
-
-.tag {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: var(--bg-color); 
-    font-size: 0.8rem;
-    font-weight: 700;
-    padding: 5px 10px;
-    border-radius: 4px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-/* Styles pour les pages "Contact" et "Services" (En Construction) */
-.construction-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 70vh;
-    text-align: center;
-    padding: 20px;
-}
-
-.construction-section h1 {
-    font-size: 3rem;
-    color: var(--accent-color);
-    margin-bottom: 15px;
-    font-weight: 900;
-}
-
-.construction-section p {
-    font-size: 1.2rem;
-    opacity: 0.8;
-}
-
-
-/* 9. Styles du Pied de Page (Footer) */
+/* ----- FOOTER ----- */
 footer {
-    padding: 30px 20px;
-    margin-top: 50px;
-    border-top: 1px solid var(--accent-color); 
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--accent-color); 
-    opacity: 0.7;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.footer-link {
-    color: var(--accent-color);
-    text-decoration: none;
-    transition: opacity 0.3s;
-}
-
-.footer-link:hover {
-    opacity: 1;
-}
-
-.footer-logo {
-    font-weight: 700;
-}
-
-/* 10. MEDIA QUERIES (RESPONSIVITÉ) */
-@media (max-width: 768px) {
-    /* Ajustement de la Navbar pour le Mobile */
-    .navbar {
-        flex-direction: column; /* Empile les éléments */
-        align-items: center;
-    }
-    
-    .brand {
-        margin-bottom: 10px;
-    }
-
-    .main-nav {
-        order: 1; /* Place le menu après la marque */
-        width: 100%;
-        margin-bottom: 15px;
-    }
-
-    .navbar ul {
-        justify-content: center; /* Centre les liens de navigation */
-        flex-wrap: wrap; /* Permet aux liens de passer à la ligne */
-    }
-
-    .navbar ul li a {
-        margin: 5px 10px; /* Réduit les marges pour gagner de la place */
-    }
-
-    .header-utils {
-        order: 2; /* Place les utilitaires en dernier */
-        margin-top: 5px;
-    }
-
-    /* Ajustement des Titres et Textes */
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-section {
-        min-height: 60vh;
-    }
-
-    .buttons {
-        flex-direction: column; /* Empile les boutons */
-        gap: 15px;
-    }
-
-    .button {
-        width: 100%;
-    }
-
-    .page-title,
-    .construction-section h1 {
-        font-size: 2rem;
-    }
-
-    .description,
-    .page-subtitle,
-    .construction-section p {
-        font-size: 1rem;
-    }
+  background: var(--noir);
+  color: var(--texte-clair);
+  text-align: center;
+  padding: 2rem;
 }
