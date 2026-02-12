@@ -1,11 +1,19 @@
-// 🌙 Mode sombre
-const toggle = document.getElementById("dark-mode-toggle");
-toggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
+// ----- DARK MODE -----
+const toggleDarkMode = document.getElementById('dark-mode-toggle');
+toggleDarkMode.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
 });
 
-// 🌍 Langue
-document.getElementById("lang-btn").addEventListener("click", () => {
-  alert("Version anglaise à venir !");
+// ----- LANGUE -----
+const langBtn = document.getElementById('lang-btn');
+let lang = 'FR';
+langBtn.addEventListener('click', () => {
+  if (lang === 'FR') {
+    lang = 'EN';
+    langBtn.textContent = 'EN';
+  } else {
+    lang = 'FR';
+    langBtn.textContent = 'FR';
+  }
 });
 
