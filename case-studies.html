@@ -1,107 +1,33 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-fr="Études de Cas | VISTORÉ" data-en="Case Studies | VISTORÉ">Études de Cas | VISTORÉ</title>
+  <title>Études de cas – Vistoré</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
-
 <body>
   <header class="navbar">
-    <div class="brand">VISTORÉ</div>
-
-    <nav class="main-nav">
+    <div class="logo">Vistoré</div>
+    <nav>
       <ul>
-        <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
-        <li><a href="profil.html" data-fr="Profil" data-en="Profile">Profil</a></li>
-        <li><a href="case-studies.html" class="active-link" data-fr="Études de Cas" data-en="Case Studies">Études de Cas</a></li>
-        <li><a href="services.html" data-fr="Services" data-en="Services">Services</a></li>
-        <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="case-studies.html" class="active">Études de cas</a></li>
+        <li><a href="services.html">Services</a></li>
       </ul>
     </nav>
-
-    <div class="header-utils">
-      <select id="language-switcher" class="util-select">
-        <option value="fr">FR</option>
-        <option value="en">EN</option>
-      </select>
-      <button id="dark-mode-toggle" class="util-button" data-fr="Mode Sombre" data-en="Dark Mode">Mode Sombre</button>
-    </div>
   </header>
 
-  <main class="page-container">
-    <section class="page-intro">
-      <h1 class="page-title" data-fr="Nos Études de Cas" data-en="Our Case Studies">Nos Études de Cas</h1>
-      <p class="page-subtitle" data-fr="Des projets data et IA conçus avec rigueur, impact et élégance." data-en="Data and AI projects designed with rigor, impact, and elegance.">Des projets data et IA conçus avec rigueur, impact et élégance.</p>
-    </section>
-
-    <article class="case-study-card">
-      <div class="tags">
-        <span class="tag">Data</span>
-        <span class="tag">IA</span>
-        <span class="tag">Strategy</span>
-      </div>
-      <h2 data-fr="Section en préparation" data-en="Section in progress">Section en préparation</h2>
-      <p class="description" data-fr="Nous préparons des études de cas détaillées sur nos missions d'analyse avancée, d'automatisation intelligente et de conseil digital premium." data-en="We are preparing detailed case studies on our advanced analytics, intelligent automation, and premium digital consulting engagements.">
-        Nous préparons des études de cas détaillées sur nos missions d'analyse avancée, d'automatisation intelligente et de conseil digital premium.
-      </p>
-      <a href="contact.html" class="button outline" data-fr="Parler de votre projet" data-en="Discuss your project">Parler de votre projet</a>
-    </article>
-  </main>
+  <section class="case">
+    <h1>Nos Études de Cas</h1>
+    <p>Découvrez comment Vistoré transforme la vision digitale en émotion et en impact.</p>
+    <p><i>Section en développement – bientôt disponible.</i></p>
+  </section>
 
   <footer>
-    <div class="footer-content">
-      <a href="#" class="footer-link" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales</a>
-      <span class="footer-logo">|</span>
-      <span data-fr="© 2025 Vistoré. Tous droits réservés." data-en="© 2025 Vistoré. All rights reserved.">© 2025 Vistoré. Tous droits réservés.</span>
-      <span class="footer-logo">|</span>
-      <a href="contact.html" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
-    </div>
+    <p>© 2025 Vistoré. Tous droits réservés.</p>
   </footer>
 
-  <script>
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const body = document.body;
-    const langSwitcher = document.getElementById('language-switcher');
-
-    function updateModeButtonText(lang, isDarkMode) {
-      darkModeToggle.textContent = isDarkMode ? ((lang === 'fr') ? 'Mode Clair' : 'Light Mode') : ((lang === 'fr') ? 'Mode Sombre' : 'Dark Mode');
-    }
-
-    function toggleDarkMode() {
-      body.classList.toggle('dark-mode');
-      const isDarkMode = body.classList.contains('dark-mode');
-      localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
-      updateModeButtonText(localStorage.getItem('lang') || 'fr', isDarkMode);
-    }
-
-    if (localStorage.getItem('darkMode') === 'enabled') body.classList.add('dark-mode');
-    darkModeToggle.addEventListener('click', toggleDarkMode);
-
-    const savedLang = localStorage.getItem('lang') || 'fr';
-    langSwitcher.value = savedLang;
-    document.documentElement.lang = savedLang;
-
-    function applyLanguage(lang) {
-      document.querySelectorAll('[data-fr]').forEach((el) => {
-        const translation = el.getAttribute(`data-${lang}`);
-        if (translation) el.textContent = translation;
-      });
-      updateModeButtonText(lang, body.classList.contains('dark-mode'));
-    }
-
-    applyLanguage(savedLang);
-
-    langSwitcher.addEventListener('change', (e) => {
-      const newLang = e.target.value;
-      localStorage.setItem('lang', newLang);
-      document.documentElement.lang = newLang;
-      applyLanguage(newLang);
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
-
 </html>
