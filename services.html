@@ -3,33 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services – Vistoré</title>
+  <title>Vistoré | Services</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">Vistoré</div>
+
+  <!-- NAVBAR -->
+  <header>
+    <h1 class="logo">Vistoré</h1>
     <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="case-studies.html">Études de cas</a></li>
-        <li><a href="services.html" class="active">Services</a></li>
-      </ul>
+      <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+      <a href="services.html" data-fr="Services" data-en="Services">Services</a>
+      <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+      <button id="lang-btn">FR / EN</button>
+      <button id="dark-mode-toggle">🌙</button>
     </nav>
   </header>
 
-  <section class="construction">
-    <h1>🚧 En cours de construction</h1>
-    <p>Nous préparons quelque chose d’exceptionnel. Restez connectés.</p>
-    <p>En attendant, découvrez notre lecture recommandée :</p>
-    <a href="https://amzn.to/43vBtt5" target="_blank" class="cta">AI Engineering Book sur Amazon</a>
-  </section>
+  <!-- SECTION SERVICES -->
+  <main>
+    <section class="services">
+      <h2 data-fr="Nos Services" data-en="Our Services">Nos Services</h2>
 
+      <div class="service-card">
+        <h3>Développement Web</h3>
+        <p>Création de sites performants et modernes pour votre entreprise.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Intelligence Artificielle</h3>
+        <p>Solutions d’analyse de données et d’automatisation basées sur l’IA.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Conseil Digital</h3>
+        <p>Stratégies digitales sur mesure pour booster votre croissance.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 Vistoré. Tous droits réservés.</p>
+    <div class="footer-content">
+      <a href="#" class="footer-link" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales</a>
+      <span class="footer-logo">|</span>
+      <span data-fr="© 2025 Vistoré. Tous droits réservés."
+            data-en="© 2025 Vistoré. All rights reserved.">
+        © 2025 Vistoré. Tous droits réservés.
+      </span>
+      <span class="footer-logo">|</span>
+      <a href="mailto:sirallahm@gmail.com" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
+    </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
