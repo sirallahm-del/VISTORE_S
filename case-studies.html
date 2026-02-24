@@ -3,29 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Études de cas – Vistoré</title>
+  <title>Études de Cas | VISTORÉ</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="navbar">
-    <div class="logo">Vistoré</div>
-    <nav>
+    <div class="brand">VISTORÉ</div>
+    <nav class="main-nav">
       <ul>
         <li><a href="index.html">Accueil</a></li>
-        <li><a href="case-studies.html" class="active">Études de cas</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a class="active-link" href="case-studies.html">Études de Cas</a></li>
         <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    <div class="header-utils">
+      <button id="lang-btn">FR</button>
+      <button id="dark-mode-toggle">🌙</button>
+    </div>
   </header>
 
-  <section class="case">
-    <h1>Nos Études de Cas</h1>
-    <p>Découvrez comment Vistoré transforme la vision digitale en émotion et en impact.</p>
-    <p><i>Section en développement – bientôt disponible.</i></p>
-  </section>
+  <main class="page-container">
+    <section class="page-intro">
+      <h1 class="page-title">Nos Études de Cas</h1>
+      <p class="page-subtitle">Des cas concrets, avec impact business et excellence technique.</p>
+    </section>
+
+    <article class="case-study-card">
+      <div class="tags">
+        <span class="tag">Data</span>
+        <span class="tag">IA</span>
+        <span class="tag">Luxe</span>
+      </div>
+      <h2>Section en développement</h2>
+      <p class="description">Nous préparons des études détaillées de projets premium orientés performance, image de marque et innovation.</p>
+      <a href="contact.html" class="button outline">Discuter de votre projet</a>
+    </article>
+  </main>
 
   <footer>
-    <p>© 2025 Vistoré. Tous droits réservés.</p>
+    <div class="footer-content">
+      <a href="#" class="footer-link">Mentions Légales</a>
+      <span>|</span>
+      <span>© 2025 Vistoré. Tous droits réservés.</span>
+      <span>|</span>
+      <a href="contact.html" class="footer-link">Contact</a>
+    </div>
   </footer>
 
   <script src="script.js"></script>
