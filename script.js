@@ -16,4 +16,3 @@ langBtn.addEventListener('click', () => {
     langBtn.textContent = 'FR';
   }
 });
-
