@@ -3,57 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VISTORÉ - Data & IA Consulting</title>
+  <title>VISTORÉ</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header class="navbar">
-  <div class="brand">VISTORÉ</div>
+  <div class="logo">VISTORÉ</div>
 
   <nav>
-    <a href="index.html" class="active">Accueil</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
+    <a href="#" data-fr="Accueil" data-en="Home">Accueil</a>
+    <a href="#" data-fr="Services" data-en="Services">Services</a>
+    <a href="#" data-fr="Case Studies" data-en="Case Studies">Case Studies</a>
+    <a href="mailto:sirallahm@gmail.com" data-fr="Contact" data-en="Contact">Contact</a>
   </nav>
 
   <div class="controls">
-    <button id="lang-toggle">FR / EN</button>
-    <button id="dark-toggle">🌙</button>
+    <button id="langBtn">FR</button>
+    <button id="themeBtn">◐</button>
   </div>
 </header>
 
-<main class="hero">
-  <h1 id="title">Votre future partenaire Tech & IA</h1>
+<section class="hero">
+  <h1 data-fr="Votre partenaire stratégique en Data & IA"
+      data-en="Your Strategic Partner in Data & AI">
+      Votre partenaire stratégique en Data & IA
+  </h1>
 
-  <p id="description">
-    Des solutions Data & Intelligence Artificielle conçues avec rigueur,
-    élégance et vision stratégique.
+  <p data-fr="Exclusivité. Intelligence. Vision long terme."
+     data-en="Exclusivity. Intelligence. Long-term Vision.">
+     Exclusivité. Intelligence. Vision long terme.
   </p>
 
-  <a href="mailto:sirallahm@gmail.com" class="button">
-    Démarrer une collaboration
+  <a href="mailto:sirallahm@gmail.com" class="cta"
+     data-fr="Démarrer une collaboration"
+     data-en="Start a collaboration">
+     Démarrer une collaboration
   </a>
-</main>
+</section>
 
 <footer>
-  <div class="footer-content">
-    <span>© 2025 VISTORÉ. Tous droits réservés.</span>
-    <span>|</span>
-    <a href="mailto:sirallahm@gmail.com">Contact</a>
-  </div>
+  © 2025 VISTORÉ. Tous droits réservés.
 </footer>
-  <h1 data-fr="Votre future partenaire Tech & IA"
-    data-en="Your Future Tech & AI Partner">
-    Votre future partenaire Tech & IA
-</h1>
-
-<p data-fr="Des solutions Data & Intelligence Artificielle conçues avec rigueur."
-   data-en="Data & Artificial Intelligence solutions designed with precision.">
-   Des solutions Data & Intelligence Artificielle conçues avec rigueur.
-</p>
 
 <script src="script.js"></script>
 </body>
 </html>
-
