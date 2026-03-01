@@ -1,42 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vistoré | Études de Cas</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Studies - VISTORÉ</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="brand">Vistoré</div>
-        <div>
-            <a href="index.html" class="button">Accueil</a>
-            <a href="services.html" class="button">Services</a>
-            <a href="cas-etudes.html" class="button">Études de cas</a>
-            <button id="dark-mode-toggle">Mode Sombre / Clair</button>
-            <select id="lang-select">
-                <option value="fr">Français</option>
-                <option value="en">English</option>
-            </select>
-        </div>
-    </nav>
 
-    <!-- Page Title -->
-    <header class="page-header">
-        <h1>Études de Cas</h1>
-        <p>Découvrez bientôt nos projets exclusifs. Chaque cas est une opportunité rare, luxueuse et intemporelle.</p>
-    </header>
+<header class="navbar">
+  <div class="brand">VISTORÉ</div>
 
-    <!-- En construction / FOMO -->
-    <div class="construction fomo">
-        🚧 Nos études de cas sont en cours de construction… Patience, quelque chose d'unique arrive ! 🚧
-    </div>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="services.html">Services</a>
+    <a href="case-studies.html" class="active">Case Studies</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-    <footer>
-        &copy; 2025 Vistoré. Tous droits réservés.
-    </footer>
+  <div class="controls">
+    <button id="lang-toggle">FR / EN</button>
+    <button id="dark-toggle">🌙</button>
+  </div>
+</header>
 
-    <script src="script.js"></script>
+<main class="page">
+  <h1 data-fr="Études de Cas" data-en="Case Studies">
+    Études de Cas
+  </h1>
+
+  <div class="card">
+    <h3>AI Strategy</h3>
+    <p>Optimisation des performances via Data Intelligence.</p>
+  </div>
+
+  <div class="card">
+    <h3>Automation</h3>
+    <p>Implémentation d’outils d’automatisation intelligents.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <span>© 2025 VISTORÉ. Tous droits réservés.</span>
+    <span>|</span>
+    <a href="mailto:sirallahm@gmail.com">Contact</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
