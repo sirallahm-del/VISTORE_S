@@ -1,55 +1,52 @@
-<!DOCTYPE html>
+
+   <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vistoré | Accueil</title>
+  <title>Vistoré – L'Art du Digital de Luxe</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- NAVBAR -->
-  <header>
-    <h1 class="logo">Vistoré</h1>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Vistoré</div>
     <nav>
-      <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
-      <a href="services.html" data-fr="Services" data-en="Services">Services</a>
-      <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
-      <button id="lang-btn">FR / EN</button>
-      <button id="dark-mode-toggle">🌙</button>
+      <ul>
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="case-studies.html">Études de cas</a></li>
+        <li><a href="services.html">Services</a></li>
+      </ul>
     </nav>
+    <div class="controls">
+      <button id="lang-btn">FR</button>
+      <button id="dark-mode-toggle">🌙</button>
+    </div>
   </header>
 
-  <!-- SECTION PRINCIPALE -->
-  <main>
-    <section class="hero">
-      <h2 data-fr="Innovation. Intelligence. Impact." data-en="Innovation. Intelligence. Impact.">
-        Innovation. Intelligence. Impact.
-      </h2>
-      <p data-fr="Vistoré accompagne les entreprises vers un futur plus intelligent et plus connecté."
-         data-en="Vistoré guides companies towards a smarter and more connected future.">
-         Vistoré accompagne les entreprises vers un futur plus intelligent et plus connecté.
-      </p>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Vistoré</h1>
+      <p>Où la technologie, la créativité et la psychologie se rencontrent pour redéfinir le digital de luxe.</p>
+      <a href="services.html" class="cta">Découvrir nos services</a>
+    </div>
+  </section>
 
-      <a href="mailto:sirallahm@gmail.com" class="button outline"
-         data-fr="Démarrer une Collaboration"
-         data-en="Start a Collaboration">
-         Démarrer une Collaboration
-      </a>
-    </section>
-  </main>
+  <!-- Vision -->
+  <section class="about">
+    <h2>Notre Vision</h2>
+    <p>
+      De la conception étudiante à un mouvement mondial, <strong>Vistoré</strong> incarne une
+      approche du digital où chaque interaction devient une expérience esthétique, émotionnelle et stratégique.
+    </p>
+  </section>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <a href="#" class="footer-link" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales</a>
-      <span class="footer-logo">|</span>
-      <span data-fr="© 2025 Vistoré. Tous droits réservés."
-            data-en="© 2025 Vistoré. All rights reserved.">
-        © 2025 Vistoré. Tous droits réservés.
-      </span>
-      <span class="footer-logo">|</span>
-      <a href="mailto:sirallahm@gmail.com" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
+      <p>© 2025 <strong>Vistoré</strong>. Tous droits réservés.</p>
+      <p><a href="mailto:contact@vistore.com">Contact</a> | <a href="mentions-legales.html">Mentions légales</a></p>
     </div>
   </footer>
 
