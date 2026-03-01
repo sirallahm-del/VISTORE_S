@@ -1,16 +1,16 @@
-// ===== DARK MODE =====
-const darkBtn = document.getElementById("dark-toggle");
-
-darkBtn.addEventListener("click", () => {
-  document.body.classList.toggle("light-mode");
+// THEME
+const themeBtn = document.getElementById("themeBtn");
+themeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("light");
 });
 
-// ===== LANGUAGE SWITCH =====
-const langBtn = document.getElementById("lang-toggle");
+// LANGUAGE
+const langBtn = document.getElementById("langBtn");
 let currentLang = "fr";
 
 langBtn.addEventListener("click", () => {
   currentLang = currentLang === "fr" ? "en" : "fr";
+  langBtn.textContent = currentLang.toUpperCase();
 
   document.querySelectorAll("[data-fr]").forEach(el => {
     el.textContent = el.getAttribute("data-" + currentLang);
