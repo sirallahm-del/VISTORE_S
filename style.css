@@ -1,24 +1,122 @@
-/* FOOTER */
-footer {
-  background: var(--bg-color);
-  border-top: 1px solid var(--border-color);
-  padding: 25px 0;
-  text-align: center;
-  font-size: 0.95rem;
-  color: var(--text-color);
+:root {
+  --bg-light: #fafafa;
+  --text-light: #1a1a1a;
+  --bg-dark: #0f0f0f;
+  --text-dark: #f5f5f5;
+  --accent: #b89b5e;
 }
 
-.footer-link {
-  color: var(--text-color);
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: 0.3s ease;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 3rem;
+  background: transparent;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.navbar a {
   text-decoration: none;
-  margin: 0 6px;
-  transition: color 0.3s ease;
+  color: inherit;
+  font-weight: 500;
 }
 
-.footer-link:hover {
-  color: var(--accent-color);
+.navbar a.active {
+  color: var(--accent);
 }
 
-.footer-logo {
-  opacity: 0.7;
+.controls button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(120deg, #1a1a1a, #3a2e1f);
+  color: white;
+}
+
+.cta {
+  margin-top: 1.5rem;
+  background: var(--accent);
+  color: white;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.cta:hover {
+  background: #d3b86e;
+}
+
+/* About */
+.about {
+  max-width: 800px;
+  margin: 5rem auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  color: #ddd;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Dark Mode */
+.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.dark .navbar, .dark footer {
+  background: #111;
+  color: #ddd;
 }
