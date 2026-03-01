@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services – Vistoré</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vistoré | Services</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">Vistoré</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="case-studies.html">Études de cas</a></li>
-        <li><a href="services.html" class="active">Services</a></li>
-      </ul>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="brand">Vistoré</div>
+        <div>
+            <a href="index.html" class="button">Accueil</a>
+            <a href="services.html" class="button">Services</a>
+            <a href="cas-etudes.html" class="button">Études de cas</a>
+            <button id="dark-mode-toggle">Mode Sombre / Clair</button>
+            <select id="lang-select">
+                <option value="fr">Français</option>
+                <option value="en">English</option>
+            </select>
+        </div>
     </nav>
-  </header>
 
-  <section class="construction">
-    <h1>🚧 En cours de construction</h1>
-    <p>Nous préparons quelque chose d’exceptionnel. Restez connectés.</p>
-    <p>En attendant, découvrez notre lecture recommandée :</p>
-    <a href="https://amzn.to/43vBtt5" target="_blank" class="cta">AI Engineering Book sur Amazon</a>
-  </section>
+    <!-- Page Title -->
+    <header class="page-header">
+        <h1>Nos Services</h1>
+        <p>Chaque service est pensé pour combiner technologie, créativité et psychologie du luxe. Restez attentif, nos offres exclusives arrivent bientôt.</p>
+    </header>
 
-  <footer>
-    <p>© 2025 Vistoré. Tous droits réservés.</p>
-  </footer>
+    <!-- En construction / FOMO -->
+    <div class="construction fomo">
+        🚧 Nos services sont en cours de construction… Patience, quelque chose d'unique arrive ! 🚧
+    </div>
 
-  <script src="script.js"></script>
+    <!-- Amazon Affiliate / Dons -->
+    <section class="support">
+        <h3>Supportez nos projets</h3>
+        <p>Achetez nos livres via Amazon ou faites un don pour soutenir notre vision du futur digital et du luxe.</p>
+        <div>
+            <a href="https://amzn.to/43vBtt5" class="button">Amazon</a>
+            <a href="#" class="button">Faire un don</a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Vistoré. Tous droits réservés.
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
