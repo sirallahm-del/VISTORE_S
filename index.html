@@ -1,50 +1,58 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vistoré | Accueil</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vistoré | Accueil</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="brand">Vistoré</div>
-        <div>
-            <a href="index.html" class="button">Accueil</a>
-            <a href="services.html" class="button">Services</a>
-            <a href="cas-etudes.html" class="button">Études de cas</a>
-            <button id="dark-mode-toggle">Mode Sombre / Clair</button>
-            <select id="lang-select">
-                <option value="fr">Français</option>
-                <option value="en">English</option>
-            </select>
-        </div>
+
+  <!-- NAVBAR -->
+  <header>
+    <h1 class="logo">Vistoré</h1>
+    <nav>
+      <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+      <a href="services.html" data-fr="Services" data-en="Services">Services</a>
+      <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+      <button id="lang-btn">FR / EN</button>
+      <button id="dark-mode-toggle">🌙</button>
     </nav>
+  </header>
 
-    <!-- Hero Section -->
+  <!-- SECTION PRINCIPALE -->
+  <main>
     <section class="hero">
-        <h1>Bienvenue chez Vistoré</h1>
-        <p>Votre futur partenaire tech et AI | Portfolio & Startup</p>
-        <button class="btn">Découvrir Nos Services</button>
+      <h2 data-fr="Innovation. Intelligence. Impact." data-en="Innovation. Intelligence. Impact.">
+        Innovation. Intelligence. Impact.
+      </h2>
+      <p data-fr="Vistoré accompagne les entreprises vers un futur plus intelligent et plus connecté."
+         data-en="Vistoré guides companies towards a smarter and more connected future.">
+         Vistoré accompagne les entreprises vers un futur plus intelligent et plus connecté.
+      </p>
+
+      <a href="mailto:sirallahm@gmail.com" class="button outline"
+         data-fr="Démarrer une Collaboration"
+         data-en="Start a Collaboration">
+         Démarrer une Collaboration
+      </a>
     </section>
+  </main>
 
-    <!-- Services teaser -->
-    <section>
-        <h2>Nos Services</h2>
-        <p>Des services exclusifs combinant technologie, créativité et luxe. Découvrez bientôt !</p>
-    </section>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <a href="#" class="footer-link" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales</a>
+      <span class="footer-logo">|</span>
+      <span data-fr="© 2025 Vistoré. Tous droits réservés."
+            data-en="© 2025 Vistoré. All rights reserved.">
+        © 2025 Vistoré. Tous droits réservés.
+      </span>
+      <span class="footer-logo">|</span>
+      <a href="mailto:sirallahm@gmail.com" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
+    </div>
+  </footer>
 
-    <!-- Études de Cas teaser -->
-    <section>
-        <h2>Études de Cas</h2>
-        <p>Projets et réalisations exclusifs. Patience, chaque cas est unique et luxueux.</p>
-    </section>
-
-    <footer>
-        &copy; 2025 Vistoré. Tous droits réservés.
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
