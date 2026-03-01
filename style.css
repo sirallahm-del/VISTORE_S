@@ -107,3 +107,67 @@ footer {
   background: var(--white);
   color: var(--navy);
 }
+/* ========================= */
+/* RESPONSIVE DESIGN */
+/* ========================= */
+
+/* Tablettes */
+@media (max-width: 1024px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .page {
+    padding: 60px 20px;
+  }
+}
+
+/* Téléphones */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 20px;
+  }
+
+  .navbar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .hero h1,
+  .page h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p,
+  .page p {
+    font-size: 1rem;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+
+  .hero h1,
+  .page h1 {
+    font-size: 1.5rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
