@@ -1,29 +1,18 @@
-// Dark mode
+// ===== DARK MODE =====
 const darkBtn = document.getElementById("dark-toggle");
+
 darkBtn.addEventListener("click", () => {
-  document.body.classList.toggle("light");
+  document.body.classList.toggle("light-mode");
 });
 
-// Language toggle simple
+// ===== LANGUAGE SWITCH =====
 const langBtn = document.getElementById("lang-toggle");
-
-let isEnglish = false;
+let currentLang = "fr";
 
 langBtn.addEventListener("click", () => {
-  isEnglish = !isEnglish;
+  currentLang = currentLang === "fr" ? "en" : "fr";
 
-  const title = document.getElementById("title");
-  const description = document.getElementById("description");
-
-  if (title && description) {
-    if (isEnglish) {
-      title.textContent = "Your Future Tech & AI Partner";
-      description.textContent =
-        "Data & Artificial Intelligence solutions designed with precision and strategic vision.";
-    } else {
-      title.textContent = "Votre future partenaire Tech & IA";
-      description.textContent =
-        "Des solutions Data & Intelligence Artificielle conçues avec rigueur, élégance et vision stratégique.";
-    }
-  }
+  document.querySelectorAll("[data-fr]").forEach(el => {
+    el.textContent = el.getAttribute("data-" + currentLang);
+  });
 });
