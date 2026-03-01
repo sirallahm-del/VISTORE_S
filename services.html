@@ -1,52 +1,61 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vistoré | Services</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vistoré | Services</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="brand">Vistoré</div>
-        <div>
-            <a href="index.html" class="button">Accueil</a>
-            <a href="services.html" class="button">Services</a>
-            <a href="cas-etudes.html" class="button">Études de cas</a>
-            <button id="dark-mode-toggle">Mode Sombre / Clair</button>
-            <select id="lang-select">
-                <option value="fr">Français</option>
-                <option value="en">English</option>
-            </select>
-        </div>
+
+  <!-- NAVBAR -->
+  <header>
+    <h1 class="logo">Vistoré</h1>
+    <nav>
+      <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+      <a href="services.html" data-fr="Services" data-en="Services">Services</a>
+      <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+      <button id="lang-btn">FR / EN</button>
+      <button id="dark-mode-toggle">🌙</button>
     </nav>
+  </header>
 
-    <!-- Page Title -->
-    <header class="page-header">
-        <h1>Nos Services</h1>
-        <p>Chaque service est pensé pour combiner technologie, créativité et psychologie du luxe. Restez attentif, nos offres exclusives arrivent bientôt.</p>
-    </header>
+  <!-- SECTION SERVICES -->
+  <main>
+    <section class="services">
+      <h2 data-fr="Nos Services" data-en="Our Services">Nos Services</h2>
 
-    <!-- En construction / FOMO -->
-    <div class="construction fomo">
-        🚧 Nos services sont en cours de construction… Patience, quelque chose d'unique arrive ! 🚧
-    </div>
+      <div class="service-card">
+        <h3>Développement Web</h3>
+        <p>Création de sites performants et modernes pour votre entreprise.</p>
+      </div>
 
-    <!-- Amazon Affiliate / Dons -->
-    <section class="support">
-        <h3>Supportez nos projets</h3>
-        <p>Achetez nos livres via Amazon ou faites un don pour soutenir notre vision du futur digital et du luxe.</p>
-        <div>
-            <a href="https://amzn.to/43vBtt5" class="button">Amazon</a>
-            <a href="#" class="button">Faire un don</a>
-        </div>
+      <div class="service-card">
+        <h3>Intelligence Artificielle</h3>
+        <p>Solutions d’analyse de données et d’automatisation basées sur l’IA.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Conseil Digital</h3>
+        <p>Stratégies digitales sur mesure pour booster votre croissance.</p>
+      </div>
     </section>
+  </main>
 
-    <footer>
-        &copy; 2025 Vistoré. Tous droits réservés.
-    </footer>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <a href="#" class="footer-link" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales</a>
+      <span class="footer-logo">|</span>
+      <span data-fr="© 2025 Vistoré. Tous droits réservés."
+            data-en="© 2025 Vistoré. All rights reserved.">
+        © 2025 Vistoré. Tous droits réservés.
+      </span>
+      <span class="footer-logo">|</span>
+      <a href="mailto:sirallahm@gmail.com" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
