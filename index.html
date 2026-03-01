@@ -1,49 +1,50 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vistoré – L'Art du Digital de Luxe</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vistoré | Accueil</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">Vistoré</div>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Accueil</a></li>
-        <li><a href="case-studies.html">Études de cas</a></li>
-        <li><a href="services.html">Services</a></li>
-      </ul>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="brand">Vistoré</div>
+        <div>
+            <a href="index.html" class="button">Accueil</a>
+            <a href="services.html" class="button">Services</a>
+            <a href="cas-etudes.html" class="button">Études de cas</a>
+            <button id="dark-mode-toggle">Mode Sombre / Clair</button>
+            <select id="lang-select">
+                <option value="fr">Français</option>
+                <option value="en">English</option>
+            </select>
+        </div>
     </nav>
-    <div class="controls">
-      <button id="lang-btn">FR</button>
-      <button id="dark-mode-toggle">🌙</button>
-    </div>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Vistoré</h1>
-    <p>Où la technologie, la créativité et la psychologie se rencontrent pour créer l’avenir du digital de luxe.</p>
-    <a href="services.html" class="cta">Découvrir nos services</a>
-  </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Bienvenue chez Vistoré</h1>
+        <p>Votre futur partenaire tech et AI | Portfolio & Startup</p>
+        <button class="btn">Découvrir Nos Services</button>
+    </section>
 
-  <!-- About -->
-  <section class="about">
-    <h2>Notre Vision</h2>
-    <p>
-      De la conception étudiante à un phénomène mondial, Vistoré incarne une révolution du digital où
-      chaque projet devient une expérience émotionnelle et esthétique.
-    </p>
-  </section>
+    <!-- Services teaser -->
+    <section>
+        <h2>Nos Services</h2>
+        <p>Des services exclusifs combinant technologie, créativité et luxe. Découvrez bientôt !</p>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Vistoré. Tous droits réservés.</p>
-  </footer>
+    <!-- Études de Cas teaser -->
+    <section>
+        <h2>Études de Cas</h2>
+        <p>Projets et réalisations exclusifs. Patience, chaque cas est unique et luxueux.</p>
+    </section>
 
-  <script src="script.js"></script>
+    <footer>
+        &copy; 2025 Vistoré. Tous droits réservés.
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
