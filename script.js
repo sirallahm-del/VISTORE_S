@@ -16,3 +16,11 @@ langBtn.addEventListener("click", () => {
     el.textContent = el.getAttribute("data-" + currentLang);
   });
 });
+// HAMBURGER TOGGLE
+const hamburger = document.getElementById('hamburger');
+const mainNav = document.getElementById('mainNav');
+
+hamburger.addEventListener('click', () => {
+    mainNav.classList.toggle('active');
+});
+
