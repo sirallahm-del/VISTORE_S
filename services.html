@@ -3,53 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services - VISTORÉ</title>
+  <title>Vistoré | Services</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="navbar">
-  <div class="brand">VISTORÉ</div>
+  <!-- NAVBAR -->
+  <header>
+    <h1 class="logo">Vistoré</h1>
+    <nav>
+      <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+      <a href="services.html" data-fr="Services" data-en="Services">Services</a>
+      <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+      <button id="lang-btn">FR / EN</button>
+      <button id="dark-mode-toggle">🌙</button>
+    </nav>
+  </header>
 
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="services.html" class="active">Services</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <!-- SECTION SERVICES -->
+  <main>
+    <section class="services">
+      <h2 data-fr="Nos Services" data-en="Our Services">Nos Services</h2>
 
-  <div class="controls">
-    <button id="lang-toggle">FR / EN</button>
-    <button id="dark-toggle">🌙</button>
-  </div>
-</header>
+      <div class="service-card">
+        <h3>Développement Web</h3>
+        <p>Création de sites performants et modernes pour votre entreprise.</p>
+      </div>
 
-<main class="page">
-  <h1>Nos Services</h1>
+      <div class="service-card">
+        <h3>Intelligence Artificielle</h3>
+        <p>Solutions d’analyse de données et d’automatisation basées sur l’IA.</p>
+      </div>
 
-  <div class="card">
-    <h3>Data Science</h3>
-    <p>Analyse avancée et valorisation stratégique des données.</p>
-  </div>
+      <div class="service-card">
+        <h3>Conseil Digital</h3>
+        <p>Stratégies digitales sur mesure pour booster votre croissance.</p>
+      </div>
+    </section>
+  </main>
 
-  <div class="card">
-    <h3>Intelligence Artificielle</h3>
-    <p>Automatisation et solutions IA sur mesure.</p>
-  </div>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <a href="#" class="footer-link" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales</a>
+      <span class="footer-logo">|</span>
+      <span data-fr="© 2025 Vistoré. Tous droits réservés."
+            data-en="© 2025 Vistoré. All rights reserved.">
+        © 2025 Vistoré. Tous droits réservés.
+      </span>
+      <span class="footer-logo">|</span>
+      <a href="mailto:sirallahm@gmail.com" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
+    </div>
+  </footer>
 
-  <div class="card">
-    <h3>Consulting Digital</h3>
-    <p>Accompagnement stratégique pour votre croissance.</p>
-  </div>
-</main>
-
-<footer>
-  <div class="footer-content">
-    <span>© 2025 VISTORÉ. Tous droits réservés.</span>
-    <span>|</span>
-    <a href="mailto:sirallahm@gmail.com">Contact</a>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
