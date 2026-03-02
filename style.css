@@ -452,4 +452,29 @@ footer {
   }
 
 }
+@media (max-width: 768px) {
+
+  .hero h1 {
+    font-size: 1.9rem;
+    line-height: 1.25;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .cta,
+  .hero .button {
+    width: 100%;
+    max-width: 320px;
+    margin: 20px auto 0 auto;
+    display: block;
+    border-radius: 10px;
+  }
+
+}
+
 
