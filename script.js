@@ -1,58 +1,34 @@
-// THEME
-const themeBtn = document.getElementById("themeBtn");
-themeBtn.addEventListener("click", () => {
-  document.body.classList.toggle("light");
-});
+// DARK MODE
+const darkBtn = document.getElementById("dark-mode-toggle");
 
-// LANGUAGE
-const langBtn = document.getElementById("langBtn");
-let currentLang = "fr";
+if (darkBtn) {
+    darkBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+    });
+}
 
-langBtn.addEventListener("click", () => {
-  currentLang = currentLang === "fr" ? "en" : "fr";
-  langBtn.textContent = currentLang.toUpperCase();
+// LANGUAGE SWITCH
+const langSwitcher = document.getElementById("language-switcher");
 
-  document.querySelectorAll("[data-fr]").forEach(el => {
-    el.textContent = el.getAttribute("data-" + currentLang);
-  });
-});
-// HAMBURGER TOGGLE
-const hamburger = document.getElementById('hamburger');
-const mainNav = document.getElementById('mainNav');
+if (langSwitcher) {
+    langSwitcher.addEventListener("change", (e) => {
+        const lang = e.target.value;
 
-hamburger.addEventListener('click', () => {
-    mainNav.classList.toggle('active');
-});
-<header class="navbar">
-    <div class="brand">VISTORÉ</div>
+        document.querySelectorAll("[data-fr]").forEach(el => {
+            const translation = el.getAttribute("data-" + lang);
+            if (translation) el.textContent = translation;
+        });
+    });
+}
 
-    <!-- Hamburger -->
-    <div class="hamburger" id="hamburger">
-        ☰
-    </div>
+// HAMBURGER
+const hamburger = document.getElementById("hamburger");
+const mainNav = document.getElementById("mainNav");
 
-    <nav class="main-nav" id="mainNav">
-        <ul>
-            <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
-            <li><a href="profil.html" data-fr="Profil" data-en="Profile">Profil</a></li>
-            <li><a href="case-studies.html" data-fr="Études de Cas" data-en="Case Studies">Études de Cas</a></li>
-            <li><a href="services.html" data-fr="Services" data-en="Services">Services</a></li>
-            <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="header-utils">
-        <select id="language-switcher" class="util-select">
-            <option value="fr">FR</option>
-            <option value="en">EN</option>
-        </select>
-
-        <button id="dark-mode-toggle" class="util-button"
-            data-fr="Mode Sombre"
-            data-en="Dark Mode">
-            Mode Sombre
-        </button>
-    </div>
-</header>
+if (hamburger && mainNav) {
+    hamburger.addEventListener("click", () => {
+        mainNav.classList.toggle("active");
+    });
+}
 
 
