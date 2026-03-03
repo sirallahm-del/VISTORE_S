@@ -1,4 +1,3 @@
-/* 1. VARIABLES */
 :root {
     --bg-color: #0F1626;
     --text-color: #F8F8F8;
@@ -8,7 +7,7 @@
     --font-sans: 'Inter', sans-serif;
 }
 
-/* 2. GLOBAL */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -16,26 +15,23 @@
 }
 
 body {
-    background-color: var(--bg-color);
+    background: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-sans);
     min-height: 100vh;
     padding: 20px;
-    transition: background-color 0.4s, color 0.4s;
+    transition: 0.4s;
 }
 
-/* ========================= */
-/* 3. NAVBAR (DESKTOP) */
-/* ========================= */
+/* ================= NAVBAR ================= */
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
-    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
 
 .brand {
@@ -53,13 +49,11 @@ body {
     color: var(--text-color);
     margin-left: 30px;
     font-weight: 400;
-    opacity: 0.9;
     transition: 0.3s;
 }
 
 .main-nav ul li a:hover {
     color: var(--accent-color);
-    opacity: 1;
 }
 
 .active-link {
@@ -67,54 +61,31 @@ body {
     font-weight: 700 !important;
 }
 
-/* UTIL BUTTONS */
-
+/* UTIL */
 .header-utils {
     display: flex;
-    align-items: center;
     gap: 10px;
+    align-items: center;
 }
 
 .util-button,
 .util-select {
     padding: 8px 12px;
-    font-weight: 500;
+    border: 1px solid var(--accent-color);
+    background: transparent;
+    color: var(--text-color);
     border-radius: 4px;
-    font-size: 0.85rem;
     cursor: pointer;
-    transition: 0.2s;
 }
 
-.util-button {
-    background: transparent;
-    border: 1px solid var(--accent-color);
-    color: var(--text-color);
-}
-
-.util-button:hover {
-    background: var(--accent-color);
-    color: var(--bg-color);
-}
-
-.util-select {
-    background: transparent;
-    border: 1px solid var(--accent-color);
-    color: var(--text-color);
-}
-
-/* ========================= */
 /* HAMBURGER */
-/* ========================= */
-
 .hamburger {
     display: none;
     font-size: 1.8rem;
     cursor: pointer;
 }
 
-/* ========================= */
-/* HERO */
-/* ========================= */
+/* ================= HERO ================= */
 
 .hero-section {
     display: flex;
@@ -129,7 +100,6 @@ body {
 }
 
 .subtitle {
-    font-size: 1rem;
     font-weight: 700;
     color: var(--accent-color);
     letter-spacing: 2px;
@@ -159,8 +129,8 @@ h1 {
 }
 
 .button {
-    text-decoration: none;
     padding: 15px 30px;
+    text-decoration: none;
     font-weight: 700;
     border-radius: 5px;
     transition: 0.3s;
@@ -172,58 +142,30 @@ h1 {
     border: 2px solid var(--text-color);
 }
 
-.button.filled:hover {
-    background: var(--accent-color);
-    border-color: var(--accent-color);
-}
-
 .button.outline {
     background: transparent;
-    color: var(--accent-color);
     border: 2px solid var(--accent-color);
+    color: var(--accent-color);
 }
 
-.button.outline:hover {
-    background: var(--accent-color);
-    color: var(--bg-color);
-}
-
-/* ========================= */
-/* DARK MODE */
-/* ========================= */
+/* ================= DARK MODE ================= */
 
 .dark-mode {
     --bg-color: var(--dark-bg-color);
     --text-color: var(--dark-text-color);
 }
 
-/* ========================= */
-/* FOOTER */
-/* ========================= */
+/* ================= FOOTER ================= */
 
 footer {
-    padding: 30px 20px;
-    margin-top: 50px;
+    margin-top: 60px;
+    padding-top: 30px;
     border-top: 1px solid var(--accent-color);
     text-align: center;
-    font-size: 0.85rem;
-    color: var(--accent-color);
     opacity: 0.7;
 }
 
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-/* ========================= */
-/* MOBILE */
-/* ========================= */
+/* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
 
@@ -234,7 +176,7 @@ footer {
     .main-nav {
         display: none;
         width: 100%;
-        margin-top: 15px;
+        margin-top: 20px;
     }
 
     .main-nav.active {
