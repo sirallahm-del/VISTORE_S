@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-fr="Profil | VISTORÉ" data-en="Profile | VISTORÉ">Profil | VISTORÉ</title>
-
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
     <header class="navbar">
         <div class="brand">VISTORÉ</div>
-
-        <nav class="main-nav">
+        <div class="hamburger" id="hamburger">☰</div>
+        <nav class="main-nav" id="mainNav">
             <ul>
                 <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
                 <li><a href="profil.html" class="active-link" data-fr="Profil" data-en="Profile">Profil</a></li>
@@ -24,7 +21,6 @@
                 <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
             </ul>
         </nav>
-
         <div class="header-utils">
             <select id="language-switcher" class="util-select">
                 <option value="fr">FR</option>
@@ -36,7 +32,6 @@
 
     <main class="page-container">
 
-        <!-- INTRO -->
         <section class="page-intro">
             <h1 class="page-title"
                 data-fr="Sirallah Makhlouf"
@@ -44,165 +39,65 @@
                 Sirallah Makhlouf
             </h1>
             <p class="page-subtitle"
-                data-fr="Fondatrice de VISTORÉ · Étudiante en Informatique Appliquée · Data & IA · Casablanca, Maroc"
-                data-en="Founder of VISTORÉ · Computer Science Student · Data & AI · Casablanca, Morocco">
-                Fondatrice de VISTORÉ · Étudiante en Informatique Appliquée · Data & IA · Casablanca, Maroc
+                data-fr="Fondatrice de VISTORÉ · Informatique Appliquée, UM5 · Data & IA · Casablanca"
+                data-en="Founder of VISTORÉ · Applied Computer Science, UM5 · Data & AI · Casablanca">
+                Fondatrice de VISTORÉ · Informatique Appliquée, UM5 · Data & IA · Casablanca
             </p>
         </section>
 
-        <!-- QUI SUIS-JE -->
         <div class="content-card">
-            <h2 data-fr="Qui suis-je ?" data-en="Who Am I?">Qui suis-je ?</h2>
-            <p data-fr="Étudiante en Licence Informatique Appliquée à l'Université Mohammed V de Casablanca, spécialisée en Data Science et Intelligence Artificielle. J'ai fondé VISTORÉ avec une conviction simple : les entreprises marocaines méritent des solutions IA de niveau international, pensées avec rigueur et livrées avec élégance. Mon profil combine expertise technique, expérience terrain en logistique et import-export, et une capacité prouvée à exécuter sous pression — comme lors du Hackathon NASA Space Apps 2025."
-                data-en="Computer Science student at Mohammed V University in Casablanca, specializing in Data Science and Artificial Intelligence. I founded VISTORÉ with one conviction: Moroccan businesses deserve international-level AI solutions, built with rigor and delivered with elegance. My profile combines technical expertise, hands-on experience in logistics and import-export, and a proven ability to execute under pressure — as demonstrated at the NASA Space Apps Hackathon 2025.">
-                Étudiante en Licence Informatique Appliquée à l'Université Mohammed V de Casablanca, spécialisée en Data Science et Intelligence Artificielle. J'ai fondé VISTORÉ avec une conviction simple : les entreprises méritent des solutions IA de niveau international, pensées avec rigueur et livrées avec élégance. Mon profil combine expertise technique, expérience terrain en logistique, et une capacité prouvée à exécuter sous pression — comme lors du <strong>Hackathon NASA Space Apps 2025</strong>.
+            <h2 data-fr="À propos" data-en="About">À propos</h2>
+            <p data-fr="Étudiante en S2 Informatique Appliquée à l'Université Mohammed V, spécialisée en Data Science et IA. Fondatrice de VISTORÉ — une startup qui aide les entreprises à intégrer l'IA dans leurs opérations. Hackathon NASA 2025, CS50 Harvard, Ambassadrice UM5 2026/2027."
+               data-en="2nd year Applied Computer Science student at Mohammed V University, specializing in Data Science and AI. Founder of VISTORÉ — a startup helping businesses integrate AI into their operations. NASA Hackathon 2025, CS50 Harvard, UM5 Ambassador 2026/2027.">
+                Étudiante en S2 Informatique Appliquée à l'Université Mohammed V, spécialisée en Data Science et IA. Fondatrice de VISTORÉ — une startup qui aide les entreprises à intégrer l'IA dans leurs opérations. Hackathon NASA 2025, CS50 Harvard, Ambassadrice UM5 2026/2027.
             </p>
         </div>
 
-        <!-- COMPÉTENCES -->
         <div class="content-card">
-            <h2 data-fr="Compétences Techniques" data-en="Technical Skills">Compétences Techniques</h2>
-            <div class="tags" style="margin-top: 1rem;">
+            <h2 data-fr="Compétences" data-en="Skills">Compétences</h2>
+            <div class="tags" style="margin-top: 14px;">
                 <span class="tag">Python</span>
                 <span class="tag">SQL</span>
                 <span class="tag">C</span>
-                <span class="tag">Algorithmique</span>
-                <span class="tag">Excel Avancé</span>
-                <span class="tag">Google Cloud Platform</span>
+                <span class="tag">Google Cloud</span>
                 <span class="tag">Google Earth Engine</span>
+                <span class="tag">Excel Avancé</span>
                 <span class="tag">Git / GitHub</span>
-                <span class="tag">Analyse de données</span>
-                <span class="tag">Télédétection (Landsat/SRTM)</span>
+                <span class="tag">Algorithmique</span>
             </div>
-            <div class="tags" style="margin-top: 1rem;">
-                <span class="tag">🇲🇦 Arabe — Maternelle</span>
-                <span class="tag">🇫🇷 Français — Courant</span>
-                <span class="tag">🇺🇸 Anglais — Avancé</span>
+            <div class="tags" style="margin-top: 10px;">
+                <span class="tag">Arabe — Maternelle</span>
+                <span class="tag">Français — Courant</span>
+                <span class="tag">Anglais — Avancé</span>
             </div>
         </div>
 
-        <!-- FORMATION -->
         <div class="content-card">
-            <h2 data-fr="Formation" data-en="Education">Formation</h2>
+            <h2 data-fr="Réalisations clés" data-en="Key Achievements">Réalisations clés</h2>
 
-            <div style="margin-bottom: 1.5rem;">
-                <h3 data-fr="Licence Informatique Appliquée — Université Mohammed V, FSR"
-                    data-en="Bachelor in Applied Computer Science — Mohammed V University, FSR">
-                    Licence Informatique Appliquée — Université Mohammed V, FSR
-                </h3>
-                <p data-fr="2025 – Présent · Casablanca, Maroc · Spécialisation Data Science & Intelligence Artificielle"
-                   data-en="2025 – Present · Casablanca, Morocco · Data Science & AI specialization">
-                    2025 – Présent · Casablanca, Maroc · Spécialisation Data Science & IA
-                </p>
+            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border);">
+                <h3 data-fr="🚀 Hackathon NASA Space Apps 2025" data-en="🚀 NASA Space Apps Hackathon 2025">🚀 Hackathon NASA Space Apps 2025</h3>
+                <p data-fr="Projet GaiaByte — pipeline Python pour données satellitaires, livré en 48h en compétition internationale." data-en="GaiaByte project — Python pipeline for satellite data, delivered in 48h in international competition.">Projet GaiaByte — pipeline Python pour données satellitaires, livré en 48h en compétition internationale.</p>
+            </div>
+
+            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border);">
+                <h3 data-fr="🎓 CS50 — Harvard University (En cours)" data-en="🎓 CS50 — Harvard University (In Progress)">🎓 CS50 — Harvard University (En cours)</h3>
+                <p data-fr="Python · C · SQL · Algorithmique via edX." data-en="Python · C · SQL · Algorithms via edX.">Python · C · SQL · Algorithmique via edX.</p>
+            </div>
+
+            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border);">
+                <h3 data-fr="🗄️ Certified Database Practitioner — DBA Academy" data-en="🗄️ Certified Database Practitioner — DBA Academy">🗄️ Certified Database Practitioner — DBA Academy</h3>
+                <p data-fr="Janvier 2026 · ID : 7135447035SM" data-en="January 2026 · ID: 7135447035SM">Janvier 2026 · ID : 7135447035SM</p>
             </div>
 
             <div>
-                <h3 data-fr="Baccalauréat Scientifique — Option Physique-Chimie"
-                    data-en="Scientific Baccalaureate — Physics-Chemistry">
-                    Baccalauréat Scientifique — Option Physique-Chimie
-                </h3>
-                <p data-fr="2025 · Maroc"
-                   data-en="2025 · Morocco">
-                    2025 · Maroc
-                </p>
+                <h3 data-fr="🏛️ Ambassadrice Étudiante — Université Mohammed V" data-en="🏛️ Student Ambassador — Mohammed V University">🏛️ Ambassadrice Étudiante — Université Mohammed V</h3>
+                <p data-fr="2026 / 2027 — Représentation officielle de l'université." data-en="2026 / 2027 — Official university representative.">2026 / 2027 — Représentation officielle de l'université.</p>
             </div>
         </div>
 
-        <!-- EXPÉRIENCE -->
-        <div class="content-card">
-            <h2 data-fr="Expérience Professionnelle" data-en="Professional Experience">Expérience Professionnelle</h2>
-
-            <div style="margin-bottom: 1.5rem;">
-                <h3 data-fr="Stagiaire Logistique — Gama International"
-                    data-en="Logistics Intern — Gama International">
-                    Stagiaire Logistique — Gama International
-                </h3>
-                <p data-fr="Juin 2025 · Analyse des flux logistiques, optimisation du suivi documentaire via Excel, coordination clients/fournisseurs."
-                   data-en="June 2025 · Logistics flow analysis, documentation tracking optimization via Excel, client/supplier coordination.">
-                    Juin 2025 · Analyse des flux logistiques, optimisation du suivi documentaire via Excel, coordination clients/fournisseurs.
-                </p>
-            </div>
-
-            <div style="margin-bottom: 1.5rem;">
-                <h3 data-fr="Stagiaire Export / Import — ANKH"
-                    data-en="Export / Import Intern — ANKH">
-                    Stagiaire Export / Import — ANKH
-                </h3>
-                <p data-fr="2025 · Gestion des dossiers douaniers, suivi des opérations import-export, amélioration des processus administratifs."
-                   data-en="2025 · Customs file management, import-export operations tracking, administrative process improvement.">
-                    2025 · Gestion des dossiers douaniers, suivi des opérations import-export, amélioration des processus administratifs.
-                </p>
-            </div>
-
-            <div>
-                <h3 data-fr="Bénévole — Organisation de Ftour Solidaire"
-                    data-en="Volunteer — Community Iftar Organization">
-                    Bénévole — Organisation de Ftour Solidaire
-                </h3>
-                <p data-fr="Ramadan 2023 · Coordination logistique d'un événement communautaire à fort impact social."
-                   data-en="Ramadan 2023 · Logistics coordination of a high-impact community event.">
-                    Ramadan 2023 · Coordination logistique d'un événement communautaire à fort impact social.
-                </p>
-            </div>
-        </div>
-
-        <!-- CERTIFICATIONS -->
-        <div class="content-card">
-            <h2 data-fr="Certifications & Réalisations" data-en="Certifications & Achievements">Certifications & Réalisations</h2>
-
-            <div style="margin-bottom: 1rem;">
-                <h3 data-fr="🚀 Hackathon NASA Space Apps 2025 — Projet GaiaByte"
-                    data-en="🚀 NASA Space Apps Hackathon 2025 — GaiaByte Project">
-                    🚀 Hackathon NASA Space Apps 2025 — Projet GaiaByte
-                </h3>
-                <p data-fr="Compétition internationale NASA · Analyse de données environnementales satellitaires en équipe · Livraison en 48h."
-                   data-en="International NASA competition · Satellite environmental data analysis in a team · Delivered in 48h.">
-                    Compétition internationale NASA · Analyse de données environnementales en équipe · Livraison en 48h.
-                </p>
-            </div>
-
-            <div style="margin-bottom: 1rem;">
-                <h3 data-fr="🎓 Certification CS50 — HarvardX (En cours)"
-                    data-en="🎓 CS50 Certification — HarvardX (In Progress)">
-                    🎓 Certification CS50 — HarvardX (En cours)
-                </h3>
-                <p data-fr="Python · C · SQL · Algorithmique · Structures de données — Harvard University via edX."
-                   data-en="Python · C · SQL · Algorithms · Data structures — Harvard University via edX.">
-                    Python · C · SQL · Algorithmique · Structures de données — Harvard University via edX.
-                </p>
-            </div>
-
-            <div style="margin-bottom: 1rem;">
-                <h3 data-fr="🗄️ Certified Database Practitioner — DBA Academy"
-                    data-en="🗄️ Certified Database Practitioner — DBA Academy">
-                    🗄️ Certified Database Practitioner — DBA Academy
-                </h3>
-                <p data-fr="Janvier 2026 · Identifiant officiel : 7135447035SM"
-                   data-en="January 2026 · Official ID: 7135447035SM">
-                    Janvier 2026 · Identifiant officiel : 7135447035SM
-                </p>
-            </div>
-
-            <div>
-                <h3 data-fr="🏛️ Ambassadrice Étudiante — Université Mohammed V"
-                    data-en="🏛️ Student Ambassador — Mohammed V University">
-                    🏛️ Ambassadrice Étudiante — Université Mohammed V
-                </h3>
-                <p data-fr="2026 / 2027 · Sélectionnée pour représenter l'Université Mohammed V en tant qu'ambassadrice officielle — reconnaissance de l'engagement académique et du leadership étudiant."
-                   data-en="2026 / 2027 · Selected to represent Mohammed V University as an official student ambassador — recognition of academic commitment and student leadership.">
-                    2026 / 2027 · Sélectionnée pour représenter l'Université Mohammed V en tant qu'ambassadrice officielle — reconnaissance de l'engagement académique et du leadership étudiant.
-                </p>
-            </div>
-        </div>
-
-        <!-- CTA -->
-        <div class="content-card" style="text-align: center;">
-            <h2 data-fr="Vous voulez travailler ensemble ?" data-en="Want to Work Together?">Vous voulez travailler ensemble ?</h2>
-            <p data-fr="Je suis disponible pour des projets en Data, IA et automatisation. Réponse garantie sous 24h."
-               data-en="I'm available for Data, AI and automation projects. Reply guaranteed within 24h.">
-                Je suis disponible pour des projets en Data, IA et automatisation. Réponse garantie sous 24h.
-            </p>
-            <a href="contact.html" class="button filled" style="margin-top: 20px;"
+        <div style="text-align: center; margin-top: 48px;">
+            <a href="contact.html" class="button filled"
                 data-fr="Démarrer un Projet →"
                 data-en="Start a Project →">
                 Démarrer un Projet →
@@ -214,63 +109,13 @@
     <footer>
         <div class="footer-content">
             <a href="#" class="footer-link" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales</a>
-            <span class="footer-logo">|</span>
+            <span>|</span>
             <span data-fr="© 2026 Vistoré. Tous droits réservés." data-en="© 2026 Vistoré. All rights reserved.">© 2026 Vistoré. Tous droits réservés.</span>
-            <span class="footer-logo">|</span>
+            <span>|</span>
             <a href="contact.html" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
         </div>
     </footer>
 
-    <script>
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        const body = document.body;
-        const langSwitcher = document.getElementById('language-switcher');
-        
-        function updateModeButtonText(lang, isDarkMode) {
-            if (isDarkMode) {
-                darkModeToggle.textContent = (lang === 'fr') ? 'Mode Clair' : 'Light Mode';
-            } else {
-                darkModeToggle.textContent = (lang === 'fr') ? 'Mode Sombre' : 'Dark Mode';
-            }
-        }
-
-        function toggleDarkMode() {
-            body.classList.toggle('dark-mode');
-            const isDarkMode = body.classList.contains('dark-mode');
-            localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
-            updateModeButtonText(localStorage.getItem('lang') || 'fr', isDarkMode);
-        }
-
-        const isDarkModeInitial = localStorage.getItem('darkMode') === 'enabled';
-        if (isDarkModeInitial) {
-            body.classList.add('dark-mode');
-        }
-
-        darkModeToggle.addEventListener('click', toggleDarkMode);
-
-        const savedLang = localStorage.getItem('lang') || 'fr';
-        langSwitcher.value = savedLang;
-        document.documentElement.lang = savedLang;
-        
-        function applyLanguage(lang) {
-            document.querySelectorAll('[data-fr]').forEach(el => {
-                const translation = el.getAttribute(`data-${lang}`);
-                if (translation) {
-                    el.textContent = translation;
-                }
-            });
-            updateModeButtonText(lang, body.classList.contains('dark-mode'));
-        }
-
-        applyLanguage(savedLang);
-
-        langSwitcher.addEventListener('change', (e) => {
-            const newLang = e.target.value;
-            localStorage.setItem('lang', newLang);
-            document.documentElement.lang = newLang;
-            applyLanguage(newLang);
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
