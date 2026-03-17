@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-fr="VISTORÉ - Data & IA Consulting" data-en="VISTORÉ - Data & AI Consulting">VISTORÉ - Data & IA Consulting</title>
-
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
     <header class="navbar">
         <div class="brand">VISTORÉ</div>
-
-        <nav class="main-nav">
+        <div class="hamburger" id="hamburger">☰</div>
+        <nav class="main-nav" id="mainNav">
             <ul>
                 <li><a href="index.html" class="active-link" data-fr="Accueil" data-en="Home">Accueil</a></li>
                 <li><a href="profil.html" data-fr="Profil" data-en="Profile">Profil</a></li>
@@ -24,13 +21,11 @@
                 <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
             </ul>
         </nav>
-
         <div class="header-utils">
             <select id="language-switcher" class="util-select">
                 <option value="fr">FR</option>
                 <option value="en">EN</option>
             </select>
-
             <button id="dark-mode-toggle" class="util-button" data-fr="Mode Sombre" data-en="Dark Mode">Mode Sombre</button>
         </div>
     </header>
@@ -42,19 +37,15 @@
                 data-en="Data. Artificial Intelligence. Results.">
                 Data. Intelligence Artificielle. Résultats.
             </p>
-
-            <h1
-                data-fr="L'IA au service de votre croissance."
+            <h1 data-fr="L'IA au service de votre croissance."
                 data-en="AI-Powered Growth for Your Business.">
                 L'IA au service de votre croissance.
             </h1>
-
             <p class="description"
                 data-fr="VISTORÉ conçoit des solutions sur mesure en Data et Intelligence Artificielle pour les entreprises qui refusent la médiocrité. Automatisation, analyse, stratégie — nous transformons vos données en avantage compétitif."
                 data-en="VISTORÉ builds custom Data and AI solutions for businesses that refuse mediocrity. Automation, analysis, strategy — we turn your data into a competitive edge.">
                 VISTORÉ conçoit des solutions sur mesure en Data et Intelligence Artificielle pour les entreprises qui refusent la médiocrité. Automatisation, analyse, stratégie — nous transformons vos données en avantage compétitif.
             </p>
-
             <div class="buttons">
                 <a href="case-studies.html" class="button filled"
                     data-fr="Voir nos Réalisations"
@@ -73,63 +64,14 @@
     <footer>
         <div class="footer-content">
             <a href="#" class="footer-link" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales</a>
-            <span class="footer-logo">|</span>
+            <span>|</span>
             <span data-fr="© 2026 Vistoré. Tous droits réservés." data-en="© 2026 Vistoré. All rights reserved.">© 2026 Vistoré. Tous droits réservés.</span>
-            <span class="footer-logo">|</span>
+            <span>|</span>
             <a href="contact.html" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
         </div>
     </footer>
 
-    <script>
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        const body = document.body;
-        const langSwitcher = document.getElementById('language-switcher');
-        
-        function updateModeButtonText(lang, isDarkMode) {
-            if (isDarkMode) {
-                darkModeToggle.textContent = (lang === 'fr') ? 'Mode Clair' : 'Light Mode';
-            } else {
-                darkModeToggle.textContent = (lang === 'fr') ? 'Mode Sombre' : 'Dark Mode';
-            }
-        }
-
-        function toggleDarkMode() {
-            body.classList.toggle('dark-mode');
-            const isDarkMode = body.classList.contains('dark-mode');
-            localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
-            updateModeButtonText(localStorage.getItem('lang') || 'fr', isDarkMode);
-        }
-
-        const isDarkModeInitial = localStorage.getItem('darkMode') === 'enabled';
-        if (isDarkModeInitial) {
-            body.classList.add('dark-mode');
-        }
-
-        darkModeToggle.addEventListener('click', toggleDarkMode);
-
-        const savedLang = localStorage.getItem('lang') || 'fr';
-        langSwitcher.value = savedLang;
-        document.documentElement.lang = savedLang;
-        
-        function applyLanguage(lang) {
-            document.querySelectorAll('[data-fr]').forEach(el => {
-                const translation = el.getAttribute(`data-${lang}`);
-                if (translation) {
-                    el.textContent = translation;
-                }
-            });
-            updateModeButtonText(lang, body.classList.contains('dark-mode'));
-        }
-
-        applyLanguage(savedLang);
-
-        langSwitcher.addEventListener('change', (e) => {
-            const newLang = e.target.value;
-            localStorage.setItem('lang', newLang);
-            document.documentElement.lang = newLang;
-            applyLanguage(newLang);
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
+
