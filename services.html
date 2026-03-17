@@ -1,30 +1,25 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vistoré | Services</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="service.css">
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <header class="navbar">
     <div class="brand">VISTORÉ</div>
-
     <div class="hamburger" id="hamburger">☰</div>
-
     <nav class="main-nav" id="mainNav">
       <ul>
         <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
         <li><a href="profil.html" data-fr="Profil" data-en="Profile">Profil</a></li>
         <li><a href="case-studies.html" data-fr="Études de Cas" data-en="Case Studies">Études de Cas</a></li>
-        <li><a href="services.html" data-fr="Services" data-en="Services">Services</a></li>
+        <li><a href="services.html" class="active-link" data-fr="Services" data-en="Services">Services</a></li>
         <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
       </ul>
     </nav>
-
     <div class="header-utils">
       <select id="language-switcher" class="util-select">
         <option value="fr">FR</option>
@@ -34,7 +29,6 @@
     </div>
   </header>
 
-  <!-- SECTION SERVICES -->
   <main>
     <section class="services">
 
@@ -44,22 +38,16 @@
         Ce que nous faisons
       </p>
 
-      <h2
+      <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 40px;"
         data-fr="Des solutions IA concrètes, pas des promesses."
         data-en="Concrete AI Solutions, Not Promises.">
         Des solutions IA concrètes, pas des promesses.
       </h2>
 
-      <!-- SERVICE 1 -->
       <div class="service-card">
-        <h3
-          data-fr="🤖 Automatisation & Chatbots IA"
-          data-en="🤖 AI Automation & Chatbots">
-          🤖 Automatisation & Chatbots IA
-        </h3>
-        <p
-          data-fr="Nous déployons des assistants IA et des workflows automatisés qui remplacent les tâches répétitives. Résultat : vous gagnez du temps, réduisez les erreurs et servez vos clients 24h/24."
-          data-en="We deploy AI assistants and automated workflows that replace repetitive tasks. Result: you save time, reduce errors and serve your clients 24/7.">
+        <h3 data-fr="🤖 Automatisation & Chatbots IA" data-en="🤖 AI Automation & Chatbots">🤖 Automatisation & Chatbots IA</h3>
+        <p data-fr="Nous déployons des assistants IA et des workflows automatisés qui remplacent les tâches répétitives. Résultat : vous gagnez du temps, réduisez les erreurs et servez vos clients 24h/24."
+           data-en="We deploy AI assistants and automated workflows that replace repetitive tasks. Result: you save time, reduce errors and serve your clients 24/7.">
           Nous déployons des assistants IA et des workflows automatisés qui remplacent les tâches répétitives. Résultat : vous gagnez du temps, réduisez les erreurs et servez vos clients 24h/24.
         </p>
         <ul>
@@ -69,16 +57,10 @@
         </ul>
       </div>
 
-      <!-- SERVICE 2 -->
       <div class="service-card">
-        <h3
-          data-fr="📊 Data Analyse & Reporting"
-          data-en="📊 Data Analysis & Reporting">
-          📊 Data Analyse & Reporting
-        </h3>
-        <p
-          data-fr="Vos données sont une mine d'or inexploitée. Nous les structurons, les analysons et les transformons en tableaux de bord clairs pour des décisions rapides et éclairées."
-          data-en="Your data is an untapped goldmine. We structure, analyze and transform it into clear dashboards for fast, informed decisions.">
+        <h3 data-fr="📊 Data Analyse & Reporting" data-en="📊 Data Analysis & Reporting">📊 Data Analyse & Reporting</h3>
+        <p data-fr="Vos données sont une mine d'or inexploitée. Nous les structurons, les analysons et les transformons en tableaux de bord clairs pour des décisions rapides et éclairées."
+           data-en="Your data is an untapped goldmine. We structure, analyze and transform it into clear dashboards for fast, informed decisions.">
           Vos données sont une mine d'or inexploitée. Nous les structurons, les analysons et les transformons en tableaux de bord clairs pour des décisions rapides et éclairées.
         </p>
         <ul>
@@ -88,16 +70,10 @@
         </ul>
       </div>
 
-      <!-- SERVICE 3 -->
       <div class="service-card">
-        <h3
-          data-fr="🌐 Développement Web Premium"
-          data-en="🌐 Premium Web Development">
-          🌐 Développement Web Premium
-        </h3>
-        <p
-          data-fr="Des sites web modernes, rapides et élégants qui reflètent l'ambition de votre marque. Pas de templates génériques — chaque projet est pensé pour convertir et impressionner."
-          data-en="Modern, fast and elegant websites that reflect your brand's ambition. No generic templates — every project is built to convert and impress.">
+        <h3 data-fr="🌐 Développement Web Premium" data-en="🌐 Premium Web Development">🌐 Développement Web Premium</h3>
+        <p data-fr="Des sites web modernes, rapides et élégants qui reflètent l'ambition de votre marque. Pas de templates génériques — chaque projet est pensé pour convertir et impressionner."
+           data-en="Modern, fast and elegant websites that reflect your brand's ambition. No generic templates — every project is built to convert and impress.">
           Des sites web modernes, rapides et élégants qui reflètent l'ambition de votre marque. Pas de templates génériques — chaque projet est pensé pour convertir et impressionner.
         </p>
         <ul>
@@ -107,16 +83,10 @@
         </ul>
       </div>
 
-      <!-- SERVICE 4 -->
       <div class="service-card">
-        <h3
-          data-fr="🧠 Conseil Stratégique IA"
-          data-en="🧠 AI Strategic Consulting">
-          🧠 Conseil Stratégique IA
-        </h3>
-        <p
-          data-fr="Vous voulez intégrer l'IA dans votre business mais vous ne savez pas par où commencer ? Nous analysons vos processus, identifions les opportunités et vous livrons une feuille de route claire et actionnable."
-          data-en="You want to integrate AI into your business but don't know where to start? We analyze your processes, identify opportunities and deliver a clear, actionable roadmap.">
+        <h3 data-fr="🧠 Conseil Stratégique IA" data-en="🧠 AI Strategic Consulting">🧠 Conseil Stratégique IA</h3>
+        <p data-fr="Vous voulez intégrer l'IA dans votre business mais vous ne savez pas par où commencer ? Nous analysons vos processus, identifions les opportunités et vous livrons une feuille de route claire et actionnable."
+           data-en="You want to integrate AI into your business but don't know where to start? We analyze your processes, identify opportunities and deliver a clear, actionable roadmap.">
           Vous voulez intégrer l'IA dans votre business mais vous ne savez pas par où commencer ? Nous analysons vos processus, identifions les opportunités et vous livrons une feuille de route claire et actionnable.
         </p>
         <ul>
@@ -126,7 +96,6 @@
         </ul>
       </div>
 
-      <!-- CTA -->
       <div style="text-align:center; margin-top: 3rem;">
         <a href="contact.html" class="button filled"
           data-fr="Discutons de votre projet →"
@@ -138,13 +107,12 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-content">
       <a href="#" class="footer-link" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales</a>
-      <span class="footer-logo">|</span>
+      <span>|</span>
       <span data-fr="© 2026 Vistoré. Tous droits réservés." data-en="© 2026 Vistoré. All rights reserved.">© 2026 Vistoré. Tous droits réservés.</span>
-      <span class="footer-logo">|</span>
+      <span>|</span>
       <a href="mailto:sirallahm@gmail.com" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
     </div>
   </footer>
