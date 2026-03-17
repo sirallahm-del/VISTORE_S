@@ -1,84 +1,77 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-fr="Études de Cas | VISTORÉ" data-en="Case Studies | VISTORÉ">Études de Cas | VISTORÉ</title>
-    
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
     <header class="navbar">
         <div class="brand">VISTORÉ</div>
-
-        <nav class="main-nav">
+        <div class="hamburger" id="hamburger">☰</div>
+        <nav class="main-nav" id="mainNav">
             <ul>
                 <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
                 <li><a href="profil.html" data-fr="Profil" data-en="Profile">Profil</a></li>
-                <li><a href="case-studies.html" class="active-link" data-fr="Études de Cas" data-en="Case Studies">Études de Cas</a></li> 
+                <li><a href="case-studies.html" class="active-link" data-fr="Études de Cas" data-en="Case Studies">Études de Cas</a></li>
                 <li><a href="services.html" data-fr="Services" data-en="Services">Services</a></li>
                 <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
             </ul>
         </nav>
-        
         <div class="header-utils">
             <select id="language-switcher" class="util-select">
                 <option value="fr">FR</option>
                 <option value="en">EN</option>
             </select>
-            
             <button id="dark-mode-toggle" class="util-button" data-fr="Mode Sombre" data-en="Dark Mode">Mode Sombre</button>
         </div>
     </header>
 
     <main class="case-studies-container">
-        
+
         <section class="page-intro">
-            <h1 class="page-title" 
-                data-fr="Réalisations & Preuves" 
+            <h1 class="page-title"
+                data-fr="Réalisations & Preuves"
                 data-en="Work & Proof">
                 Réalisations & Preuves
             </h1>
-            <p class="page-subtitle" 
-                data-fr="Pas de promesses vides. Voici des projets réels, du code livré, et des certifications validées par les meilleures institutions mondiales." 
-                data-en="No empty promises. Real projects, delivered code, and certifications validated by the world's best institutions.">
-                Pas de promesses vides. Voici des projets réels, du code livré, et des certifications validées par les meilleures institutions mondiales.
+            <p class="page-subtitle"
+                data-fr="Pas de promesses vides — des projets réels, du code livré, des certifications validées."
+                data-en="No empty promises — real projects, delivered code, validated certifications.">
+                Pas de promesses vides — des projets réels, du code livré, des certifications validées.
             </p>
         </section>
 
         <div class="case-study-card">
-            <h2 
-                data-fr="Hackathon NASA Space Apps 2025 — Projet GaiaByte" 
-                data-en="NASA Space Apps Hackathon 2025 — GaiaByte Project">
-                Hackathon NASA Space Apps 2025 — Projet GaiaByte
+            <h2 data-fr="Hackathon NASA Space Apps 2025 — GaiaByte"
+                data-en="NASA Space Apps Hackathon 2025 — GaiaByte">
+                Hackathon NASA Space Apps 2025 — GaiaByte
             </h2>
             <div class="tags">
                 <span class="tag">Python</span>
-                <span class="tag">Analyse SIG</span>
                 <span class="tag">Google Earth Engine</span>
-                <span class="tag">Hackathon NASA</span>
+                <span class="tag">Analyse SIG</span>
+                <span class="tag">NASA</span>
             </div>
-            <p class="description" 
-                data-fr="En équipe, nous avons développé Terra Climate Insights : un pipeline Python complet pour analyser des données environnementales satellitaires (Landsat/SRTM) en moins de 48 heures. Défi relevé : livrer une solution fonctionnelle sous contrainte de temps extrême, dans un contexte de compétition internationale organisée par la NASA."
-                data-en="As a team, we built Terra Climate Insights: a complete Python pipeline to analyze satellite environmental data (Landsat/SRTM) in under 48 hours. Challenge met: deliver a working solution under extreme time pressure, in an international competition organized by NASA.">
-                En équipe, nous avons développé <strong>Terra Climate Insights</strong> : un pipeline Python complet pour analyser des données environnementales satellitaires (Landsat/SRTM) en moins de 48 heures. Défi relevé : livrer une solution fonctionnelle sous contrainte de temps extrême, dans un contexte de compétition internationale organisée par la <strong>NASA</strong>.
+            <p class="description"
+                data-fr="Pipeline Python complet pour analyser des données environnementales satellitaires (Landsat/SRTM). Solution fonctionnelle livrée en 48h dans une compétition internationale organisée par la NASA."
+                data-en="Complete Python pipeline to analyze satellite environmental data (Landsat/SRTM). Working solution delivered in 48h in an international competition organized by NASA.">
+                Pipeline Python complet pour analyser des données environnementales satellitaires (Landsat/SRTM). Solution fonctionnelle livrée en 48h dans une compétition internationale organisée par la <strong>NASA</strong>.
             </p>
-            <a href="https://github.com/sirallahm-del/NASA-GaiaByte-2025" target="_blank" class="button filled" 
-                data-fr="Voir le code source (GitHub)" 
-                data-en="View Source Code (GitHub)">
-                Voir le code source (GitHub)
+            <a href="https://github.com/sirallahm-del/NASA-GaiaByte-2025" target="_blank" class="button filled"
+                data-fr="Voir le code (GitHub)"
+                data-en="View Code (GitHub)">
+                Voir le code (GitHub)
             </a>
         </div>
 
         <div class="case-study-card">
-            <h2 
-                data-fr="Certification CS50 — HarvardX : Fondamentaux de l'Informatique" 
-                data-en="CS50 Certification — HarvardX: Computer Science Fundamentals">
-                Certification CS50 — HarvardX : Fondamentaux de l'Informatique
+            <h2 data-fr="CS50 — Harvard University"
+                data-en="CS50 — Harvard University">
+                CS50 — Harvard University
             </h2>
             <div class="tags">
                 <span class="tag">Python</span>
@@ -86,33 +79,26 @@
                 <span class="tag">SQL</span>
                 <span class="tag">Algorithmique</span>
             </div>
-            <p class="description" 
-                data-fr="Certification internationale délivrée par Harvard University via edX, validant la maîtrise des fondamentaux : algorithmique, structures de données, langages C et Python, bases de données SQL. CS50 est reconnue mondialement comme l'une des meilleures introductions à l'informatique — moins de 5% des inscrits la complètent."
-                data-en="International certification delivered by Harvard University via edX, validating mastery of fundamentals: algorithms, data structures, C and Python languages, SQL databases. CS50 is globally recognized as one of the best introductions to computer science — fewer than 5% of enrollees complete it.">
-                Certification internationale délivrée par <strong>Harvard University</strong> via edX, validant la maîtrise des fondamentaux : algorithmique, structures de données, langages C et Python, bases de données SQL. CS50 est reconnue mondialement comme l'une des meilleures introductions à l'informatique.
+            <p class="description"
+                data-fr="Certification internationale validant la maîtrise des fondamentaux : algorithmique, structures de données, C, Python, SQL. Délivrée par Harvard University via edX."
+                data-en="International certification validating mastery of fundamentals: algorithms, data structures, C, Python, SQL. Delivered by Harvard University via edX.">
+                Certification internationale validant la maîtrise des fondamentaux : algorithmique, structures de données, C, Python, SQL. Délivrée par <strong>Harvard University</strong> via edX.
             </p>
-            <a href="#" class="button outline" 
-                data-fr="Voir la Certification" 
-                data-en="View Certification">
-                Voir la Certification
-            </a>
         </div>
 
         <div class="case-study-card">
-            <h2 
-                data-fr="Certified Database Practitioner — DBA Academy" 
+            <h2 data-fr="Certified Database Practitioner — DBA Academy"
                 data-en="Certified Database Practitioner — DBA Academy">
                 Certified Database Practitioner — DBA Academy
             </h2>
             <div class="tags">
                 <span class="tag">SQL</span>
                 <span class="tag">Bases de données</span>
-                <span class="tag">DBA Academy</span>
             </div>
-            <p class="description" 
-                data-fr="Certification professionnelle validant la maîtrise de la conception, l'administration et l'optimisation de bases de données relationnelles. Identifiant officiel : 7135447035SM — délivré en janvier 2026."
-                data-en="Professional certification validating mastery of relational database design, administration and optimization. Official ID: 7135447035SM — issued January 2026.">
-                Certification professionnelle validant la maîtrise de la conception, l'administration et l'optimisation de bases de données relationnelles. Identifiant officiel : <strong>7135447035SM</strong> — délivré en janvier 2026.
+            <p class="description"
+                data-fr="Certification professionnelle en conception et administration de bases de données relationnelles. ID officiel : 7135447035SM — Janvier 2026."
+                data-en="Professional certification in relational database design and administration. Official ID: 7135447035SM — January 2026.">
+                Certification professionnelle en conception et administration de bases de données relationnelles. ID officiel : <strong>7135447035SM</strong> — Janvier 2026.
             </p>
         </div>
 
@@ -121,65 +107,13 @@
     <footer>
         <div class="footer-content">
             <a href="#" class="footer-link" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales</a>
-            <span class="footer-logo">|</span>
+            <span>|</span>
             <span data-fr="© 2026 Vistoré. Tous droits réservés." data-en="© 2026 Vistoré. All rights reserved.">© 2026 Vistoré. Tous droits réservés.</span>
-            <span class="footer-logo">|</span>
+            <span>|</span>
             <a href="contact.html" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
         </div>
     </footer>
 
-    <script>
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        const body = document.body;
-        const langSwitcher = document.getElementById('language-switcher');
-        
-        function updateModeButtonText(lang, isDarkMode) {
-            if (isDarkMode) {
-                darkModeToggle.textContent = (lang === 'fr') ? 'Mode Clair' : 'Light Mode';
-            } else {
-                darkModeToggle.textContent = (lang === 'fr') ? 'Mode Sombre' : 'Dark Mode';
-            }
-        }
-
-        function toggleDarkMode() {
-            body.classList.toggle('dark-mode');
-            const isDarkMode = body.classList.contains('dark-mode');
-            localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
-            updateModeButtonText(localStorage.getItem('lang') || 'fr', isDarkMode);
-        }
-
-        const isDarkModeInitial = localStorage.getItem('darkMode') === 'enabled';
-        if (isDarkModeInitial) {
-            body.classList.add('dark-mode');
-        }
-
-        darkModeToggle.addEventListener('click', toggleDarkMode);
-
-        const savedLang = localStorage.getItem('lang') || 'fr';
-        langSwitcher.value = savedLang;
-        document.documentElement.lang = savedLang;
-        
-        function applyLanguage(lang) {
-            document.querySelectorAll('[data-fr]').forEach(el => {
-                const translation = el.getAttribute(`data-${lang}`);
-                if (translation) {
-                    el.textContent = translation;
-                }
-            });
-            updateModeButtonText(lang, body.classList.contains('dark-mode'));
-        }
-
-        applyLanguage(savedLang);
-
-        langSwitcher.addEventListener('change', (e) => {
-            const newLang = e.target.value;
-            localStorage.setItem('lang', newLang);
-            document.documentElement.lang = newLang;
-            applyLanguage(newLang);
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
-
 </html>
-    
