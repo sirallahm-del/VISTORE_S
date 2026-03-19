@@ -48,6 +48,8 @@ body {
     margin: 0 auto 20px auto;
     padding-bottom: 20px;
     border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .brand {
@@ -108,9 +110,13 @@ body {
 
 .hamburger {
     display: none;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     cursor: pointer;
     color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: var(--radius);
 }
 
 /* ================= HERO ================= */
@@ -173,6 +179,7 @@ h1 {
     transition: all var(--transition);
     display: inline-block;
     cursor: pointer;
+    border: none;
 }
 
 .button.filled {
@@ -216,9 +223,7 @@ h1 {
     gap: 16px;
 }
 
-.construction-section h1 {
-    font-size: 2.8rem;
-}
+.construction-section h1 { font-size: 2.8rem; }
 
 .construction-section p {
     color: var(--text-muted);
@@ -260,9 +265,7 @@ h1 {
 }
 
 .content-card:hover,
-.case-study-card:hover {
-    border-color: var(--accent);
-}
+.case-study-card:hover { border-color: var(--accent); }
 
 .content-card h2,
 .case-study-card h2 {
@@ -306,16 +309,7 @@ h1 {
     padding: 0 16px;
 }
 
-.services h2 {
-    font-size: 2.6rem;
-    font-weight: 900;
-    margin-bottom: 12px;
-    letter-spacing: -1px;
-}
-
-.services > .subtitle {
-    margin-bottom: 48px;
-}
+.services > .subtitle { margin-bottom: 48px; }
 
 .service-card {
     background: var(--bg-card);
@@ -326,9 +320,7 @@ h1 {
     transition: border-color var(--transition);
 }
 
-.service-card:hover {
-    border-color: var(--accent);
-}
+.service-card:hover { border-color: var(--accent); }
 
 .service-card h3 {
     font-size: 1.15rem;
@@ -344,9 +336,7 @@ h1 {
     margin-bottom: 14px;
 }
 
-.service-card ul {
-    padding-left: 20px;
-}
+.service-card ul { padding-left: 20px; }
 
 .service-card ul li {
     color: var(--text-muted);
@@ -398,20 +388,27 @@ footer {
     transition: color var(--transition);
 }
 
-.footer-link:hover {
-    color: var(--accent);
-}
+.footer-link:hover { color: var(--accent); }
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
     body { padding: 16px; }
 
+    .navbar {
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
     .hamburger { display: block; }
 
+    /* Menu s'ouvre en dessous — prend toute la largeur */
     .main-nav {
         display: none;
         width: 100%;
-        margin-top: 20px;
+        order: 4; /* toujours en dessous de tout */
+        border-top: 1px solid var(--border);
+        padding-top: 20px;
+        margin-top: 12px;
     }
 
     .main-nav.active { display: block; }
@@ -419,16 +416,25 @@ footer {
     .main-nav ul {
         flex-direction: column;
         align-items: center;
-        gap: 18px;
+        gap: 20px;
     }
 
-    h1 { font-size: 2.4rem; }
-    .page-title { font-size: 2rem; }
-    .services h2 { font-size: 2rem; }
+    .main-nav ul li a {
+        font-size: 1rem;
+    }
 
-    .buttons { flex-direction: column; align-items: center; }
+    /* Brand à gauche, hamburger + utils à droite */
+    .brand { order: 1; }
+    .hamburger { order: 2; margin-left: auto; }
+    .header-utils { order: 3; }
+
+    h1 { font-size: 2.2rem; }
+    .page-title { font-size: 1.8rem; }
+
+    .buttons { flex-direction: column; align-items: stretch; }
     .button { width: 100%; text-align: center; }
 
-    .content-card, .case-study-card, .service-card { padding: 24px; }
-}
+    .content-card, .case-study-card, .service-card { padding: 20px; }
 
+    .construction-section h1 { font-size: 2rem; }
+}
