@@ -7,17 +7,16 @@ const mainNav = document.getElementById("mainNav");
 let currentLang = localStorage.getItem("vistore-lang") || "fr";
 let currentMode = localStorage.getItem("vistore-mode") || "dark";
 
-// ================= LANGUAGE =================
-function applyLanguage(lang) {
-    document.querySelectorAll("[data-fr]").forEach(el => {
-        const translation = el.getAttribute("data-" + lang);
-        if (translation) el.textContent = translation;
-    });
-    if (langSwitcher) langSwitcher.value = lang;
-    updateModeBtn();
+// ================= MODE =================
+function updateModeBtn() {
+    if (!darkBtn) return;
+    if (currentMode === "dark") {
+        darkBtn.textContent = currentLang === "en" ? "Light Mode" : "Mode Clair";
+    } else {
+        darkBtn.textContent = currentLang === "en" ? "Dark Mode" : "Mode Sombre";
+    }
 }
 
-// ================= DARK / LIGHT MODE =================
 function applyMode(mode) {
     if (mode === "light") {
         document.body.classList.add("light-mode");
@@ -27,13 +26,14 @@ function applyMode(mode) {
     updateModeBtn();
 }
 
-function updateModeBtn() {
-    if (!darkBtn) return;
-    if (currentMode === "dark") {
-        darkBtn.textContent = currentLang === "en" ? "Light Mode" : "Mode Clair";
-    } else {
-        darkBtn.textContent = currentLang === "en" ? "Dark Mode" : "Mode Sombre";
-    }
+// ================= LANGUAGE =================
+function applyLanguage(lang) {
+    document.querySelectorAll("[data-fr]").forEach(el => {
+        const translation = el.getAttribute("data-" + lang);
+        if (translation) el.textContent = translation;
+    });
+    if (langSwitcher) langSwitcher.value = lang;
+    updateModeBtn();
 }
 
 // ================= EVENTS =================
@@ -59,6 +59,6 @@ if (hamburger && mainNav) {
     });
 }
 
-// ================= APPLY ON LOAD =================
+// ================= ON LOAD =================
 applyMode(currentMode);
 applyLanguage(currentLang);
