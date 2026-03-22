@@ -6,10 +6,19 @@
     <title data-fr="Contact | VISTORÉ" data-en="Contact | VISTORÉ">Contact | VISTORÉ</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        .brand-tagline{font-size:.55rem;font-style:italic;color:var(--accent);opacity:.75;letter-spacing:1.5px;margin-top:2px;display:block;font-weight:400;text-transform:none;}
+        .contact-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px;margin-top:40px;width:100%;max-width:500px;transition:border-color .35s ease;}
+        .contact-card:hover{border-color:var(--accent);}
+        .contact-label{font-size:.6rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:block;}
+        .footer-ceo{font-size:.7rem;color:var(--text-muted);letter-spacing:1px;margin-top:10px;opacity:.6;}
+        .footer-ceo span{color:var(--accent);opacity:1;}
+        .urgency-badge{display:inline-block;background:rgba(201,169,110,.1);border:1px solid rgba(201,169,110,.25);color:var(--accent);font-size:.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:24px;}
+    </style>
 </head>
 <body>
     <header class="navbar">
-        <div class="brand">VISTORÉ</div>
+        <div class="brand">VISTORÉ<small class="brand-tagline">The Future of Digital Luxury</small></div>
         <div class="hamburger" id="hamburger">☰</div>
         <nav class="main-nav" id="mainNav">
             <ul>
@@ -21,62 +30,34 @@
             </ul>
         </nav>
         <div class="header-utils">
-            <select id="language-switcher" class="util-select">
-                <option value="fr">FR</option>
-                <option value="en">EN</option>
-            </select>
+            <select id="language-switcher" class="util-select"><option value="fr">FR</option><option value="en">EN</option></select>
             <button id="dark-mode-toggle" class="util-button">Mode Clair</button>
         </div>
     </header>
 
     <main class="construction-section">
 
-        <h1 data-fr="Parlons de votre projet."
-            data-en="Let's Talk About Your Project.">
-            Parlons de votre projet.
-        </h1>
+        <div class="urgency-badge" data-fr="⚡ Places limitées — Réponse sous 24h" data-en="⚡ Limited spots — Response within 24h">⚡ Places limitées — Réponse sous 24h</div>
 
-        <p data-fr="Vous avez un besoin en Data, IA ou automatisation ? Nous revenons vers vous sous 24h. Les places sont limitées — nous travaillons uniquement avec des clients sérieux."
-           data-en="Do you have a Data, AI or automation need? We'll get back to you within 24h. Spots are limited — we only work with serious clients.">
-            Vous avez un besoin en Data, IA ou automatisation ? Nous revenons vers vous sous 24h.
-            Les places sont limitées — nous travaillons uniquement avec des clients sérieux.
+        <h1 data-fr="Parlons de votre projet." data-en="Let's Talk About Your Project.">Parlons de votre projet.</h1>
+
+        <p data-fr="Vous avez un besoin en Data, IA ou Web ? Nous revenons vers vous sous 24h. Nous travaillons uniquement avec des clients sérieux qui veulent des résultats réels." data-en="Do you have a Data, AI or Web need? We'll get back to you within 24h. We only work with serious clients who want real results.">
+            Vous avez un besoin en Data, IA ou Web ? Nous revenons vers vous sous 24h.<br>Nous travaillons uniquement avec des clients sérieux qui veulent des résultats réels.
         </p>
 
-        <a href="mailto:sirallahm@gmail.com" class="button filled" style="margin-top: 30px;"
-            data-fr="✉️ Envoyer un e-mail"
-            data-en="✉️ Send an E-mail">
-            ✉️ Envoyer un e-mail
-        </a>
+        <a href="mailto:sirallahm@gmail.com" class="button filled" style="margin-top:30px;" data-fr="✉️ Envoyer un e-mail" data-en="✉️ Send an E-mail">✉️ Envoyer un e-mail</a>
 
-        <a href="https://www.linkedin.com/in/sirallah-makhlouf-909807334" target="_blank" class="button outline" style="margin-top: 12px;"
-            data-fr="💼 Me contacter sur LinkedIn"
-            data-en="💼 Contact Me on LinkedIn">
-            💼 Me contacter sur LinkedIn
-        </a>
+        <a href="https://www.linkedin.com/in/sirallah-makhlouf-909807334" target="_blank" class="button outline" style="margin-top:12px;" data-fr="💼 Me contacter sur LinkedIn" data-en="💼 Contact Me on LinkedIn">💼 Me contacter sur LinkedIn</a>
 
-        <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border); text-align: center; width: 100%; max-width: 500px;">
-            <p class="subtitle" style="margin-bottom: 12px;"
-                data-fr="Supporter VISTORÉ"
-                data-en="Support VISTORÉ">
-                Supporter VISTORÉ
-            </p>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;"
-                data-fr="VISTORÉ est un projet indépendant construit avec passion. Si notre travail vous inspire, vous pouvez nous soutenir — chaque contribution compte."
-                data-en="VISTORÉ is an independent project built with passion. If our work inspires you, you can support us — every contribution counts.">
+        <div class="contact-card">
+            <span class="contact-label" data-fr="Supporter VISTORÉ" data-en="Support VISTORÉ">Supporter VISTORÉ</span>
+            <p style="color:var(--text-muted);font-size:.95rem;margin-bottom:20px;line-height:1.7;" data-fr="VISTORÉ est un projet indépendant construit avec passion. Si notre travail vous inspire, vous pouvez nous soutenir — chaque contribution compte." data-en="VISTORÉ is an independent project built with passion. If our work inspires you, you can support us — every contribution counts.">
                 VISTORÉ est un projet indépendant construit avec passion. Si notre travail vous inspire, vous pouvez nous soutenir — chaque contribution compte.
             </p>
-            <a href="https://paypal.me/SirallahMakhlouf" target="_blank" class="button filled"
-                data-fr="💛 Supporter VISTORÉ via PayPal"
-                data-en="💛 Support VISTORÉ via PayPal">
-                💛 Supporter VISTORÉ via PayPal
-            </a>
+            <a href="https://paypal.me/SirallahMakhlouf" target="_blank" class="button filled" data-fr="💛 Supporter VISTORÉ via PayPal" data-en="💛 Support VISTORÉ via PayPal">💛 Supporter VISTORÉ via PayPal</a>
         </div>
 
-        <a href="index.html" class="button outline" style="margin-top: 32px;"
-            data-fr="← Retourner à l'Accueil"
-            data-en="← Back to Home">
-            ← Retourner à l'Accueil
-        </a>
+        <a href="index.html" class="button outline" style="margin-top:32px;" data-fr="← Retourner à l'Accueil" data-en="← Back to Home">← Retourner à l'Accueil</a>
 
     </main>
 
@@ -88,8 +69,8 @@
             <span>|</span>
             <a href="contact.html" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
         </div>
+        <div class="footer-ceo">Founded by <span>Sirallah Makhlouf</span> · Founder & CEO, VISTORÉ</div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
