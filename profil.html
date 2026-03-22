@@ -6,11 +6,124 @@
     <title data-fr="Profil | VISTORÉ" data-en="Profile | VISTORÉ">Profil | VISTORÉ</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* ── TAGLINE ── */
+        .brand-tagline {
+            font-size: .65rem;
+            font-style: italic;
+            color: var(--accent);
+            opacity: 0.8;
+            letter-spacing: 1.5px;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* ── CEO BADGE ── */
+        .ceo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(201,169,110,.1);
+            border: 1px solid rgba(201,169,110,.25);
+            padding: 8px 18px;
+            border-radius: 24px;
+            font-size: .65rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+        .ceo-badge::before { content: '◆'; font-size: .4rem; }
+
+        /* ── CARD HOVER UPGRADE ── */
+        .content-card {
+            transition: all .4s cubic-bezier(.25,.46,.45,.94);
+            border: 1px solid rgba(201,169,110,.1);
+        }
+        .content-card:hover {
+            box-shadow: 0 0 40px rgba(201,169,110,.1);
+            transform: translateY(-6px);
+            border-color: rgba(201,169,110,.3);
+        }
+
+        /* ── ACHIEVEMENT ITEM ── */
+        .achievement-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            transition: all .3s;
+            padding-left: 12px;
+            border-left: 2px solid transparent;
+        }
+        .achievement-item:hover {
+            border-left-color: var(--accent);
+            padding-left: 16px;
+        }
+        .achievement-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        /* ── SKILLS TAG UPGRADE ── */
+        .tag {
+            transition: all .3s;
+        }
+        .tag:hover {
+            background: rgba(201,169,110,.15);
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* ── FOOTER CEO ── */
+        .footer-ceo {
+            font-size: .68rem;
+            color: rgba(255,255,255,.25);
+            letter-spacing: 1.5px;
+            margin-top: 8px;
+            text-align: center;
+        }
+        .footer-ceo span { color: var(--accent); }
+
+        /* ── LUXURY LINE ── */
+        .luxury-line {
+            font-style: italic;
+            color: var(--accent);
+            opacity: 0.75;
+            font-size: .82rem;
+            letter-spacing: 1px;
+            margin-top: 8px;
+            display: block;
+        }
+
+        /* ── VISION STRIP ── */
+        .vision-strip {
+            background: var(--nav-bg, #0D1B2A);
+            padding: 48px 7%;
+            text-align: center;
+            border-top: 1px solid rgba(201,169,110,.1);
+            border-bottom: 1px solid rgba(201,169,110,.1);
+            margin: 48px 0;
+        }
+        .vision-strip p {
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            font-weight: 300;
+            color: rgba(255,255,255,.75);
+            line-height: 1.7;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+        .vision-strip em { color: var(--accent); font-style: italic; }
+    </style>
 </head>
 <body>
 
     <header class="navbar">
-        <div class="brand">VISTORÉ</div>
+        <div class="brand">
+            VISTORÉ
+            <small class="brand-tagline">The Future of Digital Luxury</small>
+        </div>
         <div class="hamburger" id="hamburger">☰</div>
         <nav class="main-nav" id="mainNav">
             <ul>
@@ -33,6 +146,7 @@
     <main class="page-container">
 
         <section class="page-intro">
+            <div class="ceo-badge" data-fr="Founder & CEO · VISTORÉ" data-en="Founder & CEO · VISTORÉ">Founder & CEO · VISTORÉ</div>
             <h1 class="page-title"
                 data-fr="Sirallah Makhlouf"
                 data-en="Sirallah Makhlouf">
@@ -43,13 +157,18 @@
                 data-en="Founder of VISTORÉ · Applied Computer Science, UM5 · Data & AI · Casablanca">
                 Fondatrice de VISTORÉ · Informatique Appliquée, UM5 · Data & IA · Casablanca
             </p>
+            <span class="luxury-line"
+                data-fr="We merge technology, psychology and creativity to redefine digital luxury."
+                data-en="We merge technology, psychology and creativity to redefine digital luxury.">
+                We merge technology, psychology and creativity to redefine digital luxury.
+            </span>
         </section>
 
         <div class="content-card">
             <h2 data-fr="À propos" data-en="About">À propos</h2>
-            <p data-fr="Étudiante en S2 Informatique Appliquée à l'Université Mohammed V, spécialisée en Data Science et IA. Fondatrice de VISTORÉ — une startup qui aide les entreprises à intégrer l'IA dans leurs opérations. Hackathon NASA 2025, CS50 Harvard, Ambassadrice UM5 2026/2027."
-               data-en="2nd year Applied Computer Science student at Mohammed V University, specializing in Data Science and AI. Founder of VISTORÉ — a startup helping businesses integrate AI into their operations. NASA Hackathon 2025, CS50 Harvard, UM5 Ambassador 2026/2027.">
-                Étudiante en S2 Informatique Appliquée à l'Université Mohammed V, spécialisée en Data Science et IA. Fondatrice de VISTORÉ — une startup qui aide les entreprises à intégrer l'IA dans leurs opérations. Hackathon NASA 2025, CS50 Harvard, Ambassadrice UM5 2026/2027.
+            <p data-fr="Étudiante en S2 Informatique Appliquée à l'Université Mohammed V, spécialisée en Data Science et IA. Fondatrice & CEO de VISTORÉ — une startup qui aide les entreprises à intégrer l'IA dans leurs opérations. Hackathon NASA 2025, CS50 Harvard, Ambassadrice UM5 2026/2027."
+               data-en="2nd year Applied Computer Science student at Mohammed V University, specializing in Data Science and AI. Founder & CEO of VISTORÉ — a startup helping businesses integrate AI into their operations. NASA Hackathon 2025, CS50 Harvard, UM5 Ambassador 2026/2027.">
+                Étudiante en S2 Informatique Appliquée à l'Université Mohammed V, spécialisée en Data Science et IA. Fondatrice & CEO de VISTORÉ — une startup qui aide les entreprises à intégrer l'IA dans leurs opérations. Hackathon NASA 2025, CS50 Harvard, Ambassadrice UM5 2026/2027.
             </p>
         </div>
 
@@ -64,6 +183,8 @@
                 <span class="tag">Excel Avancé</span>
                 <span class="tag">Git / GitHub</span>
                 <span class="tag">Algorithmique</span>
+                <span class="tag">HTML / CSS / JS</span>
+                <span class="tag">Chatbot IA (Groq API)</span>
             </div>
             <div class="tags" style="margin-top: 10px;">
                 <span class="tag">Arabe — Maternelle</span>
@@ -72,31 +193,48 @@
             </div>
         </div>
 
+        <!-- VISION STRIP -->
+        <div class="vision-strip">
+            <p data-fr="Nous ne construisons pas des sites web. Nous construisons des <em>actifs digitaux</em> qui génèrent de la croissance." data-en="We don't build websites. We build <em>digital assets</em> that generate growth.">
+                Nous ne construisons pas des sites web. Nous construisons des <em>actifs digitaux</em> qui génèrent de la croissance.
+            </p>
+        </div>
+
         <div class="content-card">
             <h2 data-fr="Réalisations clés" data-en="Key Achievements">Réalisations clés</h2>
 
-            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border);">
+            <div class="achievement-item">
                 <h3 data-fr="🚀 Hackathon NASA Space Apps 2025" data-en="🚀 NASA Space Apps Hackathon 2025">🚀 Hackathon NASA Space Apps 2025</h3>
                 <p data-fr="Projet GaiaByte — pipeline Python pour données satellitaires, livré en 48h en compétition internationale." data-en="GaiaByte project — Python pipeline for satellite data, delivered in 48h in international competition.">Projet GaiaByte — pipeline Python pour données satellitaires, livré en 48h en compétition internationale.</p>
             </div>
 
-            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border);">
+            <div class="achievement-item">
+                <h3 data-fr="🤖 VISTORÉ Chatbot IA" data-en="🤖 VISTORÉ AI Chatbot">🤖 VISTORÉ Chatbot IA</h3>
+                <p data-fr="Premier produit IA de VISTORÉ — chatbot intelligent pour restaurants, propulsé par Groq API (LLaMA 3)." data-en="VISTORÉ's first AI product — intelligent chatbot for restaurants, powered by Groq API (LLaMA 3).">Premier produit IA de VISTORÉ — chatbot intelligent pour restaurants, propulsé par Groq API (LLaMA 3).</p>
+            </div>
+
+            <div class="achievement-item">
+                <h3 data-fr="🌐 Bright Smile Dental Clinic" data-en="🌐 Bright Smile Dental Clinic">🌐 Bright Smile Dental Clinic</h3>
+                <p data-fr="Site web premium pour clinique dentaire à Casablanca — design luxueux, bilingue, responsive." data-en="Premium website for a dental clinic in Casablanca — luxury design, bilingual, responsive.">Site web premium pour clinique dentaire à Casablanca — design luxueux, bilingue, responsive.</p>
+            </div>
+
+            <div class="achievement-item">
                 <h3 data-fr="🎓 CS50 — Harvard University (En cours)" data-en="🎓 CS50 — Harvard University (In Progress)">🎓 CS50 — Harvard University (En cours)</h3>
                 <p data-fr="Python · C · SQL · Algorithmique via edX." data-en="Python · C · SQL · Algorithms via edX.">Python · C · SQL · Algorithmique via edX.</p>
             </div>
 
-            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border);">
+            <div class="achievement-item">
                 <h3 data-fr="🗄️ Certified Database Practitioner — DBA Academy" data-en="🗄️ Certified Database Practitioner — DBA Academy">🗄️ Certified Database Practitioner — DBA Academy</h3>
                 <p data-fr="Janvier 2026 · ID : 7135447035SM" data-en="January 2026 · ID: 7135447035SM">Janvier 2026 · ID : 7135447035SM</p>
             </div>
 
-            <div>
+            <div class="achievement-item">
                 <h3 data-fr="🏛️ Ambassadrice Étudiante — Université Mohammed V" data-en="🏛️ Student Ambassador — Mohammed V University">🏛️ Ambassadrice Étudiante — Université Mohammed V</h3>
                 <p data-fr="2026 / 2027 — Représentation officielle de l'université." data-en="2026 / 2027 — Official university representative.">2026 / 2027 — Représentation officielle de l'université.</p>
             </div>
         </div>
 
-        <div style="text-align: center; margin-top: 48px;">
+        <div style="text-align: center; margin-top: 52px;">
             <a href="contact.html" class="button filled"
                 data-fr="Démarrer un Projet →"
                 data-en="Start a Project →">
@@ -113,6 +251,9 @@
             <span data-fr="© 2026 Vistoré. Tous droits réservés." data-en="© 2026 Vistoré. All rights reserved.">© 2026 Vistoré. Tous droits réservés.</span>
             <span>|</span>
             <a href="contact.html" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
+        </div>
+        <div class="footer-ceo">
+            Founded by <span>Sirallah Makhlouf</span> · Founder & CEO, VISTORÉ
         </div>
     </footer>
 
