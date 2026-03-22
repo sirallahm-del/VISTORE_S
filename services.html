@@ -143,6 +143,94 @@
         .footer-ceo{font-size:.7rem;color:var(--text-muted);letter-spacing:1px;margin-top:10px;opacity:.6;}
         .footer-ceo span{color:var(--accent);opacity:1;}
 
+        /* WHY VISTORÉ */
+        .why-section{
+            margin-top:60px;
+            padding:60px 0;
+            border-top:1px solid var(--border);
+        }
+        .why-header{text-align:center;margin-bottom:52px;}
+        .why-label{
+            font-size:.62rem;font-weight:700;letter-spacing:4px;
+            text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;
+        }
+        .why-title{
+            font-size:2.2rem;font-weight:900;line-height:1.2;
+            margin-bottom:16px;color:var(--text);
+        }
+        .why-gold{color:var(--accent);}
+        .why-sub{
+            color:var(--text-muted);font-size:.95rem;
+            font-style:italic;max-width:480px;margin:0 auto;
+        }
+
+        /* COMPARISON TABLE */
+        .compare-table{
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            overflow:hidden;
+            margin-bottom:48px;
+        }
+        .compare-header{
+            display:grid;grid-template-columns:1fr 1fr 1fr;
+            background:var(--bg-card);
+            border-bottom:2px solid var(--border);
+        }
+        .compare-col-label{padding:16px 20px;}
+        .compare-col{
+            padding:16px 20px;text-align:center;
+            font-size:.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+        }
+        .compare-col.others{color:rgba(255,100,100,.7);border-left:1px solid var(--border);}
+        .compare-col.vistore{
+            color:var(--accent);
+            background:rgba(201,169,110,.06);
+            border-left:1px solid var(--border);
+        }
+        .compare-row{
+            display:grid;grid-template-columns:1fr 1fr 1fr;
+            border-bottom:1px solid var(--border);
+            transition:background .2s;
+        }
+        .compare-row:hover{background:rgba(201,169,110,.03);}
+        .compare-row-last{border-bottom:none;}
+        .compare-feature{
+            padding:18px 20px;font-size:.85rem;font-weight:700;
+            color:var(--text);display:flex;align-items:center;
+        }
+        .compare-col.others-val{
+            padding:18px 20px;font-size:.83rem;color:rgba(255,100,100,.7);
+            text-align:center;display:flex;align-items:center;justify-content:center;
+            border-left:1px solid var(--border);font-weight:400;
+        }
+        .compare-col.vistore-val{
+            padding:18px 20px;font-size:.83rem;color:var(--accent);
+            text-align:center;display:flex;align-items:center;justify-content:center;
+            background:rgba(201,169,110,.04);
+            border-left:1px solid var(--border);font-weight:600;
+        }
+
+        .why-closing{
+            text-align:center;
+            padding:40px;
+            background:var(--bg-card);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+        }
+        .why-closing p{
+            font-size:1.1rem;color:var(--text-muted);line-height:1.7;
+            max-width:520px;margin:0 auto;
+        }
+        .why-closing strong{color:var(--text);}
+
+        @media(max-width:768px){
+            .why-title{font-size:1.6rem;}
+            .compare-feature{font-size:.75rem;padding:14px 12px;}
+            .compare-col.others-val,.compare-col.vistore-val{font-size:.72rem;padding:14px 8px;}
+            .compare-col{font-size:.62rem;padding:12px 8px;}
+            .why-closing{padding:24px 16px;}
+        }
+
         @media(max-width:768px){
             .service-card{padding:24px;}
             .sc-cta-ghost{margin-left:0;margin-top:10px;}
@@ -313,6 +401,61 @@
             <a href="contact.html" class="sc-cta" data-fr="Auditer mon business →" data-en="Audit my business →">Auditer mon business →</a>
         </div>
 
+        <!-- WHY VISTORÉ -->
+        <div class="why-section">
+            <div class="why-header">
+                <p class="why-label" data-fr="Pourquoi nous ?" data-en="Why us?">Pourquoi nous ?</p>
+                <h2 class="why-title">
+                    <span data-fr="Agencies deliver work." data-en="Agencies deliver work.">Agencies deliver work.</span><br>
+                    <span class="why-gold" data-fr="VISTORÉ delivers results." data-en="VISTORÉ delivers results.">VISTORÉ delivers results.</span>
+                </h2>
+                <p class="why-sub" data-fr="We don't sell services. We build systems that generate results." data-en="We don't sell services. We build systems that generate results.">We don't sell services. We build systems that generate results.</p>
+            </div>
+
+            <div class="compare-table">
+                <div class="compare-header">
+                    <div class="compare-col-label"></div>
+                    <div class="compare-col others" data-fr="❌ Les autres" data-en="❌ The others">❌ Les autres</div>
+                    <div class="compare-col vistore">✦ VISTORÉ</div>
+                </div>
+                <div class="compare-row">
+                    <div class="compare-feature" data-fr="Délai de livraison" data-en="Delivery time">Délai de livraison</div>
+                    <div class="compare-col others-val" data-fr="3 à 6 semaines" data-en="3 to 6 weeks">3 à 6 semaines</div>
+                    <div class="compare-col vistore-val" data-fr="7 à 10 jours" data-en="7 to 10 days">7 à 10 jours ⚡</div>
+                </div>
+                <div class="compare-row">
+                    <div class="compare-feature" data-fr="Design" data-en="Design">Design</div>
+                    <div class="compare-col others-val" data-fr="Templates génériques" data-en="Generic templates">Templates génériques</div>
+                    <div class="compare-col vistore-val" data-fr="Sur mesure & premium" data-en="Custom & premium">Sur mesure & premium ✦</div>
+                </div>
+                <div class="compare-row">
+                    <div class="compare-feature" data-fr="Intelligence Artificielle" data-en="Artificial Intelligence">Intelligence Artificielle</div>
+                    <div class="compare-col others-val" data-fr="Rarement intégrée" data-en="Rarely integrated">Rarement intégrée</div>
+                    <div class="compare-col vistore-val" data-fr="Toujours incluse" data-en="Always included">Toujours incluse 🤖</div>
+                </div>
+                <div class="compare-row">
+                    <div class="compare-feature" data-fr="Résultats" data-en="Results">Résultats</div>
+                    <div class="compare-col others-val" data-fr="Promesses vagues" data-en="Vague promises">Promesses vagues</div>
+                    <div class="compare-col vistore-val" data-fr="Mesurables & concrets" data-en="Measurable & concrete">Mesurables & concrets 📊</div>
+                </div>
+                <div class="compare-row">
+                    <div class="compare-feature" data-fr="Suivi client" data-en="Client support">Suivi client</div>
+                    <div class="compare-col others-val" data-fr="Inexistant après livraison" data-en="Gone after delivery">Inexistant après livraison</div>
+                    <div class="compare-col vistore-val" data-fr="Inclus" data-en="Included">Inclus ✓</div>
+                </div>
+                <div class="compare-row compare-row-last">
+                    <div class="compare-feature" data-fr="Stratégie" data-en="Strategy">Stratégie</div>
+                    <div class="compare-col others-val" data-fr="Aucune" data-en="None">Aucune</div>
+                    <div class="compare-col vistore-val" data-fr="Pensée pour votre croissance" data-en="Built for your growth">Pensée pour votre croissance 🚀</div>
+                </div>
+            </div>
+
+            <div class="why-closing">
+                <p data-fr="Vos concurrents engagent des agences. Nos clients construisent des systèmes." data-en="Your competitors hire agencies. Our clients build systems.">Vos concurrents engagent des agences. <strong>Nos clients construisent des systèmes.</strong></p>
+                <a href="contact.html" class="sc-cta" style="margin-top:24px;display:inline-flex;" data-fr="Démarrer avec VISTORÉ →" data-en="Start with VISTORÉ →">Démarrer avec VISTORÉ →</a>
+            </div>
+        </div>
+
         <!-- BOTTOM CTA -->
         <div class="bottom-cta">
             <h2 data-fr="Vous avez encore des doutes ?" data-en="Still not sure?">Vous avez encore des doutes ?</h2>
@@ -331,10 +474,8 @@
             <span>|</span>
             <span data-fr="© 2026 Vistoré. Tous droits réservés." data-en="© 2026 Vistoré. All rights reserved.">© 2026 Vistoré. Tous droits réservés.</span>
             <span>|</span>
-            <a href="mailto:sirallahm@gmail.com" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
+            <a href="/cdn-cgi/l/email-protection#31425843505d5d50595c71565c50585d1f525e5c" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
         </div>
         <div class="footer-ceo">Founded by <span>Sirallah Makhlouf</span> · Founder & CEO, VISTORÉ</div>
     </footer>
-    <script src="script.js"></script>
-</body>
-</html>
+    <script
