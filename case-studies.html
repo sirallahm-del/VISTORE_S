@@ -6,11 +6,20 @@
     <title data-fr="Études de Cas | VISTORÉ" data-en="Case Studies | VISTORÉ">Études de Cas | VISTORÉ</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        .brand-tagline{font-size:.55rem;font-style:italic;color:var(--accent);opacity:.75;letter-spacing:1.5px;margin-top:2px;display:block;font-weight:400;text-transform:none;}
+        .case-study-card{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease !important;}
+        .case-study-card:hover{transform:translateY(-6px) !important;box-shadow:0 8px 32px rgba(201,169,110,.12) !important;border-color:var(--accent) !important;}
+        .card-number{font-size:.58rem;font-weight:700;letter-spacing:3px;color:var(--accent);opacity:.6;text-transform:uppercase;margin-bottom:8px;display:block;}
+        .card-new{border-color:rgba(201,169,110,.4) !important;position:relative;}
+        .card-new::before{content:'NOUVEAU';position:absolute;top:-1px;right:20px;background:var(--accent);color:var(--bg);font-size:.52rem;font-weight:700;letter-spacing:2px;padding:4px 10px;border-radius:0 0 6px 6px;}
+        .footer-ceo{font-size:.7rem;color:var(--text-muted);letter-spacing:1px;margin-top:10px;opacity:.6;}
+        .footer-ceo span{color:var(--accent);opacity:1;}
+    </style>
 </head>
 <body>
-
     <header class="navbar">
-        <div class="brand">VISTORÉ</div>
+        <div class="brand">VISTORÉ<small class="brand-tagline">The Future of Digital Luxury</small></div>
         <div class="hamburger" id="hamburger">☰</div>
         <nav class="main-nav" id="mainNav">
             <ul>
@@ -22,113 +31,77 @@
             </ul>
         </nav>
         <div class="header-utils">
-            <select id="language-switcher" class="util-select">
-                <option value="fr">FR</option>
-                <option value="en">EN</option>
-            </select>
+            <select id="language-switcher" class="util-select"><option value="fr">FR</option><option value="en">EN</option></select>
             <button id="dark-mode-toggle" class="util-button">Mode Clair</button>
         </div>
     </header>
 
     <main class="case-studies-container">
-
         <section class="page-intro">
-            <h1 class="page-title"
-                data-fr="Réalisations & Preuves"
-                data-en="Work & Proof">
-                Réalisations & Preuves
-            </h1>
-            <p class="page-subtitle"
-                data-fr="Pas de promesses vides — des projets réels, du code livré, des certifications validées."
-                data-en="No empty promises — real projects, delivered code, validated certifications.">
-                Pas de promesses vides — des projets réels, du code livré, des certifications validées.
-            </p>
+            <h1 class="page-title" data-fr="Réalisations & Preuves" data-en="Work & Proof">Réalisations & Preuves</h1>
+            <p class="page-subtitle" data-fr="Pas de promesses vides — des projets réels, du code livré, des certifications validées." data-en="No empty promises — real projects, delivered code, validated certifications.">Pas de promesses vides — des projets réels, du code livré, des certifications validées.</p>
         </section>
 
-        <!-- CHATBOT — projet le plus récent en premier -->
+        <div class="case-study-card card-new">
+            <span class="card-number">01 · Client Web</span>
+            <h2 data-fr="Bright Smile Dental Clinic — Site Web Premium" data-en="Bright Smile Dental Clinic — Premium Website">Bright Smile Dental Clinic — Site Web Premium</h2>
+            <div class="tags">
+                <span class="tag">HTML / CSS / JS</span>
+                <span class="tag">Design Luxe</span>
+                <span class="tag">Bilingue FR/EN</span>
+                <span class="tag">Responsive</span>
+                <span class="tag">Casablanca</span>
+            </div>
+            <p class="description" data-fr="Site web premium pour la clinique dentaire du Dr. Noussaiba Rguibi à Casablanca. Design haut de gamme, section avant/après, formulaire de rendez-vous, Google Maps intégré. Conçu pour une clientèle exigeante." data-en="Premium website for Dr. Noussaiba Rguibi's dental clinic in Casablanca. High-end design, before/after section, appointment form, Google Maps. Built for a discerning clientele.">Site web premium pour la clinique dentaire du Dr. Noussaiba Rguibi à Casablanca. Design haut de gamme, section avant/après, formulaire de rendez-vous, Google Maps intégré. Conçu pour une clientèle exigeante.</p>
+        </div>
+
         <div class="case-study-card">
-            <h2 data-fr="Chatbot IA — Assistant Restaurant Le Marrakchi"
-                data-en="AI Chatbot — Restaurant Le Marrakchi Assistant">
-                Chatbot IA — Assistant Restaurant Le Marrakchi
-            </h2>
+            <span class="card-number">02 · Produit IA</span>
+            <h2 data-fr="Chatbot IA — Assistant Restaurant Le Marrakchi" data-en="AI Chatbot — Restaurant Le Marrakchi Assistant">Chatbot IA — Assistant Restaurant Le Marrakchi</h2>
             <div class="tags">
                 <span class="tag">Python</span>
                 <span class="tag">Groq API</span>
                 <span class="tag">LLaMA 3.3</span>
                 <span class="tag">IA Générative</span>
             </div>
-            <p class="description"
-                data-fr="Premier projet IA de VISTORÉ — un chatbot intelligent qui automatise le service client d'un restaurant marocain. Il répond aux questions sur le menu, les horaires et les réservations, 24h/24. Construit from scratch en Python avec l'API Groq."
-                data-en="VISTORÉ's first AI project — an intelligent chatbot that automates customer service for a Moroccan restaurant. It answers questions about the menu, opening hours and reservations, 24/7. Built from scratch in Python using the Groq API.">
-                Premier projet IA de VISTORÉ — un chatbot intelligent qui automatise le service client d'un restaurant marocain. Il répond aux questions sur le menu, les horaires et les réservations, 24h/24. Construit from scratch en Python avec l'API Groq.
-            </p>
-            <a href="https://github.com/sirallahm-del/vistore-chatbot" target="_blank" class="button filled"
-                data-fr="Voir le code (GitHub)"
-                data-en="View Code (GitHub)">
-                Voir le code (GitHub)
-            </a>
+            <p class="description" data-fr="Premier produit IA de VISTORÉ — un chatbot intelligent qui automatise le service client d'un restaurant marocain. Répond aux questions sur le menu, les horaires et les réservations, 24h/24." data-en="VISTORÉ's first AI product — an intelligent chatbot automating customer service for a Moroccan restaurant. Answers questions about the menu, hours and reservations 24/7.">Premier produit IA de VISTORÉ — un chatbot intelligent qui automatise le service client d'un restaurant marocain. Répond aux questions sur le menu, les horaires et les réservations, 24h/24.</p>
+            <a href="https://github.com/sirallahm-del/vistore-chatbot" target="_blank" class="button filled" data-fr="Voir le code (GitHub)" data-en="View Code (GitHub)">Voir le code (GitHub)</a>
         </div>
 
-        <!-- NASA -->
         <div class="case-study-card">
-            <h2 data-fr="Hackathon NASA Space Apps 2025 — GaiaByte"
-                data-en="NASA Space Apps Hackathon 2025 — GaiaByte">
-                Hackathon NASA Space Apps 2025 — GaiaByte
-            </h2>
+            <span class="card-number">03 · Compétition Internationale</span>
+            <h2 data-fr="Hackathon NASA Space Apps 2025 — GaiaByte" data-en="NASA Space Apps Hackathon 2025 — GaiaByte">Hackathon NASA Space Apps 2025 — GaiaByte</h2>
             <div class="tags">
                 <span class="tag">Python</span>
                 <span class="tag">Google Earth Engine</span>
                 <span class="tag">Analyse SIG</span>
                 <span class="tag">NASA</span>
             </div>
-            <p class="description"
-                data-fr="Pipeline Python complet pour analyser des données environnementales satellitaires (Landsat/SRTM). Solution fonctionnelle livrée en 48h dans une compétition internationale organisée par la NASA."
-                data-en="Complete Python pipeline to analyze satellite environmental data (Landsat/SRTM). Working solution delivered in 48h in an international competition organized by NASA.">
-                Pipeline Python complet pour analyser des données environnementales satellitaires (Landsat/SRTM). Solution fonctionnelle livrée en 48h dans une compétition internationale organisée par la <strong>NASA</strong>.
-            </p>
-            <a href="https://github.com/sirallahm-del/NASA-GaiaByte-2025" target="_blank" class="button filled"
-                data-fr="Voir le code (GitHub)"
-                data-en="View Code (GitHub)">
-                Voir le code (GitHub)
-            </a>
+            <p class="description" data-fr="Pipeline Python complet pour analyser des données environnementales satellitaires (Landsat/SRTM). Solution fonctionnelle livrée en 48h dans une compétition internationale organisée par la NASA." data-en="Complete Python pipeline to analyze satellite environmental data (Landsat/SRTM). Working solution delivered in 48h in an international competition by NASA.">Pipeline Python complet pour analyser des données environnementales satellitaires (Landsat/SRTM). Solution fonctionnelle livrée en 48h dans une compétition internationale organisée par la <strong>NASA</strong>.</p>
+            <a href="https://github.com/sirallahm-del/NASA-GaiaByte-2025" target="_blank" class="button filled" data-fr="Voir le code (GitHub)" data-en="View Code (GitHub)">Voir le code (GitHub)</a>
         </div>
 
-        <!-- CS50 -->
         <div class="case-study-card">
-            <h2 data-fr="CS50 — Harvard University"
-                data-en="CS50 — Harvard University">
-                CS50 — Harvard University
-            </h2>
+            <span class="card-number">04 · Certification</span>
+            <h2 data-fr="CS50 — Harvard University" data-en="CS50 — Harvard University">CS50 — Harvard University</h2>
             <div class="tags">
-                <span class="tag">Python</span>
-                <span class="tag">C</span>
-                <span class="tag">SQL</span>
-                <span class="tag">Algorithmique</span>
+                <span class="tag">Python</span><span class="tag">C</span><span class="tag">SQL</span><span class="tag">Algorithmique</span>
             </div>
-            <p class="description"
-                data-fr="Certification internationale validant la maîtrise des fondamentaux : algorithmique, structures de données, C, Python, SQL. Délivrée par Harvard University via edX."
-                data-en="International certification validating mastery of fundamentals: algorithms, data structures, C, Python, SQL. Delivered by Harvard University via edX.">
-                Certification internationale validant la maîtrise des fondamentaux : algorithmique, structures de données, C, Python, SQL. Délivrée par <strong>Harvard University</strong> via edX.
-            </p>
+            <p class="description" data-fr="Certification internationale validant la maîtrise des fondamentaux : algorithmique, structures de données, C, Python, SQL. Délivrée par Harvard University via edX." data-en="International certification validating mastery of fundamentals: algorithms, data structures, C, Python, SQL. By Harvard University via edX.">Certification internationale validant la maîtrise des fondamentaux : algorithmique, structures de données, C, Python, SQL. Délivrée par <strong>Harvard University</strong> via edX.</p>
         </div>
 
-        <!-- DBA -->
         <div class="case-study-card">
-            <h2 data-fr="Certified Database Practitioner — DBA Academy"
-                data-en="Certified Database Practitioner — DBA Academy">
-                Certified Database Practitioner — DBA Academy
-            </h2>
+            <span class="card-number">05 · Certification</span>
+            <h2 data-fr="Certified Database Practitioner — DBA Academy" data-en="Certified Database Practitioner — DBA Academy">Certified Database Practitioner — DBA Academy</h2>
             <div class="tags">
-                <span class="tag">SQL</span>
-                <span class="tag">Bases de données</span>
+                <span class="tag">SQL</span><span class="tag">Bases de données</span>
             </div>
-            <p class="description"
-                data-fr="Certification professionnelle en conception et administration de bases de données relationnelles. ID officiel : 7135447035SM — Janvier 2026."
-                data-en="Professional certification in relational database design and administration. Official ID: 7135447035SM — January 2026.">
-                Certification professionnelle en conception et administration de bases de données relationnelles. ID officiel : <strong>7135447035SM</strong> — Janvier 2026.
-            </p>
+            <p class="description" data-fr="Certification professionnelle en conception et administration de bases de données relationnelles. ID officiel : 7135447035SM — Janvier 2026." data-en="Professional certification in relational database design and administration. Official ID: 7135447035SM — January 2026.">Certification professionnelle en conception et administration de bases de données relationnelles. ID officiel : <strong>7135447035SM</strong> — Janvier 2026.</p>
         </div>
 
+        <div style="text-align:center;margin-top:48px;">
+            <a href="contact.html" class="button filled" data-fr="Démarrer votre projet →" data-en="Start Your Project →">Démarrer votre projet →</a>
+        </div>
     </main>
 
     <footer>
@@ -139,8 +112,8 @@
             <span>|</span>
             <a href="contact.html" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
         </div>
+        <div class="footer-ceo">Founded by <span>Sirallah Makhlouf</span> · Founder & CEO, VISTORÉ</div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
