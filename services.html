@@ -6,10 +6,18 @@
     <title data-fr="Services | VISTORÉ" data-en="Services | VISTORÉ">Services | VISTORÉ</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        .brand-tagline{font-size:.55rem;font-style:italic;color:var(--accent);opacity:.75;letter-spacing:1.5px;margin-top:2px;display:block;font-weight:400;text-transform:none;}
+        .service-card{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease !important;}
+        .service-card:hover{transform:translateY(-6px) !important;box-shadow:0 8px 32px rgba(201,169,110,.12) !important;border-color:var(--accent) !important;}
+        .service-num{font-size:.58rem;font-weight:700;letter-spacing:3px;color:var(--accent);opacity:.6;text-transform:uppercase;margin-bottom:8px;display:block;}
+        .footer-ceo{font-size:.7rem;color:var(--text-muted);letter-spacing:1px;margin-top:10px;opacity:.6;}
+        .footer-ceo span{color:var(--accent);opacity:1;}
+    </style>
 </head>
 <body>
     <header class="navbar">
-        <div class="brand">VISTORÉ</div>
+        <div class="brand">VISTORÉ<small class="brand-tagline">The Future of Digital Luxury</small></div>
         <div class="hamburger" id="hamburger">☰</div>
         <nav class="main-nav" id="mainNav">
             <ul>
@@ -21,10 +29,7 @@
             </ul>
         </nav>
         <div class="header-utils">
-            <select id="language-switcher" class="util-select">
-                <option value="fr">FR</option>
-                <option value="en">EN</option>
-            </select>
+            <select id="language-switcher" class="util-select"><option value="fr">FR</option><option value="en">EN</option></select>
             <button id="dark-mode-toggle" class="util-button">Mode Clair</button>
         </div>
     </header>
@@ -32,18 +37,12 @@
     <main>
         <section class="services">
             <p class="subtitle" data-fr="Ce que nous faisons" data-en="What We Do">Ce que nous faisons</p>
-            <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 40px;"
-                data-fr="Des solutions IA concrètes, pas des promesses."
-                data-en="Concrete AI Solutions, Not Promises.">
-                Des solutions IA concrètes, pas des promesses.
-            </h2>
+            <h2 style="font-size:2rem;font-weight:900;margin-bottom:40px;" data-fr="Des solutions IA concrètes, pas des promesses." data-en="Concrete AI Solutions, Not Promises.">Des solutions IA concrètes, pas des promesses.</h2>
 
             <div class="service-card">
+                <span class="service-num">01</span>
                 <h3 data-fr="🤖 Automatisation & Chatbots IA" data-en="🤖 AI Automation & Chatbots">🤖 Automatisation & Chatbots IA</h3>
-                <p data-fr="Nous déployons des assistants IA et des workflows automatisés qui remplacent les tâches répétitives. Résultat : vous gagnez du temps, réduisez les erreurs et servez vos clients 24h/24."
-                   data-en="We deploy AI assistants and automated workflows that replace repetitive tasks. Result: you save time, reduce errors and serve your clients 24/7.">
-                    Nous déployons des assistants IA et des workflows automatisés qui remplacent les tâches répétitives. Résultat : vous gagnez du temps, réduisez les erreurs et servez vos clients 24h/24.
-                </p>
+                <p data-fr="Nous déployons des assistants IA et des workflows automatisés qui remplacent les tâches répétitives. Résultat : vous gagnez du temps, réduisez les erreurs et servez vos clients 24h/24." data-en="We deploy AI assistants and automated workflows that replace repetitive tasks. Result: you save time, reduce errors and serve your clients 24/7.">Nous déployons des assistants IA et des workflows automatisés qui remplacent les tâches répétitives. Résultat : vous gagnez du temps, réduisez les erreurs et servez vos clients 24h/24.</p>
                 <ul>
                     <li data-fr="Chatbots intelligents (WhatsApp, Web, Instagram)" data-en="Smart chatbots (WhatsApp, Web, Instagram)">Chatbots intelligents (WhatsApp, Web, Instagram)</li>
                     <li data-fr="Automatisation des processus métier" data-en="Business process automation">Automatisation des processus métier</li>
@@ -52,11 +51,9 @@
             </div>
 
             <div class="service-card">
+                <span class="service-num">02</span>
                 <h3 data-fr="📊 Data Analyse & Reporting" data-en="📊 Data Analysis & Reporting">📊 Data Analyse & Reporting</h3>
-                <p data-fr="Vos données sont une mine d'or inexploitée. Nous les structurons, les analysons et les transformons en tableaux de bord clairs pour des décisions rapides et éclairées."
-                   data-en="Your data is an untapped goldmine. We structure, analyze and transform it into clear dashboards for fast, informed decisions.">
-                    Vos données sont une mine d'or inexploitée. Nous les structurons, les analysons et les transformons en tableaux de bord clairs pour des décisions rapides et éclairées.
-                </p>
+                <p data-fr="Vos données sont une mine d'or inexploitée. Nous les structurons, les analysons et les transformons en tableaux de bord clairs pour des décisions rapides et éclairées." data-en="Your data is an untapped goldmine. We structure, analyze and transform it into clear dashboards for fast, informed decisions.">Vos données sont une mine d'or inexploitée. Nous les structurons, les analysons et les transformons en tableaux de bord clairs pour des décisions rapides et éclairées.</p>
                 <ul>
                     <li data-fr="Tableaux de bord sur mesure (Excel, Python, GCP)" data-en="Custom dashboards (Excel, Python, GCP)">Tableaux de bord sur mesure (Excel, Python, GCP)</li>
                     <li data-fr="Nettoyage & structuration de bases de données" data-en="Database cleaning & structuring">Nettoyage & structuration de bases de données</li>
@@ -65,11 +62,9 @@
             </div>
 
             <div class="service-card">
+                <span class="service-num">03</span>
                 <h3 data-fr="🌐 Développement Web Premium" data-en="🌐 Premium Web Development">🌐 Développement Web Premium</h3>
-                <p data-fr="Des sites web modernes, rapides et élégants qui reflètent l'ambition de votre marque. Pas de templates génériques — chaque projet est pensé pour convertir et impressionner."
-                   data-en="Modern, fast and elegant websites that reflect your brand's ambition. No generic templates — every project is built to convert and impress.">
-                    Des sites web modernes, rapides et élégants qui reflètent l'ambition de votre marque. Pas de templates génériques — chaque projet est pensé pour convertir et impressionner.
-                </p>
+                <p data-fr="Des sites web modernes, rapides et élégants qui reflètent l'ambition de votre marque. Pas de templates génériques — chaque projet est pensé pour convertir et impressionner." data-en="Modern, fast and elegant websites that reflect your brand's ambition. No generic templates — every project is built to convert and impress.">Des sites web modernes, rapides et élégants qui reflètent l'ambition de votre marque. Pas de templates génériques — chaque projet est pensé pour convertir et impressionner.</p>
                 <ul>
                     <li data-fr="Sites vitrines & portfolios haute performance" data-en="High-performance showcase sites & portfolios">Sites vitrines & portfolios haute performance</li>
                     <li data-fr="Intégration de fonctionnalités IA" data-en="AI feature integration">Intégration de fonctionnalités IA</li>
@@ -78,11 +73,9 @@
             </div>
 
             <div class="service-card">
+                <span class="service-num">04</span>
                 <h3 data-fr="🧠 Conseil Stratégique IA" data-en="🧠 AI Strategic Consulting">🧠 Conseil Stratégique IA</h3>
-                <p data-fr="Vous voulez intégrer l'IA dans votre business mais vous ne savez pas par où commencer ? Nous analysons vos processus et vous livrons une feuille de route claire et actionnable."
-                   data-en="You want to integrate AI into your business but don't know where to start? We analyze your processes and deliver a clear, actionable roadmap.">
-                    Vous voulez intégrer l'IA dans votre business mais vous ne savez pas par où commencer ? Nous analysons vos processus et vous livrons une feuille de route claire et actionnable.
-                </p>
+                <p data-fr="Vous voulez intégrer l'IA dans votre business mais vous ne savez pas par où commencer ? Nous analysons vos processus et vous livrons une feuille de route claire et actionnable." data-en="You want to integrate AI into your business but don't know where to start? We analyze your processes and deliver a clear, actionable roadmap.">Vous voulez intégrer l'IA dans votre business mais vous ne savez pas par où commencer ? Nous analysons vos processus et vous livrons une feuille de route claire et actionnable.</p>
                 <ul>
                     <li data-fr="Audit de vos processus actuels" data-en="Audit of your current processes">Audit de vos processus actuels</li>
                     <li data-fr="Identification des gains IA rapides (Quick Wins)" data-en="Identification of quick AI wins">Identification des gains IA rapides (Quick Wins)</li>
@@ -90,12 +83,8 @@
                 </ul>
             </div>
 
-            <div style="text-align:center; margin-top: 3rem;">
-                <a href="contact.html" class="button filled"
-                    data-fr="Discutons de votre projet →"
-                    data-en="Let's Talk About Your Project →">
-                    Discutons de votre projet →
-                </a>
+            <div style="text-align:center;margin-top:3rem;">
+                <a href="contact.html" class="button filled" data-fr="Discutons de votre projet →" data-en="Let's Talk About Your Project →">Discutons de votre projet →</a>
             </div>
         </section>
     </main>
@@ -108,8 +97,8 @@
             <span>|</span>
             <a href="mailto:sirallahm@gmail.com" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
         </div>
+        <div class="footer-ceo">Founded by <span>Sirallah Makhlouf</span> · Founder & CEO, VISTORÉ</div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
