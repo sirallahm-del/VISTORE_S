@@ -195,9 +195,8 @@
 
         <!-- VISION STRIP -->
         <div class="vision-strip">
-            <p data-fr="Nous ne construisons pas des sites web. Nous construisons des <em>actifs digitaux</em> qui génèrent de la croissance." data-en="We don't build websites. We build <em>digital assets</em> that generate growth.">
-                Nous ne construisons pas des sites web. Nous construisons des <em>actifs digitaux</em> qui génèrent de la croissance.
-            </p>
+            <p class="vision-fr">Nous ne construisons pas des sites web. Nous construisons des <em>actifs digitaux</em> qui génèrent de la croissance.</p>
+            <p class="vision-en" style="display:none;">We don't build websites. We build <em>digital assets</em> that generate growth.</p>
         </div>
 
         <div class="content-card">
@@ -258,5 +257,19 @@
     </footer>
 
     <script src="script.js"></script>
-</body>
+    <script>
+        // Fix vision strip language — can't use data-fr/en because it strips HTML tags
+        function updateVisionStrip() {
+            const lang = localStorage.getItem('vistore-lang') || 'fr';
+            const fr = document.querySelector('.vision-fr');
+            const en = document.querySelector('.vision-en');
+            if (!fr || !en) return;
+            if (lang === 'en') { fr.style.display='none'; en.style.display='block'; }
+            else { fr.style.display='block'; en.style.display='none'; }
+        }
+        updateVisionStrip();
+        document.getElementById('language-switcher')?.addEventListener('change', () => {
+            setTimeout(updateVisionStrip, 50);
+        });
+    </script>
 </html>
