@@ -7,10 +7,122 @@
     <title data-fr="VISTORÉ - Data & IA Consulting" data-en="VISTORÉ - Data & AI Consulting">VISTORÉ - Data & IA Consulting</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* ── TAGLINE ── */
+        .brand-tagline {
+            font-size: .65rem;
+            font-style: italic;
+            color: var(--accent);
+            opacity: 0.8;
+            letter-spacing: 1.5px;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* ── VISION SECTION ── */
+        .vision-section {
+            padding: 90px 7%;
+            background: var(--bg);
+            text-align: center;
+            border-top: 1px solid rgba(201,169,110,.15);
+        }
+        .vision-label {
+            font-size: .62rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 20px;
+            display: block;
+        }
+        .vision-text {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1.3rem, 2.5vw, 2rem);
+            font-weight: 300;
+            color: var(--text);
+            line-height: 1.6;
+            max-width: 680px;
+            margin: 0 auto 16px;
+        }
+        .vision-text em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        /* ── STATS BAND ── */
+        .stats-band {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding: 60px 7%;
+            background: var(--nav-bg, #0D1B2A);
+            border-top: 1px solid rgba(201,169,110,.1);
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-n {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--accent);
+            display: block;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .stat-l {
+            font-size: .62rem;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.35);
+        }
+        .stat-sep {
+            width: 1px;
+            background: rgba(255,255,255,.08);
+            align-self: stretch;
+        }
+
+        /* ── CARD HOVER UPGRADE ── */
+        .card {
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(201,169,110,.15);
+            transition: all .4s cubic-bezier(.25,.46,.45,.94);
+        }
+        .card:hover {
+            box-shadow: 0 0 40px rgba(201,169,110,.12);
+            transform: translateY(-12px) scale(1.02);
+            border-color: rgba(201,169,110,.35);
+        }
+
+        /* ── LUXURY LINE ── */
+        .luxury-line {
+            margin-top: 20px;
+            font-style: italic;
+            color: var(--accent);
+            opacity: 0.75;
+            font-size: .85rem;
+            letter-spacing: 1px;
+        }
+
+        /* ── CEO FOOTER ── */
+        .footer-ceo {
+            font-size: .68rem;
+            color: rgba(255,255,255,.25);
+            letter-spacing: 1.5px;
+            margin-top: 8px;
+        }
+        .footer-ceo span {
+            color: var(--accent);
+        }
+    </style>
 </head>
 <body>
     <header class="navbar">
-        <div class="brand">VISTORÉ</div>
+        <div class="brand">
+            VISTORÉ
+            <small class="brand-tagline" data-fr="The Future of Digital Luxury" data-en="The Future of Digital Luxury">The Future of Digital Luxury</small>
+        </div>
         <div class="hamburger" id="hamburger">☰</div>
         <nav class="main-nav" id="mainNav">
             <ul>
@@ -46,6 +158,11 @@
                 data-en="VISTORÉ builds custom Data and AI solutions for businesses that refuse mediocrity. Automation, analysis, strategy — we turn your data into a competitive edge.">
                 VISTORÉ conçoit des solutions sur mesure en Data et Intelligence Artificielle pour les entreprises qui refusent la médiocrité. Automatisation, analyse, stratégie — nous transformons vos données en avantage compétitif.
             </p>
+            <p class="luxury-line"
+                data-fr="We merge technology, psychology and creativity to redefine digital luxury."
+                data-en="We merge technology, psychology and creativity to redefine digital luxury.">
+                We merge technology, psychology and creativity to redefine digital luxury.
+            </p>
             <div class="buttons">
                 <a href="case-studies.html" class="button filled"
                     data-fr="Voir nos Réalisations"
@@ -61,6 +178,39 @@
         </div>
     </main>
 
+    <!-- STATS BAND -->
+    <div class="stats-band">
+        <div class="stat-item">
+            <span class="stat-n">3+</span>
+            <span class="stat-l" data-fr="Projets livrés" data-en="Projects delivered">Projets livrés</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat-item">
+            <span class="stat-n">2</span>
+            <span class="stat-l" data-fr="Outils IA créés" data-en="AI tools built">Outils IA créés</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat-item">
+            <span class="stat-n">100%</span>
+            <span class="stat-l" data-fr="Sur mesure" data-en="Custom-built">Sur mesure</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat-item">
+            <span class="stat-n">∞</span>
+            <span class="stat-l" data-fr="Ambition" data-en="Ambition">Ambition</span>
+        </div>
+    </div>
+
+    <!-- VISION SECTION -->
+    <section class="vision-section">
+        <span class="vision-label" data-fr="Notre Vision" data-en="Our Vision">Notre Vision</span>
+        <p class="vision-text"
+            data-fr="Nous fusionnons technologie, psychologie et créativité pour <em>redéfinir le luxe digital</em> — un projet à la fois."
+            data-en="We merge technology, psychology and creativity to <em>redefine digital luxury</em> — one project at a time.">
+            Nous fusionnons technologie, psychologie et créativité pour <em>redéfinir le luxe digital</em> — un projet à la fois.
+        </p>
+    </section>
+
     <footer>
         <div class="footer-content">
             <a href="#" class="footer-link" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales</a>
@@ -68,6 +218,9 @@
             <span data-fr="© 2026 Vistoré. Tous droits réservés." data-en="© 2026 Vistoré. All rights reserved.">© 2026 Vistoré. Tous droits réservés.</span>
             <span>|</span>
             <a href="contact.html" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
+        </div>
+        <div class="footer-ceo">
+            Founded by <span>Sirallah Makhlouf</span> · Founder & CEO, VISTORÉ
         </div>
     </footer>
 
