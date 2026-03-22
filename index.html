@@ -8,23 +8,72 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* ── TAGLINE ── */
+        /* TAGLINE sous logo */
         .brand-tagline {
-            font-size: .65rem;
+            font-size: .55rem;
             font-style: italic;
             color: var(--accent);
-            opacity: 0.8;
+            opacity: 0.75;
             letter-spacing: 1.5px;
-            margin-top: 4px;
+            margin-top: 2px;
             display: block;
+            font-weight: 400;
+            text-transform: none;
         }
 
-        /* ── VISION SECTION ── */
+        /* LUXURY LINE sous description */
+        .luxury-line {
+            font-style: italic;
+            color: var(--accent);
+            opacity: 0.75;
+            font-size: .88rem;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 36px;
+            margin-top: -28px;
+        }
+
+        /* STATS BAND */
+        .stats-band {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            padding: 52px 7%;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            margin: 0 -32px;
+        }
+        .stat-item { text-align: center; }
+        .stat-n {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--accent);
+            display: block;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .stat-l {
+            font-size: .6rem;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .stat-sep {
+            width: 1px;
+            height: 40px;
+            background: var(--border);
+        }
+
+        /* VISION SECTION */
         .vision-section {
-            padding: 90px 7%;
-            background: var(--bg);
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 80px 16px;
             text-align: center;
-            border-top: 1px solid rgba(201,169,110,.15);
         }
         .vision-label {
             font-size: .62rem;
@@ -36,84 +85,41 @@
             display: block;
         }
         .vision-text {
-            font-family: 'Inter', sans-serif;
-            font-size: clamp(1.3rem, 2.5vw, 2rem);
-            font-weight: 300;
+            font-size: clamp(1.2rem, 2vw, 1.7rem);
+            font-weight: 400;
             color: var(--text);
-            line-height: 1.6;
-            max-width: 680px;
-            margin: 0 auto 16px;
+            line-height: 1.65;
+            max-width: 640px;
+            margin: 0 auto;
         }
         .vision-text em {
             font-style: italic;
             color: var(--accent);
         }
 
-        /* ── STATS BAND ── */
-        .stats-band {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            padding: 60px 7%;
-            background: var(--nav-bg, #0D1B2A);
-            border-top: 1px solid rgba(201,169,110,.1);
-            flex-wrap: wrap;
+        /* CARD HOVER GLOBAL UPGRADE */
+        .content-card, .service-card, .case-study-card {
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease !important;
         }
-        .stat-item {
-            text-align: center;
-        }
-        .stat-n {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--accent);
-            display: block;
-            line-height: 1;
-            margin-bottom: 6px;
-        }
-        .stat-l {
-            font-size: .62rem;
-            font-weight: 600;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            color: rgba(255,255,255,.35);
-        }
-        .stat-sep {
-            width: 1px;
-            background: rgba(255,255,255,.08);
-            align-self: stretch;
+        .content-card:hover, .service-card:hover, .case-study-card:hover {
+            transform: translateY(-6px) !important;
+            box-shadow: 0 8px 32px rgba(201,169,110,.12) !important;
+            border-color: var(--accent) !important;
         }
 
-        /* ── CARD HOVER UPGRADE ── */
-        .card {
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(201,169,110,.15);
-            transition: all .4s cubic-bezier(.25,.46,.45,.94);
-        }
-        .card:hover {
-            box-shadow: 0 0 40px rgba(201,169,110,.12);
-            transform: translateY(-12px) scale(1.02);
-            border-color: rgba(201,169,110,.35);
-        }
-
-        /* ── LUXURY LINE ── */
-        .luxury-line {
-            margin-top: 20px;
-            font-style: italic;
-            color: var(--accent);
-            opacity: 0.75;
-            font-size: .85rem;
-            letter-spacing: 1px;
-        }
-
-        /* ── CEO FOOTER ── */
+        /* CEO FOOTER */
         .footer-ceo {
-            font-size: .68rem;
-            color: rgba(255,255,255,.25);
-            letter-spacing: 1.5px;
-            margin-top: 8px;
+            font-size: .7rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            margin-top: 10px;
+            opacity: .6;
         }
-        .footer-ceo span {
-            color: var(--accent);
+        .footer-ceo span { color: var(--accent); opacity: 1; }
+
+        @media(max-width: 768px) {
+            .stats-band { margin: 0 -16px; gap: 28px; padding: 40px 5%; }
+            .stat-sep { display: none; }
         }
     </style>
 </head>
@@ -121,7 +127,7 @@
     <header class="navbar">
         <div class="brand">
             VISTORÉ
-            <small class="brand-tagline" data-fr="The Future of Digital Luxury" data-en="The Future of Digital Luxury">The Future of Digital Luxury</small>
+            <small class="brand-tagline">The Future of Digital Luxury</small>
         </div>
         <div class="hamburger" id="hamburger">☰</div>
         <nav class="main-nav" id="mainNav">
@@ -158,11 +164,11 @@
                 data-en="VISTORÉ builds custom Data and AI solutions for businesses that refuse mediocrity. Automation, analysis, strategy — we turn your data into a competitive edge.">
                 VISTORÉ conçoit des solutions sur mesure en Data et Intelligence Artificielle pour les entreprises qui refusent la médiocrité. Automatisation, analyse, stratégie — nous transformons vos données en avantage compétitif.
             </p>
-            <p class="luxury-line"
+            <span class="luxury-line"
                 data-fr="We merge technology, psychology and creativity to redefine digital luxury."
                 data-en="We merge technology, psychology and creativity to redefine digital luxury.">
                 We merge technology, psychology and creativity to redefine digital luxury.
-            </p>
+            </span>
             <div class="buttons">
                 <a href="case-studies.html" class="button filled"
                     data-fr="Voir nos Réalisations"
@@ -201,12 +207,12 @@
         </div>
     </div>
 
-    <!-- VISION SECTION -->
+    <!-- VISION -->
     <section class="vision-section">
         <span class="vision-label" data-fr="Notre Vision" data-en="Our Vision">Notre Vision</span>
         <p class="vision-text"
-            data-fr="Nous fusionnons technologie, psychologie et créativité pour <em>redéfinir le luxe digital</em> — un projet à la fois."
-            data-en="We merge technology, psychology and creativity to <em>redefine digital luxury</em> — one project at a time.">
+            data-fr="Nous fusionnons technologie, psychologie et créativité pour redéfinir le luxe digital — un projet à la fois."
+            data-en="We merge technology, psychology and creativity to redefine digital luxury — one project at a time.">
             Nous fusionnons technologie, psychologie et créativité pour <em>redéfinir le luxe digital</em> — un projet à la fois.
         </p>
     </section>
