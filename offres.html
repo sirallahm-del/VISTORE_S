@@ -1,20 +1,290 @@
-/* Structure de la carte en tant que lien */
-.offers-grid a.offer-card {
-    text-decoration: none;
-    display: block;
-    color: inherit;
-    cursor: pointer;
-    transition: all 0.4s ease; /* Fluidité de l'animation */
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-fr="Offres | VISTORÉ" data-en="Offers | VISTORÉ">Offres | VISTORÉ</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        .brand-tagline{font-size:.55rem;font-style:italic;color:var(--accent);opacity:.75;letter-spacing:1.5px;margin-top:2px;display:block;font-weight:400;text-transform:none;}
 
-/* On s'assure que le hover s'applique sur l'élément <a> */
-.offers-grid a.offer-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 48px rgba(201,169,110,.15);
-    border-color: var(--accent);
-}
+        /* PAGE */
+        .offers-page{max-width:960px;margin:0 auto;padding:0 16px 80px;}
 
-/* Activation de la barre lumineuse au survol */
-.offers-grid a.offer-card:hover::before {
-    opacity: 1;
-}
+        /* HEADER */
+        .offers-header{text-align:center;padding:72px 20px 52px;}
+        .off-chip{
+            display:inline-flex;align-items:center;gap:8px;
+            background:rgba(201,169,110,.1);border:1px solid rgba(201,169,110,.25);
+            padding:8px 18px;border-radius:24px;
+            font-size:.62rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
+            color:var(--accent);margin-bottom:24px;
+        }
+        .off-chip::before{content:'◆';font-size:.4rem;}
+        .offers-header h1{
+            font-size:clamp(2rem,4vw,3rem);font-weight:900;
+            line-height:1.15;margin-bottom:14px;color:var(--text);
+        }
+        .offers-header h1 em{font-style:italic;color:var(--accent);}
+        .offers-header p{
+            color:var(--text-muted);font-size:.95rem;line-height:1.8;
+            max-width:520px;margin:0 auto;
+        }
+
+        /* URGENCY */
+        .urg{
+            display:flex;align-items:center;justify-content:center;gap:10px;
+            background:rgba(201,169,110,.07);border:1px solid rgba(201,169,110,.2);
+            border-radius:var(--radius);padding:12px 24px;
+            max-width:480px;margin:0 auto 52px;
+        }
+        .urg-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 1.5s infinite;flex-shrink:0;}
+        @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.4)}}
+        .urg span{font-size:.75rem;font-weight:600;color:var(--accent);letter-spacing:.5px;}
+
+        /* DEMO BANNER */
+        .demo-banner{
+            background:var(--bg-card);border:1px solid rgba(201,169,110,.25);
+            border-radius:var(--radius);padding:24px 32px;
+            display:flex;align-items:center;justify-content:space-between;
+            gap:20px;flex-wrap:wrap;margin-bottom:52px;
+        }
+        .db-text h3{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:4px;}
+        .db-text p{font-size:.82rem;color:var(--text-muted);line-height:1.6;}
+        .db-text p strong{color:var(--accent);}
+        .btn-demo{
+            display:inline-flex;align-items:center;gap:8px;
+            background:var(--accent);color:var(--bg);
+            padding:12px 22px;border-radius:var(--radius);
+            font-weight:700;font-size:.78rem;letter-spacing:1px;
+            text-decoration:none;transition:all .3s;
+            border:2px solid var(--accent);white-space:nowrap;flex-shrink:0;
+        }
+        .btn-demo:hover{background:transparent;color:var(--accent);}
+
+        /* GRID */
+        .off-grid{
+            display:grid;grid-template-columns:repeat(3,1fr);
+            gap:20px;margin-bottom:52px;
+        }
+
+        /* CARD */
+        .off-card{
+            background:var(--bg-card);border:1px solid var(--border);
+            border-radius:var(--radius);padding:32px 24px;
+            transition:all .4s;position:relative;overflow:hidden;cursor:pointer;
+            display:flex;flex-direction:column;
+        }
+        .off-card::after{
+            content:'';position:absolute;top:0;left:0;right:0;height:3px;
+            background:linear-gradient(90deg,transparent,var(--accent),transparent);
+            opacity:0;transition:opacity .35s;
+        }
+        .off-card:hover{transform:translateY(-8px);box-shadow:0 20px 52px rgba(201,169,110,.15);border-color:var(--accent);}
+        .off-card:hover::after{opacity:1;}
+
+        /* FEATURED */
+        .off-card.featured{
+            border-color:rgba(201,169,110,.35);
+            background:linear-gradient(160deg,var(--bg-card) 0%,rgba(201,169,110,.04) 100%);
+        }
+        .off-card.featured::after{opacity:.5;}
+        .feat-badge{
+            position:absolute;top:14px;right:14px;
+            background:var(--accent);color:var(--bg);
+            font-size:.52rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+            padding:4px 10px;border-radius:20px;
+        }
+
+        .off-num{font-size:.56rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);opacity:.55;margin-bottom:10px;display:block;}
+        .off-name{font-size:1.5rem;font-weight:900;color:var(--text);margin-bottom:6px;}
+        .off-tag{font-size:.8rem;color:var(--accent);font-style:italic;font-weight:500;margin-bottom:18px;display:block;}
+        .off-divider{height:1px;background:var(--border);margin-bottom:18px;}
+
+        .off-list{list-style:none;margin-bottom:auto;padding-bottom:24px;}
+        .off-list li{
+            display:flex;align-items:flex-start;gap:9px;
+            font-size:.82rem;color:var(--text-muted);margin-bottom:10px;line-height:1.5;
+        }
+        .off-list li::before{content:'✓';color:var(--accent);font-weight:900;font-size:.75rem;flex-shrink:0;margin-top:2px;}
+
+        .off-price-lbl{font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;display:block;}
+        .off-price{font-size:1rem;font-weight:700;color:var(--text);font-style:italic;margin-bottom:18px;}
+
+        .off-btn{
+            display:flex;align-items:center;justify-content:center;gap:8px;
+            background:var(--accent);color:var(--bg);
+            padding:12px 16px;border-radius:var(--radius);
+            font-weight:700;font-size:.78rem;letter-spacing:1px;
+            text-decoration:none;transition:all .3s;
+            border:2px solid var(--accent);width:100%;
+        }
+        .off-btn:hover{background:transparent;color:var(--accent);}
+        .off-btn.ghost{background:transparent;color:var(--text-muted);border-color:var(--border);}
+        .off-btn.ghost:hover{border-color:var(--accent);color:var(--accent);}
+
+        /* BOTTOM */
+        .off-bottom{
+            text-align:center;
+            background:var(--bg-card);border:1px solid var(--border);
+            border-radius:var(--radius);padding:48px 32px;
+        }
+        .off-bottom h2{font-size:1.6rem;font-weight:900;margin-bottom:12px;color:var(--text);}
+        .off-bottom p{color:var(--text-muted);font-size:.9rem;line-height:1.8;max-width:480px;margin:0 auto 28px;}
+        .off-bottom strong{color:var(--text);}
+
+        .trust-row{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:32px;padding-top:28px;border-top:1px solid var(--border);}
+        .trust-item{display:flex;align-items:center;gap:7px;font-size:.75rem;color:var(--text-muted);font-weight:500;}
+        .trust-item::before{content:'✓';color:var(--accent);font-weight:900;}
+
+        .footer-ceo{font-size:.7rem;color:var(--text-muted);letter-spacing:1px;margin-top:10px;opacity:.6;}
+        .footer-ceo span{color:var(--accent);}
+
+        @media(max-width:768px){
+            .off-grid{grid-template-columns:1fr;}
+            .demo-banner{flex-direction:column;text-align:center;}
+            .trust-row{gap:14px;}
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="brand">VISTORÉ<small class="brand-tagline">The Future of Digital Luxury</small></div>
+    <div class="hamburger" id="hamburger">☰</div>
+    <nav class="main-nav" id="mainNav">
+        <ul>
+            <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+            <li><a href="profil.html" data-fr="Profil" data-en="Profile">Profil</a></li>
+            <li><a href="case-studies.html" data-fr="Études de Cas" data-en="Case Studies">Études de Cas</a></li>
+            <li><a href="services.html" data-fr="Services" data-en="Services">Services</a></li>
+            <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="header-utils">
+        <select id="language-switcher" class="util-select"><option value="fr">FR</option><option value="en">EN</option></select>
+        <button id="dark-mode-toggle" class="util-button">Mode Clair</button>
+    </div>
+</header>
+
+<main>
+
+    <!-- HEADER -->
+    <div class="offers-header">
+        <div class="off-chip" data-fr="Nos systèmes IA" data-en="Our AI Systems">Nos systèmes IA</div>
+        <h1>
+            <span data-fr="Choisissez votre" data-en="Choose your">Choisissez votre</span>
+            <em data-fr=" système" data-en=" system"> système</em>
+        </h1>
+        <p data-fr="Pas de features inutiles. Pas de jargon. Juste un système qui répond à vos clients, capte des leads et génère des résultats — pendant que vous dormez." data-en="No useless features. No jargon. Just a system that replies to clients, captures leads and generates results — while you sleep.">Pas de features inutiles. Pas de jargon. Juste un système qui répond à vos clients, capte des leads et génère des résultats — pendant que vous dormez.</p>
+    </div>
+
+    <!-- URGENCY -->
+    <div class="urg">
+        <div class="urg-dot"></div>
+        <span data-fr="⚡ 2 places disponibles ce mois-ci — Sélection sur dossier" data-en="⚡ 2 spots available this month — Selection based on application">⚡ 2 places disponibles ce mois-ci — Sélection sur dossier</span>
+    </div>
+
+    <div class="offers-page">
+
+        <!-- DEMO BANNER -->
+        <div class="demo-banner">
+            <div class="db-text">
+                <h3 data-fr="🌊 Voir un vrai système en action" data-en="🌊 See a real system in action">🌊 Voir un vrai système en action</h3>
+                <p data-fr="Assistant IA déployé pour <strong>La Ola Rooftop Casablanca</strong> — réponses instantanées sur le menu, les horaires et les réservations." data-en="AI assistant deployed for <strong>La Ola Rooftop Casablanca</strong> — instant replies on menu, hours and reservations.">Assistant IA déployé pour <strong>La Ola Rooftop Casablanca</strong> — réponses instantanées sur le menu, les horaires et les réservations.</p>
+            </div>
+            <a href="https://la-ola-chatbot.onrender.com" target="_blank" class="btn-demo" data-fr="Tester la démo →" data-en="Test the demo →">Tester la démo →</a>
+        </div>
+
+        <!-- OFFERS GRID -->
+        <div class="off-grid">
+
+            <!-- STARTER -->
+            <div class="off-card" onclick="window.location.href='contact.html'">
+                <span class="off-num">01</span>
+                <h2 class="off-name">Starter</h2>
+                <span class="off-tag" data-fr="Vos clients répondus instantanément" data-en="Your clients answered instantly">Vos clients répondus instantanément</span>
+                <div class="off-divider"></div>
+                <ul class="off-list">
+                    <li data-fr="Assistant IA personnalisé pour votre business" data-en="Custom AI assistant for your business">Assistant IA personnalisé pour votre business</li>
+                    <li data-fr="Répond aux questions fréquentes 24h/24" data-en="Answers frequent questions 24/7">Répond aux questions fréquentes 24h/24</li>
+                    <li data-fr="Menu, horaires, infos pratiques" data-en="Menu, hours, practical info">Menu, horaires, infos pratiques</li>
+                    <li data-fr="Lien partageable partout (bio, WhatsApp, stories)" data-en="Shareable link anywhere (bio, WhatsApp, stories)">Lien partageable partout (bio, WhatsApp, stories)</li>
+                    <li data-fr="Livré en 7 jours" data-en="Delivered in 7 days">Livré en 7 jours</li>
+                </ul>
+                <span class="off-price-lbl" data-fr="Tarif" data-en="Pricing">Tarif</span>
+                <p class="off-price" data-fr="Sur demande" data-en="On request">Sur demande</p>
+                <a href="contact.html" class="off-btn ghost" data-fr="Nous contacter →" data-en="Contact us →">Nous contacter →</a>
+            </div>
+
+            <!-- GROWTH BEST SELLER -->
+            <div class="off-card featured" onclick="window.location.href='contact.html'">
+                <div class="feat-badge" data-fr="⭐ Best seller" data-en="⭐ Best seller">⭐ Best seller</div>
+                <span class="off-num">02</span>
+                <h2 class="off-name">Growth</h2>
+                <span class="off-tag" data-fr="Un système qui convertit, pas juste répond" data-en="A system that converts, not just replies">Un système qui convertit, pas juste répond</span>
+                <div class="off-divider"></div>
+                <ul class="off-list">
+                    <li data-fr="Tout le Starter inclus" data-en="Everything in Starter">Tout le Starter inclus</li>
+                    <li data-fr="Réponses optimisées pour convertir" data-en="Conversion-optimised replies">Réponses optimisées pour convertir</li>
+                    <li data-fr="Qualification automatique des leads" data-en="Automatic lead qualification">Qualification automatique des leads</li>
+                    <li data-fr="Redirection vers réservation / WhatsApp" data-en="Redirect to booking / WhatsApp">Redirection vers réservation / WhatsApp</li>
+                    <li data-fr="Ton et style adaptés à votre marque" data-en="Tone adapted to your brand">Ton et style adaptés à votre marque</li>
+                    <li data-fr="1 mois de support inclus" data-en="1 month support included">1 mois de support inclus</li>
+                </ul>
+                <span class="off-price-lbl" data-fr="Tarif" data-en="Pricing">Tarif</span>
+                <p class="off-price" data-fr="Sur demande" data-en="On request">Sur demande</p>
+                <a href="contact.html" class="off-btn" data-fr="Je veux ce système →" data-en="I want this system →">Je veux ce système →</a>
+            </div>
+
+            <!-- ELITE -->
+            <div class="off-card" onclick="window.location.href='contact.html'">
+                <span class="off-num">03</span>
+                <h2 class="off-name">Elite</h2>
+                <span class="off-tag" data-fr="Système complet sur mesure" data-en="Complete custom system">Système complet sur mesure</span>
+                <div class="off-divider"></div>
+                <ul class="off-list">
+                    <li data-fr="Tout le Growth inclus" data-en="Everything in Growth">Tout le Growth inclus</li>
+                    <li data-fr="Intégration multi-canaux (site, Insta, WhatsApp)" data-en="Multi-channel integration (site, Insta, WhatsApp)">Intégration multi-canaux (site, Insta, WhatsApp)</li>
+                    <li data-fr="Automatisation complète du funnel client" data-en="Complete client funnel automation">Automatisation complète du funnel client</li>
+                    <li data-fr="Design premium + branding complet" data-en="Premium design + full branding">Design premium + branding complet</li>
+                    <li data-fr="Reporting mensuel des performances" data-en="Monthly performance reporting">Reporting mensuel des performances</li>
+                    <li data-fr="Support dédié 3 mois" data-en="Dedicated support 3 months">Support dédié 3 mois</li>
+                </ul>
+                <span class="off-price-lbl" data-fr="Tarif" data-en="Pricing">Tarif</span>
+                <p class="off-price" data-fr="Sur demande" data-en="On request">Sur demande</p>
+                <a href="contact.html" class="off-btn ghost" data-fr="Nous contacter →" data-en="Contact us →">Nous contacter →</a>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="off-bottom">
+            <h2 data-fr="Pas sûr(e) de ce qu'il vous faut ?" data-en="Not sure what you need?">Pas sûr(e) de ce qu'il vous faut ?</h2>
+            <p data-fr="On commence toujours par une <strong>session de découverte gratuite</strong>. On analyse votre business, on identifie les opportunités, et on vous propose exactement ce dont vous avez besoin." data-en="We always start with a <strong>free discovery session</strong>. We analyze your business, identify the opportunities, and propose exactly what you need.">On commence toujours par une <strong>session de découverte gratuite</strong>. On analyse votre business, on identifie les opportunités, et on vous propose exactement ce dont vous avez besoin.</p>
+            <a href="contact.html" class="button filled" data-fr="Démarrer ma session gratuite →" data-en="Start my free session →">Démarrer ma session gratuite →</a>
+            <div class="trust-row">
+                <div class="trust-item" data-fr="Livraison rapide" data-en="Fast delivery">Livraison rapide</div>
+                <div class="trust-item" data-fr="Sans engagement" data-en="No commitment">Sans engagement</div>
+                <div class="trust-item" data-fr="100% sur mesure" data-en="100% custom">100% sur mesure</div>
+                <div class="trust-item" data-fr="Résultats mesurables" data-en="Measurable results">Résultats mesurables</div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <a href="#" class="footer-link" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales</a>
+        <span>|</span>
+        <span data-fr="© 2026 Vistoré. Tous droits réservés." data-en="© 2026 Vistoré. All rights reserved.">© 2026 Vistoré. Tous droits réservés.</span>
+        <span>|</span>
+        <a href="contact.html" class="footer-link" data-fr="Contact" data-en="Contact">Contact</a>
+    </div>
+    <div class="footer-ceo">Founded by <span>Sirallah Makhlouf</span> · Founder & CEO, VISTORÉ</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
